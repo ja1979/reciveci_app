@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="components/loader.js"></script>
+
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+    <!-- Map -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>    
+    
+    <script>            
+        var myApp = angular.module('myApp', ['onsen']);
+        //ons.bootstrap();
+    </script>
+    <!--Controllers -->
+    <script src="components/map-controller.js"></script>    
+    
+
+    
+</head>
+<body>
+
+    
+
+    <ons-navigator var="myNavigator">
+        <ons-page>
+            <ons-toolbar fixed-style>
+                <div class="center">ReciVeci</div>
+            </ons-toolbar>
+            <div style="margin: auto; width: 95%;">
+                <div class="margins">
+                    <span style="color:#0033bb"><ons-icon icon="recycle" size="16em"></ons-icon></span>
+                </div>
+            </div>
+            <ons-button modifier="large--cta" onclick="myNavigator.resetToPage('main.html')">Comenzar</ons-button>
+        </ons-page>
+    </ons-navigator>
+    
+        
+    
+</body>
+</html>
