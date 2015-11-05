@@ -1,3 +1,25 @@
-<ons-toolbar>
-    <div class="center">Noticias</div>
-</ons-toolbar>
+<div ng-controller="NewsController">
+    <ons-navigator title="Navigator" var="newsNavigator">
+      <ons-page>
+        <ons-list>
+          <ons-list-item modifier="chevron" ng-repeat="new in news" ng-click="showDetail($index)">
+            {{new.title}}
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-navigator>
+    
+    
+    <ons-template id="new.html">
+      <ons-page>
+        <ons-toolbar>
+          <div class="left">
+            <ons-back-button>Regresar</ons-back-button>
+          </div>
+          <div class="center">{{selectedItem.title}}</div>
+        </ons-toolbar>
+      </ons-page>
+    </ons-template>
+        
+</div>
+
