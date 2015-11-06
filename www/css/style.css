@@ -149,3 +149,20 @@
     padding-left: 6px;
 }
 
+.card {
+  background-color: black;
+  background-image: url('../images/book.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #1F9CD9;
+  height: 250px;
+}
+
+.card-desc {
+  font-size: 20px;
+  font-weight: 600;
+  opacity: 0.9;
+  text-align: left;
+  line-height: 1.4;
+  color:#000000;
+}
