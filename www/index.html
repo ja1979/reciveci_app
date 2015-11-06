@@ -52,19 +52,18 @@
 
 
 
+    
     <ons-navigator var="myNavigator">
         <ons-page>
-            <ons-toolbar fixed-style>
-                <div class="center">ReciVeci</div>
-            </ons-toolbar>
-            <div style="margin: auto; width: 95%;">
-                <div class="margins">
-                    <span style="color:#0033bb"><ons-icon icon="recycle" size="16em"></ons-icon></span>
-                </div>
+            <div class="logo">
+                <img src="images/reciveci_logo.png"/>
             </div>
-            <ons-button modifier="large--cta" onclick="myNavigator.resetToPage('main.html')">Comenzar</ons-button>
+            <div>
+                <ons-button modifier="large--cta" onclick="myNavigator.resetToPage('main.html')" class="startbutton">Comenzar</ons-button>
+            </div>
         </ons-page>
     </ons-navigator>
+
 
 </body>
 </html>
