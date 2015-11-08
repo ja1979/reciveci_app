@@ -5,11 +5,12 @@ myApp.factory('$recycling', function($http) {
   return {
     categories: function(callback){
       $http.get(API_ROOT + 'categories.json').success(callback);
-      console.log('1111111111');
     },
     subcategories: function(callback){
       $http.get(API_ROOT + 'subcategories.json').success(callback);
-       console.log('222222222222');
+    },
+    subcategories_by_category: function(category_id,callback){
+      $http.get(API_ROOT + 'subcategories_by_category/' + category_id + '.json').success(callback);
     }
   };
 
