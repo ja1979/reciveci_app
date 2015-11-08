@@ -1,0 +1,29 @@
+<div ng-controller="RecyclingController">
+  <ons-toolbar>
+    <div class="center contact"><strong>Tipo de residuo</strong></div>
+  </ons-toolbar>
+
+  <ons-navigator title="Navigator" var="recyclingNavigator">
+    <ons-page>
+      <ons-list>
+        <ons-list-item modifier="chevron" ng-repeat="cat in categories">
+          {{cat.name}}
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </ons-navigator>
+    
+    
+  <ons-template id="category.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button>Regresar</ons-back-button>
+        </div>
+        <div class="center">{{category.name}}</div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>
+        
+</div>
+
