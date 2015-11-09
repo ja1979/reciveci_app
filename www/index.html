@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- CSP support mode (required for Windows Universal apps): https://docs.angularjs.org/api/ng/directive/ngCsp -->
-<html lang="es" ng-app="myApp" ng-csp>
+<html lang="es_LA" ng-app="myApp" ng-csp>
 <head>
     <meta charset="utf-8" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -10,6 +10,8 @@
     <script src="scripts/platformOverrides.js"></script>
     <script src="lib/angular/angular.js"></script>
     <script src="lib/onsen/js/onsenui.js"></script>
+    <script src="lib/angular/angular-timeago.js"></script>
+
 
     <!-- CSS dependencies -->
     <link rel="stylesheet" href="lib/onsen/css/onsenui.css" />
@@ -31,7 +33,7 @@
     <title>ReciVeci</title>
 
     <script>
-        var myApp = angular.module('myApp', ['onsen']);
+        var myApp = angular.module('myApp', ['onsen','yaru22.angular-timeago']);
     </script>
 
     <!--Services -->    
@@ -55,8 +57,8 @@
     
     <ons-navigator var="myNavigator">
         <ons-page>
-            <div class="logo">
-                <img src="images/reciveci_logo.png"/>
+            <div class="centered">
+                <img class="logo" src="images/logo_reciveci_medium.png"/>
             </div>
             <div>
                 <ons-button modifier="large--cta" onclick="myNavigator.resetToPage('main.html')" class="startbutton">Comenzar</ons-button>

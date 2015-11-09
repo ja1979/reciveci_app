@@ -8,45 +8,103 @@
 
 
 .maintoolbar {
-    background-color: black;
+    background-color: #1f9cd9;
 }
 
 .maintoolbartext {
-    font-size: 24px;
-    color: white;
+  font-size: 22px;
+  color: white;
 }
 
 
 
 .maintoolbaricon {
-     color: white;
-     padding-right: 10px;
-     margin-top: 10px;
+   color: white;
+   padding-right: 10px;
+   margin-top: 10px;
 }
 
 
 .logo {
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  top: 15%;
-  text-align: center;
+  max-width: 250px;
+  width: 75%;
+  height: auto;
+  padding-top: 50px;
 }
 
 
 
 .startbutton {
-    background-color: #009ee2;
+    background-color: #222;
     font-size: 24px;
     position: absolute;
-    bottom:   15%;
+    bottom:   10%;
 }
+
+
+.centered {
+  text-align: center;
+}
+
+.wastepickerpic {    
+  width: 100px;
+  max-width: 100px;
+  height: auto;
+}
+
+
+
+:checked + .tab-bar__button > .tab-bar__icon {
+  color: #1f9cd9;
+}
+
+.sectionbar {
+  background-color: #222;
+  color: white;
+}
+
+
+.newstitle {
+  font-size: 20px;
+  /*opacity: 0.7;*/
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-weight: bold;
+}
+
+
+.newscontent {
+  padding-top: 15px;
+}
+
+.newsentry {
+  line-height: 1.2;
+  /*font-size: 20px;*/
+  padding: 15px 35px 15px 15px;
+}
+
+.newspage {
+  padding: 0px 10px 10px 10px;
+}
+
+.newspic {    
+  max-width: 90%;
+  height: auto;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  /*background-color: red;*/
+}
+
+.newsdate {
+  opacity: 0.4;
+  font-size: 10px;
+}
+
 
 .tab {
     line-height: 1;
 }
+
 
 .tab-icon {
     
