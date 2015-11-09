@@ -1,0 +1,57 @@
+<div ng-controller="RecyclingController">
+  <ons-toolbar>
+    <div class="center contact"><strong>{{recyTitle}}</strong></div>
+  </ons-toolbar>
+
+  <ons-navigator title="Navigator" var="recyclingNavigator">
+    <ons-page>
+      <ons-list>
+         <ons-list-item>
+          <div class="center contact">Tipo de residuo</div>
+         </ons-list-item>
+        <ons-list-item modifier="chevron" ng-repeat="cat in categories" ng-click="showSubcategory($index)">
+          {{cat.name}}
+        
+      </ons-list>
+    </ons-page>
+  </ons-navigator>
+    
+    
+  <ons-template id="subcategories.html">
+    <ons-page>
+      <div class="center contact">{{category.name}}</div>
+      <ons-list>
+         <ons-list-item>
+          <div class="center contact">Tipo de residuo</div>
+         </ons-list-item>
+        <ons-list-item modifier="chevron" ng-repeat="sub in subcategories" ng-click="showRecyWays($index)">
+          {{sub.name}}
+      </ons-list>
+      <ons-bottom-toolbar>
+        <div class="right">
+          <ons-back-button>Regresar</ons-back-button>
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>
+
+  <ons-template id="recy_ways.html">
+    <ons-page>
+      <div class="center contact">{{subcategory.name}}</div>
+      <ons-list>
+         <ons-list-item>
+          <div class="center contact">Como reciclar</div>
+         </ons-list-item>
+        <ons-list-item modifier="chevron" ng-repeat="way in recy_ways">
+          {{way.description}}
+      </ons-list>
+      <ons-bottom-toolbar>
+        <div class="right">
+          <ons-back-button>Regresar</ons-back-button>
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>
+        
+</div>
+
