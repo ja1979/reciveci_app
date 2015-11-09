@@ -18,7 +18,8 @@
     <ons-page>
       <ons-list>
         <ons-list-item modifier="chevron" ng-repeat="sub in subcategories" ng-click="showRecyWays($index)">
-          {{sub.name}}
+          <div>{{sub.name}}</div>
+          <span class="newsdate">{{sub.description}}</span>
       </ons-list>
       <ons-bottom-toolbar>
         <div class="right">
