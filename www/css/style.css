@@ -35,10 +35,10 @@
 
 
 .startbutton {
-    background-color: #222;
-    font-size: 24px;
-    position: absolute;
-    bottom:   10%;
+  background-color: #222;
+  font-size: 24px;
+  position: absolute;
+  bottom:   10%;
 }
 
 
@@ -59,8 +59,9 @@
 }
 
 .sectionbar {
-  background-color: #222;
-  color: white;
+  /*background-color: #222;*/
+  color: #1f9cd9;
+  font-weight: bold;
 }
 
 
@@ -75,6 +76,7 @@
 
 .newscontent {
   padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .newsentry {
@@ -96,8 +98,8 @@
 }
 
 .newsdate {
-  opacity: 0.4;
-  font-size: 10px;
+  opacity: 0.5;
+  font-size: 12px;
 }
 
 
@@ -200,11 +202,6 @@
     font: bold Helvetica, Arial, sans-serif;
     color: #4099FF;
     padding-left: 3px;
-}
-.contact{
-    font: bold Helvetica, Arial, sans-serif;
-    color: #1F9CD9;
-    padding-left: 6px;
 }
 
 .card {

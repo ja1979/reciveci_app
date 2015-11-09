@@ -30,10 +30,10 @@
       <div class="newspage">
         <div class="newstitle">{{currentNew.title}}</div>
         <span class="newsdate">{{currentNew.created_at | timeAgo}}</span>
-        <div class="newscontent">{{currentNew.content}}</div>
         <div class="centered">
           <img ng-show="{{currentNew.image_url}}" class="newspic" ng-src="{{currentNew.image_url}}"/>
         </div>
+        <div class="newscontent">{{currentNew.content}}</div>        
       </div>
     </ons-page>
   </ons-template>
