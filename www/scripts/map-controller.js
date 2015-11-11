@@ -1,25 +1,47 @@
 
-myApp.controller('MapController', function($scope) {
+myApp.controller('MapController', function($scope, $timeout) {
+
+
 
 
     //alert('MapController');
-    //console.log('MapController');
+    console.log('MapController');
 
 
-    $scope.openProfile = function() {
-      console.log('openProfile');
+    $scope.openProfile = function(feature) {
+      console.log(feature.properties["waste_picker-name"]);
       $scope.mapNavigator.pushPage('profile.html');
+      $scope.currentWastePicker = feature.properties;
     };
 
+    var map;
+    var loadMap = function() {
+
+      console.log("Loading map...");
+
+      map = L.map('map').setView([-0.1832911226129649, -78.48079204559326], 15);
+
+      L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
+        attribution: 'Map data &copy; <a href="http://openo streetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        maxZoom: 18,
+        id: 'mapbox.streets'
+      }).addTo(map);
+
+      var routes;
+
+      //$.getJSON("http://api-reciveci.rhcloud.com/map/routes.json", function(data) {      
+      $.getJSON("http://192.168.10.197:5000/map/routes.json", function(data) {
+      //$.getJSON("http://localhost:5000/map/routes.json", function(data) {
+        routes = data ;
+        //console.log(routes);
+        L.geoJson(routes, {style: style, onEachFeature: onEachFeature}).addTo(map);
+      });
 
 
-    var map = L.map('map').setView([-0.18080, -78.48003], 16);
-        
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
-      attribution: 'Map data &copy; <a href="http://openo streetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-      maxZoom: 18,
-      id: 'mapbox.streets'
-    }).addTo(map);
+    }
+
+    
+
 
 
     function style(feature) {
@@ -38,7 +60,7 @@ myApp.controller('MapController', function($scope) {
 
         // Delegate all event handling for the container itself and its contents to the container
         container.on('click', '.profileLink', function() {
-          $scope.openProfile();
+          $scope.openProfile(feature);
         });
 
         // Insert whatever you want into the container, using whichever approach you prefer
@@ -54,15 +76,13 @@ myApp.controller('MapController', function($scope) {
     }
 
 
-    var routes;
+    $timeout(function(){
+      console.log("Cargado");
+      loadMap();
+    },800);
 
-    $.getJSON("http://api-reciveci.rhcloud.com/map/routes.json", function(data) {      
-    //$.getJSON("http://192.168.10.175:5000/map/routes.json", function(data) {
-      routes = data ;
-      //console.log(routes);
-      L.geoJson(routes, {style: style, onEachFeature: onEachFeature}).addTo(map);
-    });
 
+ 
   
 });
     

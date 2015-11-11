@@ -103,6 +103,53 @@
 }
 
 
+.profile-card {
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 30px 0;
+  line-height: 1.4;
+  background-color: #222;
+  text-shadow: rgba(0,0,0,0.4) 0px 1px 0px;
+}
+
+.profile-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 30%;
+  -webkit-border-radius: 30%;
+  background-color: black;
+  border: 1px solid white;
+  box-shadow: rgba(0,0,0,0.2) 0px 2px 0px 0px;
+  -webkit-box-shadow: rgba(0,0,0,0.2) 0px 2px 0px 0px;
+}
+
+
+.profile-name {
+  margin: 20px 0 0 0;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.profile-message {
+  font-size: 15px;
+  opacity: 0.7;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+.formvalue {
+  position: absolute;
+  right: 30px;
+  top: 0px;
+  font-size: 14px;
+}
+
+
+
+
 .tab {
     line-height: 1;
 }
@@ -221,3 +268,4 @@
   line-height: 1.4;
   color:#000000;
 }
+

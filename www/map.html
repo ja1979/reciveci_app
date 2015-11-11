@@ -1,7 +1,38 @@
-<div>
+<div ng-controller="MapController"3>
 	<ons-navigator title="Navigator" var="mapNavigator">
-		<ons-page ng-controller="MapController">
+		<ons-page>
     		<div id="map"></div>
 		</ons-page>
 	</ons-navigator>
+
+
+	<ons-template id="profile.html">
+		<ons-page>
+			<ons-toolbar fixed-style>
+			    <div class="left"><ons-back-button>Back</ons-back-button></div>
+			    <!-- <div class="center sectionbar">{{currentWastePicker["waste_picker-name"]}}</div> -->
+			</ons-toolbar>
+			<div class="profile-card">
+				<img ng-src="{{currentWastePicker['waste_picker-image_url']}}" class="profile-image"/>
+				<div class="profile-name">{{currentWastePicker["waste_picker-name"]}}</div>
+				<div class="profile-message">{{currentWastePicker["waste_picker-message"]}}</div>
+			</div>
+
+			<ons-list modifier="inset">
+<!-- 		        <ons-list-item>
+		        	<ons-icon icon="ion-quote" size="20px"></ons-icon>
+		          	<span class="formvalue">{{currentWastePicker["waste_picker-message"]}}</span>
+		        </ons-list-item> -->
+		        <ons-list-item>
+		        	<ons-icon icon="calendar" size="20px"></ons-icon>
+		          	<!-- Horario: -->
+		          	<span class="formvalue">{{currentWastePicker["schedule"]}}</span>
+		        </ons-list-item>
+	      	</ons-list>
+		</ons-page>
+
+	</ons-template>
+
+
+
 </div>
