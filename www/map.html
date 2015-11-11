@@ -10,27 +10,28 @@
 		<ons-page>
 			<ons-toolbar fixed-style>
 			    <div class="left"><ons-back-button>Back</ons-back-button></div>
-			    <!-- <div class="center sectionbar">{{currentWastePicker["waste_picker-name"]}}</div> -->
 			</ons-toolbar>
 			<div class="profile-card">
 				<img class="profile-image" ng-src="{{currentWastePicker['waste_picker-image_url']}}"/>
 				<div class="profile-name">{{currentWastePicker["waste_picker-name"]}}</div>
 				<div class="profile-message">"{{currentWastePicker["waste_picker-message"]}}"</div>
-			</div>
-
+			</div>			
 			<ons-list modifier="inset">
-<!-- 		        <ons-list-item>
-		        	<ons-icon icon="ion-quote" size="20px"></ons-icon>
-		          	<span class="formvalue">{{currentWastePicker["waste_picker-message"]}}</span>
-		        </ons-list-item> -->
 		        <ons-list-item>
-		        	<ons-icon icon="calendar" size="20px"></ons-icon>
+		        	<ons-icon icon="ion-android-walk" style="color: {{currentWastePicker['color']}}; opacity: 0.4;"></ons-icon>
 		          	<span class="formvalue">{{currentWastePicker["schedule"]}}</span>
+		        </ons-list-item>
+		        <ons-list-item ng-show="currentWastePicker['affiliation-name']">
+		        	<ons-icon icon="ion-ios-people" size="25px"></ons-icon>
+		          	<span class="formvalue">{{currentWastePicker["affiliation-name"]}}</span>
 		        </ons-list-item>
 		        <ons-list-item>
 		        	<ons-icon icon="user" size="20px"></ons-icon>
-		          	<!-- Horario: -->
 		          	<span class="formvalue">{{currentWastePicker["waste_picker-birth_date"] | ageFilter}} años</span>
+		        </ons-list-item>
+		        <ons-list-item>
+		        	<ons-icon icon="recycle" size="20px"></ons-icon>
+		          	<span class="formvalue">{{currentWastePicker["waste_picker-start_date"] | ageFilter}} años</span>
 		        </ons-list-item>
 	      	</ons-list>
 		</ons-page>

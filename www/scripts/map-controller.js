@@ -30,7 +30,7 @@ myApp.controller('MapController', function($scope, $timeout) {
       var routes;
 
       //$.getJSON("http://api-reciveci.rhcloud.com/map/routes.json", function(data) {      
-      $.getJSON("http://192.168.10.197:5000/map/routes.json", function(data) {
+      $.getJSON("http://192.168.10.104:5000/map/routes.json", function(data) {
       //$.getJSON("http://localhost:5000/map/routes.json", function(data) {
         routes = data ;
         //console.log(routes);
@@ -59,15 +59,19 @@ myApp.controller('MapController', function($scope, $timeout) {
         var container = $('<div />');
 
         // Delegate all event handling for the container itself and its contents to the container
-        container.on('click', '.profileLink', function() {
+        container.on('click', '.profile-link', function() {
           $scope.openProfile(feature);
         });
 
         // Insert whatever you want into the container, using whichever approach you prefer
-        container.html("<a class='profileLink' href='#'><div class='centered'><img class='wastepickerpic' src='" + feature.properties["waste_picker-image_url"] + "'/></div>" +
-                    "<div class='centered'>" +
-                    feature.properties["waste_picker-name"] + "</div></a><br>");
-        container.append(feature.properties["schedule"]);
+        container.html("<div class='map-popup'>" +
+                    "<a class='profile-link' href='#'>" + 
+                    "<div class='centered profile-icon' style='color: " + feature.properties["color"] + "; opacity: 0.4;'><i class='icon ion-android-walk'></i></div>" +
+                    "<div class='centered'>@" + feature.properties["waste_picker-name"] + "</div>" + 
+                    //"<div class='centered'><img class='wastepickerpic' src='" + feature.properties["waste_picker-image_url"] + "'/></div>" +
+                    "</a>" +
+                    "</div>");
+        //container.append(feature.properties["schedule"]);
 
         // Insert the container into the popup
         layer.bindPopup(container[0]);

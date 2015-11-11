@@ -50,8 +50,19 @@
   width: 50px;
   max-width: 50px;
   height: auto;
+  padding: 10px 0;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: white;
 }
 
+
+.leaflet-container a.leaflet-popup-close-button {
+  width: 30px;
+  height: 30px;
+  font: 30px/30px Tahoma, Verdana, sans-serif;  
+  padding: 0px 0px 0 0;
+  }
 
 
 :checked + .tab-bar__button > .tab-bar__icon {
@@ -103,6 +114,21 @@
 }
 
 
+.map-popup {
+  padding-top: 10px;
+}
+
+.profile-link:visited,.profile-link {
+  text-decoration: none;
+  /*color: #1f9cd9;*/
+}
+
+.profile-icon {
+  font-size: 30px;
+}
+
+
+
 .profile-card {
   width: 100%;
   text-align: center;
@@ -110,14 +136,15 @@
   padding: 30px 0;
   line-height: 1.4;
   background-color: #222;
+  /*opacity: 0.7;*/
   text-shadow: rgba(0,0,0,0.4) 0px 1px 0px;
 }
 
 
 
 .profile-image {
-  height: 100px;
   width: 100px;
+  height: auto;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   background-color: black;
@@ -144,7 +171,7 @@
 
 .formvalue {
   position: absolute;
-  right: 30px;
+  right: 25px;
   top: 0px;
   font-size: 14px;
 }
