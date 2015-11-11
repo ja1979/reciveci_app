@@ -13,9 +13,9 @@
 			    <!-- <div class="center sectionbar">{{currentWastePicker["waste_picker-name"]}}</div> -->
 			</ons-toolbar>
 			<div class="profile-card">
-				<img ng-src="{{currentWastePicker['waste_picker-image_url']}}" class="profile-image"/>
+				<img class="profile-image" ng-src="{{currentWastePicker['waste_picker-image_url']}}"/>
 				<div class="profile-name">{{currentWastePicker["waste_picker-name"]}}</div>
-				<div class="profile-message">{{currentWastePicker["waste_picker-message"]}}</div>
+				<div class="profile-message">"{{currentWastePicker["waste_picker-message"]}}"</div>
 			</div>
 
 			<ons-list modifier="inset">
@@ -25,8 +25,12 @@
 		        </ons-list-item> -->
 		        <ons-list-item>
 		        	<ons-icon icon="calendar" size="20px"></ons-icon>
-		          	<!-- Horario: -->
 		          	<span class="formvalue">{{currentWastePicker["schedule"]}}</span>
+		        </ons-list-item>
+		        <ons-list-item>
+		        	<ons-icon icon="user" size="20px"></ons-icon>
+		          	<!-- Horario: -->
+		          	<span class="formvalue">{{currentWastePicker["waste_picker-birth_date"] | ageFilter}} años</span>
 		        </ons-list-item>
 	      	</ons-list>
 		</ons-page>
