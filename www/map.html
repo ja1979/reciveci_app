@@ -7,13 +7,23 @@
 
 
 	<ons-template id="profile.html">
-		<ons-page>
-			<ons-toolbar fixed-style>
+		<ons-page modifier="shop-details">
+<!-- 			<ons-toolbar fixed-style>
 			    <div class="left"><ons-back-button>Back</ons-back-button></div>
-			</ons-toolbar>
+			</ons-toolbar> -->
+			<ons-toolbar modifier="transparent">
+	          <div class="left">
+	            <ons-toolbar-button ng-click="mapNavigator.popPage();">
+	            	<!-- <ons-back-button> -->
+	            		<ons-icon icon="ion-arrow-left-c" class="profile-backbutton">
+	            		</ons-icon>
+	            	<!-- </ons-back-button> -->
+	        	</ons-toolbar-button>
+	          </div>
+	        </ons-toolbar>
 			<div class="profile-card">
 				<img class="profile-image" ng-src="{{currentWastePicker['waste_picker-image_url']}}"/>
-				<div class="profile-name">{{currentWastePicker["waste_picker-name"]}}</div>
+				<div class="profile-name">@{{currentWastePicker["waste_picker-name"]}}</div>
 				<div class="profile-message">"{{currentWastePicker["waste_picker-message"]}}"</div>
 			</div>			
 			<ons-list modifier="inset">
@@ -32,6 +42,10 @@
 		        <ons-list-item>
 		        	<ons-icon icon="recycle" size="20px"></ons-icon>
 		          	<span class="formvalue">{{currentWastePicker["waste_picker-start_date"] | ageFilter}} años</span>
+		        </ons-list-item>
+		        <ons-list-item>
+		        	<ons-icon icon="ion-android-textsms" size="20px"></ons-icon>
+		          	<span class="formvalue">{{currentWastePicker["waste_picker-background"]}}</span>
 		        </ons-list-item>
 	      	</ons-list>
 		</ons-page>

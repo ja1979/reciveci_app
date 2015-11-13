@@ -2,6 +2,12 @@
 
   <ons-navigator title="Navigator" var="newsNavigator">
     <ons-page>
+      
+      <ons-modal var="modal">
+        <i class="fa fa-spinner fa-spin fa-2x"></i>
+      </ons-modal>
+
+
       <ons-toolbar fixed-style>
         <div class="center sectionbar">
           Noticias recientes
@@ -30,8 +36,8 @@
       <div class="newspage">
         <div class="newstitle">{{currentNew.title}}</div>
         <span class="newsdate">{{currentNew.created_at | timeAgo}}</span>
-        <div class="centered">
-          <img ng-show="{{currentNew.image_url}}" class="newspic" ng-src="{{currentNew.image_url}}"/>
+        <div class="centered" ng-show="currentNew.image_url">
+          <img class="newspic" ng-src="{{currentNew.image_url}}"/>
         </div>
         <div class="newscontent">{{currentNew.content}}</div>        
       </div>

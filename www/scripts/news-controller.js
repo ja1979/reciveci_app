@@ -1,11 +1,19 @@
-myApp.controller('NewsController', function($scope, $news) {
+myApp.controller('NewsController', function($scope, $news, $timeout) {
 
     
     $scope.news = [];
     
-    $news.last(function(news) {
-        $scope.news = news;
-    });
+    $timeout(function(){
+        modal.show();
+        $news.last(function(news) {
+            $scope.news = news;
+            modal.hide();
+        });
+
+    },100);
+
+
+
 
 
     $scope.showDetail = function(newObj){ 
