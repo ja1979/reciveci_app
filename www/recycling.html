@@ -5,10 +5,18 @@
 
   <ons-navigator title="Navigator" var="recyclingNavigator">
     <ons-page>
+      
+      <ons-modal var="modal">
+        <i class="fa fa-spinner fa-spin fa-2x"></i>
+      </ons-modal>
+
+      <ons-modal var="modal">
+        <i class="fa fa-spinner fa-spin fa-2x"></i>
+      </ons-modal>
+
       <ons-list>
         <ons-list-item modifier="chevron" ng-repeat="cat in categories" ng-click="showSubcategory($index)">
           {{cat.name}}
-        
       </ons-list>
     </ons-page>
   </ons-navigator>

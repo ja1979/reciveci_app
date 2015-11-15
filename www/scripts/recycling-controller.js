@@ -1,14 +1,21 @@
-myApp.controller('RecyclingController', function($scope, $recycling) {
+myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
     $scope.categories = [];
     $scope.subcategories = [];
     $scope.recy_ways = [];
+
+    $timeout(function(){
+        modal.show();
+        $recycling.categories(function(categories) {
+            $scope.categories = categories;
+            modal.hide();
+        });
+
+    },100);
     
     $scope.recyTitle = '¿Cómo reciclar?';
 
-    $recycling.categories(function(categories) {
-        $scope.categories = categories;
-    });
+    
 
     $scope.showSubcategory = function(index){ 
         var category = $scope.categories[index];
