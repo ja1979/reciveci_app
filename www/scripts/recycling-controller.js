@@ -13,9 +13,7 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
     },100);
     
-    $scope.recyTitle = '¿Cómo reciclar?';
-
-    
+    $scope.recyTitle = "¿Cómo reciclar?";
 
     $scope.showSubcategory = function(index){ 
         var category = $scope.categories[index];
@@ -43,7 +41,12 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
     }
 
-    
+    $scope.refreshTitleOrigin=function(){
+        $scope.recyTitle = "¿Cómo reciclar?";
+    }
 
-  
+    $scope.refreshTitleCategory=function(){
+        $scope.recyTitle =  "¿Cómo reciclar " + $scope.category.name + "?";
+    }
+
 });

@@ -3,13 +3,10 @@
     <div class="center sectionbar">{{recyTitle}}</div>
   </ons-toolbar>
 
+  
   <ons-navigator title="Navigator" var="recyclingNavigator">
     <ons-page>
       
-      <ons-modal var="modal">
-        <i class="fa fa-spinner fa-spin fa-2x"></i>
-      </ons-modal>
-
       <ons-modal var="modal">
         <i class="fa fa-spinner fa-spin fa-2x"></i>
       </ons-modal>
@@ -31,7 +28,7 @@
       </ons-list>
       <ons-bottom-toolbar>
         <div class="right">
-          <ons-back-button>Regresar</ons-back-button>
+          <ons-back-button ng-click="refreshTitleOrigin();">Regresar</ons-back-button>
         </div>
       </ons-toolbar>
     </ons-page>
@@ -46,7 +43,7 @@
       </ons-list>
       <ons-bottom-toolbar>
         <div class="right">
-          <ons-back-button>Regresar</ons-back-button>
+          <ons-back-button ng-click="refreshTitleCategory();">Regresar</ons-back-button>
         </div>
       </ons-toolbar>
     </ons-page>
