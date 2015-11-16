@@ -3,12 +3,24 @@
     <div class="center sectionbar">{{recyTitle}}</div>
   </ons-toolbar>
 
+  
   <ons-navigator title="Navigator" var="recyclingNavigator">
     <ons-page>
+      
+      <ons-modal var="modal">
+        <i class="fa fa-spinner fa-spin fa-2x"></i>
+      </ons-modal>
+
       <ons-list>
         <ons-list-item modifier="chevron" ng-repeat="cat in categories" ng-click="showSubcategory($index)">
-          {{cat.name}}
-        
+          <ons-row>
+            <ons-col width="100px">
+              <img class="newspic" ng-src="{{root_base}}{{cat.image_url}}"/>
+            </ons-col>
+            <ons-col>
+              <div class="recyTitle">{{cat.name}}</div>
+            </ons-col>
+          </ons-row>  
       </ons-list>
     </ons-page>
   </ons-navigator>
@@ -17,13 +29,15 @@
   <ons-template id="subcategories.html">
     <ons-page>
       <ons-list>
-        <ons-list-item modifier="chevron" ng-repeat="sub in subcategories" ng-click="showRecyWays($index)">
-          <div>{{sub.name}}</div>
-          <span class="newsdate">{{sub.description}}</span>
-      </ons-list>
+        <div ng-repeat="sub in subcategories" ng-click="showRecyWays($index)">
+          <ons-list-item modifier="chevron">
+            <div class="recyTitle">{{sub.name}}</div>
+          </ons-list>
+          <div class="recyContent">{{sub.description}}</div>
+        </div>
       <ons-bottom-toolbar>
         <div class="right">
-          <ons-back-button>Regresar</ons-back-button>
+          <ons-back-button ng-click="refreshTitleOrigin();">Regresar</ons-back-button>
         </div>
       </ons-toolbar>
     </ons-page>
@@ -32,13 +46,22 @@
   <ons-template id="recy_ways.html">
     <ons-page>
       <ons-list>
-         
         <ons-list-item ng-repeat="way in recy_ways">
-          {{way.description}}
+          <ons-row>
+            <ons-col width="20px">
+              <ons-icon icon="ion-asterisk" size="15px" style="color: #1F9CD9"></ons-icon>
+            </ons-col>
+            <ons-col>
+              <div class="recyEntry"> {{way.description}} </div>
+              <img class="entryPic" ng-if="way.image_name!=null"
+                  ng-src="{{root_base}}{{path_images_ways}}{{way.image_name}}"/>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
       </ons-list>
       <ons-bottom-toolbar>
         <div class="right">
-          <ons-back-button>Regresar</ons-back-button>
+          <ons-back-button ng-click="refreshTitleCategory();">Regresar</ons-back-button>
         </div>
       </ons-toolbar>
     </ons-page>

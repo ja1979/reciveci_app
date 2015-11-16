@@ -1,14 +1,22 @@
-myApp.controller('RecyclingController', function($scope, $recycling) {
+myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
     $scope.categories = [];
     $scope.subcategories = [];
     $scope.recy_ways = [];
-    
-    $scope.recyTitle = '¿Cómo reciclar?';
+    $scope.root_base = 'http://api-reciveci.rhcloud.com/';
+    //$scope.root_base = 'http://192.168.10.115:3000/';
+    $scope.path_images_ways = 'assets/images/ways/';
 
-    $recycling.categories(function(categories) {
-        $scope.categories = categories;
-    });
+    $timeout(function(){
+        modal.show();
+        $recycling.categories(function(categories) {
+            $scope.categories = categories;
+            modal.hide();
+        });
+
+    },100);
+    
+    $scope.recyTitle = "¿Cómo reciclar?";
 
     $scope.showSubcategory = function(index){ 
         var category = $scope.categories[index];
@@ -36,7 +44,12 @@ myApp.controller('RecyclingController', function($scope, $recycling) {
 
     }
 
-    
+    $scope.refreshTitleOrigin=function(){
+        $scope.recyTitle = "¿Cómo reciclar?";
+    }
 
-  
+    $scope.refreshTitleCategory=function(){
+        $scope.recyTitle =  "¿Cómo reciclar " + $scope.category.name + "?";
+    }
+
 });

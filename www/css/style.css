@@ -333,7 +333,36 @@
   font-weight: 600;
   opacity: 0.9;
   text-align: left;
-  line-height: 1.4;
+  line-height: 1.3;
   color:#000000;
 }
+
+.recyTitle {
+  font-size: 20px;
+  padding-top: 12px;
+  padding-bottom: 0px;
+  font-weight: bold;
+}
+
+.recyContent {
+  padding-top: 1px;
+  padding-bottom: 5px;
+  line-height: 1.0;
+}
+
+.recyEntry {
+  font-size: 18px;
+  padding-top: 20px;
+  padding-bottom: 0px;
+  font-weight: bold;
+  line-height: 1.0;
+}
+
+.entryPic {    
+  max-width: 95%;
+  height: auto;
+  padding-top: 25px;
+  padding-bottom: 5px;
+}
+
 
