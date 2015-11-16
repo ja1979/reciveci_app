@@ -13,7 +13,7 @@
 
       <ons-list>
         <ons-list-item modifier="chevron" ng-repeat="cat in categories" ng-click="showSubcategory($index)">
-          {{cat.name}}
+          <div class="recyTitle">{{cat.name}}</div>
       </ons-list>
     </ons-page>
   </ons-navigator>
@@ -22,10 +22,12 @@
   <ons-template id="subcategories.html">
     <ons-page>
       <ons-list>
-        <ons-list-item modifier="chevron" ng-repeat="sub in subcategories" ng-click="showRecyWays($index)">
-          <div>{{sub.name}}</div>
-          <span class="newsdate">{{sub.description}}</span>
-      </ons-list>
+        <div ng-repeat="sub in subcategories" ng-click="showRecyWays($index)">
+          <ons-list-item modifier="chevron">
+            <div class="recyTitle">{{sub.name}}</div>
+          </ons-list>
+          <div class="recyContent">{{sub.description}}</div>
+        </div>
       <ons-bottom-toolbar>
         <div class="right">
           <ons-back-button ng-click="refreshTitleOrigin();">Regresar</ons-back-button>
@@ -37,10 +39,9 @@
   <ons-template id="recy_ways.html">
     <ons-page>
       <ons-list>
-         
         <ons-list-item ng-repeat="way in recy_ways">
-          {{way.description}}
-      </ons-list>
+        <div class="recyEntry">  {{way.description}} </div>
+        </ons-list>
       <ons-bottom-toolbar>
         <div class="right">
           <ons-back-button ng-click="refreshTitleCategory();">Regresar</ons-back-button>

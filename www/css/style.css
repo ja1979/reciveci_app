@@ -337,3 +337,24 @@
   color:#000000;
 }
 
+.recyTitle {
+  font-size: 20px;
+  padding-top: 12px;
+  padding-bottom: 0px;
+  font-weight: bold;
+}
+
+.recyContent {
+  padding-top: 1px;
+  padding-bottom: 5px;
+  line-height: 1.0;
+}
+
+.recyEntry {
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  font-weight: bold;
+  line-height: 1.0;
+}
+
