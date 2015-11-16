@@ -30,8 +30,10 @@ myApp.controller('MapController', function($scope, $timeout) {
       var routes;
 
       //$.getJSON("http://api-reciveci.rhcloud.com/map/routes.json", function(data) {      
-      $.getJSON("http://192.168.10.104:5000/map/routes.json", function(data) {
+      //$.getJSON("http://192.168.10.104:5000/map/routes.json", function(data) {
+      //$.getJSON("http://192.168.43.240:5000/map/routes.json", function(data) {
       //$.getJSON("http://localhost:5000/map/routes.json", function(data) {
+      $.getJSON("http://192.168.43.240:5000/map/routes.json", function(data) {
         routes = data ;
         //console.log(routes);
         L.geoJson(routes, {style: style, onEachFeature: onEachFeature}).addTo(map);
