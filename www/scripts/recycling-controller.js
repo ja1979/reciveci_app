@@ -3,6 +3,8 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
     $scope.categories = [];
     $scope.subcategories = [];
     $scope.recy_ways = [];
+    $scope.root_base = 'http://api-reciveci.rhcloud.com/';
+    //$scope.root_base = 'http://192.168.10.115:3000/';
 
     $timeout(function(){
         modal.show();
