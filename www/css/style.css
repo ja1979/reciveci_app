@@ -352,9 +352,17 @@
 
 .recyEntry {
   font-size: 18px;
-  padding-top: 10px;
+  padding-top: 20px;
   padding-bottom: 0px;
   font-weight: bold;
   line-height: 1.0;
 }
+
+.entryPic {    
+  max-width: 95%;
+  height: auto;
+  padding-top: 25px;
+  padding-bottom: 5px;
+}
+
 

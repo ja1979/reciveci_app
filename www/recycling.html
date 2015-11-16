@@ -48,11 +48,13 @@
       <ons-list>
         <ons-list-item ng-repeat="way in recy_ways">
           <ons-row>
-            <ons-col width="25px">
-              <ons-icon icon="ion-asterisk" size="20px" style="color: #1F9CD9"></ons-icon>
+            <ons-col width="20px">
+              <ons-icon icon="ion-asterisk" size="15px" style="color: #1F9CD9"></ons-icon>
             </ons-col>
             <ons-col>
-              <div class="recyEntry">  {{way.description}} </div>
+              <div class="recyEntry"> {{way.description}} </div>
+              <img class="entryPic" ng-if="way.image_name!=null"
+                  ng-src="{{root_base}}{{path_images_ways}}{{way.image_name}}"/>
             </ons-col>
           </ons-row>
         </ons-list-item>

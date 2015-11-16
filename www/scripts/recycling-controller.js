@@ -5,6 +5,7 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
     $scope.recy_ways = [];
     $scope.root_base = 'http://api-reciveci.rhcloud.com/';
     //$scope.root_base = 'http://192.168.10.115:3000/';
+    $scope.path_images_ways = 'assets/images/ways/';
 
     $timeout(function(){
         modal.show();
