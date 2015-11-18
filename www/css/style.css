@@ -1,5 +1,18 @@
+@font-face {
+    font-family:"ArialRounded";
+    src: url("../fonts/arial-rounded-mt-bold.ttf")
+}
+
+
+
 .page--full_bg__background {
-  background: url('../images/skulls.png');
+  background: url('../images/background_tree_02_small.jpg');
+  background-size: auto 100%;
+  /*
+  background-repeat: no-repeat;
+  */
+  opacity: 0.3;
+  background-position: center center;
 }
 
 
@@ -19,6 +32,8 @@
 .maintoolbartext {
   font-size: 22px;
   color: white;
+  font-family:'ArialRounded', sans-serif;
+  letter-spacing: 1.5px;
 }
 
 
@@ -88,12 +103,16 @@ ons-tabbar-item ons-icon {
 
 
 .startbutton {
-  /*background-color: #222;*/
   background-color: #1f9cd9;
-  font-size: 24px;
+  font-size: 28px;
   position: absolute;
   bottom:   10%;
+  /*
+  background-color: #222;
   font-weight: 600;
+  */
+  font-family:'ArialRounded', sans-serif;
+  letter-spacing: 1.5px;
 }
 
 
@@ -125,10 +144,14 @@ ons-tabbar-item ons-icon {
 }
 
 .sectionbar {
-  /*background-color: #222;*/
+  background-color: #e2f0e3;
   color: #1f9cd9;
   font-weight: bold;
   font-size: 20px;
+}
+
+.error-connection {
+  padding-top: 10px;
 }
 
 
@@ -192,17 +215,28 @@ ons-tabbar-item ons-icon {
   bottom: 0px;
 }
 
+/*
+.profile-card:before {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+
+}
+*/
 
 .profile-card {
+  background-color: white;
+  background-image: url(../images/footer_lodyas.png);
+  background-repeat: no-repeat;
+  /*background-size: 100%;*/
+  background-size: cover;
+
   width: 100%;
   text-align: center;
   color: white;
   padding: 30px 0;
   line-height: 1.4;
-  background-color: #222;
-  /*opacity: 0.7;*/
   text-shadow: rgba(0,0,0,0.4) 0px 1px 0px;
-  background: url('../images/dark_mosaic.png');
 }
 
 
