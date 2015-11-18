@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.onsen.helloworld" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Onsen UI Project</name>
+<widget id="ec.reviceci.app" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>ReciVeci App</name>
     <description>
-        Onsen UI project to create fancy user interfaces for hybrid mobile applications. It uses uses Apache Cordova to help you build an app that targets multiple mobile platforms: Android, iOS, Windows, and Windows Phone.
+        Aplicación para el proyecto ciudadano ReciVeci, el cuál está enfocado en incrementar y potenciar la labor de los recicladores en el Ecuador, a través de la educación e involucramiento de la ciudadanía con el trabajo y asociatividad de los recicladores de base.
     </description>
-    <author email="dev@onsen.io" href="http://onsen.io">
-        Onsen UI Team
+    <author email="info@reciveci.ec" href="http://www.reciveci.ec">
+        ReciVeci
     </author>
     <content src="index.html" />
     <access origin="*" />
