@@ -8,8 +8,8 @@
         ReciVeci
     </author>
 
-    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
     
+
 
     <platform name="android" />
     <!-- <platform name="ios" /> -->
