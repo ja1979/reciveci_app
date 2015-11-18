@@ -8,15 +8,35 @@
       </ons-modal>
 
 
+
+
       <ons-toolbar fixed-style>
         <div class="center sectionbar">
           Noticias recientes
         </div>
       </ons-toolbar>
-      <!--ons-list-header>Noticias recientes</ons-list-header-->
+
+
+      <ons-pull-hook var="loader" ng-action="load($done)">
+        <span ng-switch="loader.getCurrentState()">
+          <span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon> Baje para refrescar</span>
+          <span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon> Libere para refrescar</span>
+          <span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Cargando...</span>
+        </span>
+      </ons-pull-hook>
+
+
+
       <ons-list>
+        <ons-list-item ng-hide="success">
+          <div class="info">
+            Lo sentimos, no se pudo completar la consulta
+            :(
+          </div>
+        </ons-list-item>
+
         <ons-list-item modifier="chevron" class="newsentry" ng-repeat="newObj in news" ng-click="showDetail(newObj)">
-          <div>
+          <div class="newstitle">
             {{newObj.title}}
           </div>
           <span class="newsdate">{{newObj.created_at | timeAgo}}</span>

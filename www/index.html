@@ -11,6 +11,7 @@
     <script src="lib/angular/angular.js"></script>
     <script src="lib/onsen/js/onsenui.js"></script>
     <script src="lib/angular/angular-timeago.js"></script>
+    <script src="lib/angular/angular-resource.js"></script>
 
 
     <!-- CSS dependencies -->
@@ -34,7 +35,7 @@
     <title>ReciVeci</title>
 
     <script>
-        var myApp = angular.module('myApp', ['onsen','yaru22.angular-timeago']);
+        var myApp = angular.module('myApp', ['onsen','ngResource','yaru22.angular-timeago']);
     </script>
 
     <!-- Filters -->
@@ -64,7 +65,7 @@
 
     
     <ons-navigator var="myNavigator">
-        <ons-page>
+        <ons-page modifier="full_bg">
             <div class="centered">
                 <img class="logo" src="images/logo_reciveci_medium.png"/>
             </div>
