@@ -8,5 +8,5 @@
         ReciVeci
     </author>
     <content src="index.html" />
-    <access origin="*" />
+    <access origin="http://rhcloud.com" subdomains="true" />
 </widget>
