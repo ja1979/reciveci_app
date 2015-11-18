@@ -7,6 +7,20 @@
     <author email="info@reciveci.ec" href="http://www.reciveci.ec">
         ReciVeci
     </author>
+
+    <platform name="android" />
+    <!-- <platform name="ios" /> -->
+
     <content src="index.html" />
+    <icon src="icon.png" />
+
     <access origin="http://rhcloud.com" subdomains="true" />
+
+
+
+	<platform name="android" >
+	  <preference name="orientation" value="portrait" />
+	</platform>
+
+
 </widget>
