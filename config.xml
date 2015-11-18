@@ -8,12 +8,14 @@
         ReciVeci
     </author>
 
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+    
+
     <platform name="android" />
     <!-- <platform name="ios" /> -->
 
-    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
 
-    
+
 
     <content src="index.html" />
     <icon src="icon.png" />
