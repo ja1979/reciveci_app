@@ -3,6 +3,7 @@ myApp.factory('$recycling', function($http) {
   //var API_ROOT = 'http://192.168.1.8:3000/';
   //var API_ROOT = 'http://localhost:5000/';
   //var API_ROOT = 'http://192.168.10.115:3000/';
+  //var API_ROOT = 'http://192.168.10.126:3000/';
 
   return {
     categories: function(callback){
