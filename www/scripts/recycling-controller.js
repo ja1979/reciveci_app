@@ -7,10 +7,16 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
     //$scope.root_base = 'http://192.168.10.115:3000/';
     $scope.path_images_ways = 'assets/images/ways/';
 
+    $scope.success = true;
+
     $timeout(function(){
         modal.show();
+        $scope.success = true;
         $recycling.categories(function(categories) {
             $scope.categories = categories;
+            if(categories == null){
+                $scope.success = false;
+            }
             modal.hide();
         });
 

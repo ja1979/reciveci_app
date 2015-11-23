@@ -12,6 +12,13 @@
       </ons-modal>
 
       <ons-list>
+        <ons-list-item class="centered error-connection" ng-hide="success">
+          <ons-icon size="35px" icon="ion-sad-outline"></ons-icon>
+          <div class="info">
+            Lo sentimos, no se pudo completar la operación            
+          </div>
+        </ons-list-item>
+        
         <ons-list-item modifier="chevron" ng-repeat="cat in categories" ng-click="showSubcategory($index)">
           <ons-row>
             <ons-col width="100px">

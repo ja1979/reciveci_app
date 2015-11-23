@@ -7,7 +7,7 @@ myApp.factory('$recycling', function($http) {
 
   return {
     categories: function(callback){
-      $http.get(API_ROOT + 'categories.json').success(callback);
+      $http.get(API_ROOT + 'categories.json').success(callback).error(callback);
     },
     subcategories: function(callback){
       $http.get(API_ROOT + 'subcategories.json').success(callback);
