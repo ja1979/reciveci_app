@@ -2,7 +2,7 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
     $scope.categories = [];
     $scope.subcategories = [];
-    $scope.subcategories = [];
+    $scope.recy_ways = [];
     $scope.root_base = 'http://api-reciveci.rhcloud.com/';
     //$scope.root_base = 'http://192.168.10.115:3000/';
     $scope.path_images_ways = 'assets/images/ways/';
@@ -51,7 +51,7 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
     $scope.refreshTitleCategory=function(){
         $scope.recyTitle =  "¿Cómo reciclar " + $scope.category.name + "?";
-        $scope.subcategories = [];
+        $scope.recy_ways = [];
     }
 
 });
