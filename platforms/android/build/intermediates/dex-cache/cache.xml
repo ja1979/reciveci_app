@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/vagrant/Projects/reciveci/reciveci_app/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/classes.jar"
+        jumboMode="false"
+        revision="23.0.2"
+        sha1="5f887fd7b933e02bc8172926e0c827222c7417f8">
+        <dex dex="/home/vagrant/Projects/reciveci/reciveci_app/platforms/android/build/intermediates/pre-dexed/debug/classes-603ac47556b5e305e2de6c51397c63089f29c88d.jar" />
+    </item>
+
+</items>
