@@ -1,0 +1,67 @@
+<div ng-controller="RatesController">
+
+  <ons-navigator title="Navigator" var="ratesNavigator">
+    <ons-page>
+      
+      <ons-modal var="modal">
+        <i class="fa fa-spinner fa-spin fa-2x"></i>
+      </ons-modal>
+
+
+
+
+      <ons-toolbar fixed-style>
+        <div class="center sectionbar">
+          Datos
+        </div>
+      </ons-toolbar>
+
+
+      <ons-pull-hook var="loader" ng-action="load($done)">
+        <span ng-switch="loader.getCurrentState()">
+          <span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon> Baje para refrescar</span>
+          <span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon> Libere para refrescar</span>
+          <span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Cargando...</span>
+        </span>
+      </ons-pull-hook>
+
+
+
+      <ons-list>
+        <ons-list-item class="centered error-connection" ng-hide="success">
+          <ons-icon size="35px" icon="ion-sad-outline"></ons-icon>
+          <div class="info">
+            Lo sentimos, no se pudo completar la operación            
+          </div>
+        </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="newsentry" ng-repeat="newObj in rates" ng-click="showDetail(newObj)">
+          <div class="newstitle">
+            {{newObj.title}}
+          </div>
+          <span class="newsdate">{{newObj.created_at | timeAgo}}</span>
+        </ons-list-item>
+      </ons-list>
+    </ons-page>
+  </ons-navigator>
+  
+  
+  <ons-template id="rate.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button>Regresar</ons-back-button>
+        </div>
+      </ons-toolbar>
+      <div class="newspage">
+        <div class="newstitle">{{currentRate.title}}</div>
+        <span class="newsdate">{{currentRate.created_at | timeAgo}}</span>
+        <div class="centered" ng-show="currentRate.image_url">
+          <img class="newspic" ng-src="{{currentRate.image_url}}"/>
+        </div>
+        <div class="newscontent">{{currentRate.content}}</div>        
+      </div>
+    </ons-page>
+  </ons-template>
+        
+</div>

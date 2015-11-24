@@ -15,6 +15,10 @@
     <!-- <platform name="ios" /> -->
 
 
+    <!-- <gap:plugin name="cordova-plugin-whitelist" source="npm" /> -->
+    <allow-navigation href="http://*/*" />
+    <allow-intent href="https://*/*" />
+
 
 
     <content src="index.html" />

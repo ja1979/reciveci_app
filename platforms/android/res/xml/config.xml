@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="ec.reviceci.app" version="0.1.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <feature name="Whitelist">
+        <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <preference name="orientation" value="portrait" />
+    <name>ReciVeci App</name>
+    <description>
+        Aplicación para el proyecto ciudadano ReciVeci, el cuál está enfocado en incrementar y potenciar la labor de los recicladores en el Ecuador, a través de la educación e involucramiento de la ciudadanía con el trabajo y asociatividad de los recicladores de base.
+    </description>
+    <author email="info@reciveci.ec" href="http://www.reciveci.ec">
+        ReciVeci
+    </author>
+    <allow-navigation href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <content src="index.html" />
+    <icon src="icon.png" />
+    <access origin="http://rhcloud.com" subdomains="true" />
+</widget>
