@@ -15,17 +15,12 @@
     <!-- <platform name="ios" /> -->
 
 
-    <!-- <gap:plugin name="cordova-plugin-whitelist" source="npm" /> -->
-<!--     <allow-navigation href="http://*/*" />
-    <allow-intent href="https://*/*" />
- -->
-     <access origin="*" subdomains="true" />
-
-
-
 
     <content src="index.html" />
     <icon src="icon.png" />
+
+    <access origin="http://rhcloud.com" subdomains="true" />
+
 
 
 	<platform name="android" >
