@@ -1,2 +1,0 @@
-/home/vagrant/Projects/reciveci/reciveci_app/platforms/android/build/intermediates/classes/debug
-/home/vagrant/Projects/reciveci/reciveci_app/platforms/android/build/intermediates/pre-dexed/debug/classes-603ac47556b5e305e2de6c51397c63089f29c88d.jar
