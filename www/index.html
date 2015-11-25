@@ -36,6 +36,12 @@
 
     <script>
         var myApp = angular.module('myApp', ['onsen','ngResource','yaru22.angular-timeago']);
+
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            window.open = cordova.InAppBrowser.open;
+        }
+        
     </script>
 
     <!-- Filters -->
@@ -72,29 +78,7 @@
             </div>
             <div>
                 <ons-button modifier="large--cta" onclick="myNavigator.resetToPage('main.html')" class="startbutton">Súmate</ons-button>
-            </div>
-            <!--ons-tabbar var="tabbar" position="bottom">
-                <ons-tabbar-item
-                    icon="thumbs-o-up"
-                    label="Separa"
-                    page="recycling.html"></ons-tabbar-item>
-                <ons-tabbar-item
-                    icon="ion-map"
-                    label="Servicio"
-                    page="map.html"></ons-tabbar-item>
-                <ons-tabbar-item
-                    icon="rss"
-                    label="Noticias"
-                    page="news.html"></ons-tabbar-item>
-                <ons-tabbar-item
-                    icon="ion-stats-bars"
-                    label="Métricas"
-                    page="metrics.html"></ons-tabbar-item>
-                <ons-tabbar-item
-                    icon="ion-chatbubbles"
-                    label="Contactos"
-                    page="contacts.html"></ons-tabbar-item>
-            </ons-tabbar-->
+            </div>            
         </ons-page>
     </ons-navigator>
 
