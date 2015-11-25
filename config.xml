@@ -14,10 +14,10 @@
     <allow-navigation href="*" />
 
 
-    <!-- <access origin="*" />
-    <plugin name="cordova-plugin-inappbrowser" /> -->
-    <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
-    <access origin="*" browserOnly="true"/>
+    <access origin="*" />
+    <plugin name="cordova-plugin-inappbrowser" />
+    <!-- <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+    <access origin="*" browserOnly="true"/> -->
 
 
 
