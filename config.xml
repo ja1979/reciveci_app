@@ -10,12 +10,14 @@
 
     
     <!-- Allow navigation -->
-    <plugin name="cordova-plugin-whitelist" />
+    <plugin name="cordova-plugin-whitelist" />    
     <allow-navigation href="*" />
-    <access origin="*" />
 
 
-    <plugin name="cordova-plugin-inappbrowser" />
+    <!-- <access origin="*" />
+    <plugin name="cordova-plugin-inappbrowser" /> -->
+    <plugin name="InAppBrowser" value="org.apache.cordova.InAppBrowser" />
+    <access origin="*" browserOnly="true"/>
 
 
 
@@ -34,6 +36,13 @@
 	<platform name="android" >
 	  <preference name="orientation" value="portrait" />
 	</platform>
+
+    <feature name="InAppBrowser">
+      <param name="android-package" value="org.apache.cordova.InAppBrowser"/>
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
 
 
 </widget>
