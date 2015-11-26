@@ -357,17 +357,28 @@ ons-tabbar-item ons-icon {
     float: right;
 }
 
-.fb{
-    font-family: bold "lucida grande", tahoma, verdana, arial, sans-serif;  
-    color: #3b5998;
-    padding-left: 25px;
+
+.contact {
+  position: absolute;
+  right: 25px; 
 }
 
-.tw{
-    font: bold Helvetica, Arial, sans-serif;
-    color: #4099FF;
-    padding-left: 3px;
+.contact-fb {
+  color: #3b5998;
 }
+
+.contact-tw {
+  color: #4099FF;
+}
+
+.contact-web {
+  color: #3BAA35;
+}
+
+.contact-email {
+  color: #1f9cd9;
+}
+
 
 .card {
   background-color: black;
