@@ -397,6 +397,7 @@ ons-tabbar-item ons-icon {
 .recyContent {
   padding-top: 1px;
   padding-bottom: 5px;
+  padding-right: 50px;
   line-height: 1.0;
 }
 
@@ -406,6 +407,12 @@ ons-tabbar-item ons-icon {
   padding-bottom: 0px;
   font-weight: bold;
   line-height: 1.0;
+}
+
+.recyMore {
+   text-align: right;
+   color: #1F9CD9;
+   float: right;
 }
 
 .entryPic {    

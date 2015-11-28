@@ -39,9 +39,11 @@
         <div ng-repeat="sub in subcategories" ng-click="showRecyWays($index)">
           <ons-list-item modifier="chevron">
             <div class="recyTitle">{{sub.name}}</div>
-          </ons-list>
-          <div class="recyContent" >{{sub.description}}</div>
+            <div class="recyContent" >{{sub.description}}</div>
+            <span class="recyMore" >Ver más ...<span>
+          </ons-list-item>
         </div>
+       </ons-list>
       <ons-toolbar>
         <div class="left">
           <ons-back-button ng-click="refreshTitleOrigin();">Regresar</ons-back-button>
