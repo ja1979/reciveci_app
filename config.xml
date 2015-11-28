@@ -12,6 +12,7 @@
     <!-- Allow navigation -->
     <plugin name="cordova-plugin-whitelist" />    
     <allow-navigation href="*" />
+	<allow-navigation href="data:*" />
 
 
     <plugin name="cordova-plugin-inappbrowser" />

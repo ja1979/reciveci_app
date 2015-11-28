@@ -431,6 +431,7 @@ ons-tabbar-item ons-icon {
   height: auto;
   padding-top: 25px;
   padding-bottom: 5px;
+  padding-left: 15px;
 }
 
 
