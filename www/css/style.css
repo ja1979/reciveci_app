@@ -226,7 +226,7 @@ ons-tabbar-item ons-icon {
 
 .profile-card {
   background-color: white;
-  background-image: url(../images/footer_lodyas.png);
+  background-image: url(../images/background_tree_01.jpg);
   background-repeat: no-repeat;
   /*background-size: 100%;*/
   background-size: cover;
@@ -269,8 +269,8 @@ ons-tabbar-item ons-icon {
 
 .profile-backbutton {
   font-size: 46px;
-  opacity: 0.7;
-  color: white;
+  opacity: 1;
+  color: #1f9cd9;
   padding-top: 10px;
   padding-left: 5px;
 }
@@ -357,17 +357,28 @@ ons-tabbar-item ons-icon {
     float: right;
 }
 
-.fb{
-    font-family: bold "lucida grande", tahoma, verdana, arial, sans-serif;  
-    color: #3b5998;
-    padding-left: 25px;
+
+.contact {
+  position: absolute;
+  right: 25px; 
 }
 
-.tw{
-    font: bold Helvetica, Arial, sans-serif;
-    color: #4099FF;
-    padding-left: 3px;
+.contact-fb {
+  color: #3b5998;
 }
+
+.contact-tw {
+  color: #4099FF;
+}
+
+.contact-web {
+  color: #3BAA35;
+}
+
+.contact-email {
+  color: #1f9cd9;
+}
+
 
 .card {
   background-color: black;
