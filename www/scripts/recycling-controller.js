@@ -22,12 +22,12 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
     },100);
     
-    $scope.recyTitle = "¿Qué reciclar?";
+    $scope.recyTitle = "¿Qué separar?";
 
     $scope.showSubcategory = function(index){ 
         var category = $scope.categories[index];
         $scope.category = category;
-        $scope.recyTitle = "¿Cómo reciclar " + category.name + "?";
+        $scope.recyTitle = "¿Cómo separar " + category.name + "?";
 
         $recycling.subcategories_by_category(category.id, function(data) {
             $scope.subcategories = data;
@@ -40,7 +40,7 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
     $scope.showRecyWays = function(index){ 
         var subcategory = $scope.subcategories[index];
         $scope.subcategory = subcategory;
-        $scope.recyTitle = "¿Cómo reciclar " + subcategory.name + "?";
+        $scope.recyTitle = "¿Cómo separar " + subcategory.name + "?";
 
         $recycling.recy_ways_by_subcategory(subcategory.id, function(data) {
             $scope.recy_ways = data;
@@ -51,12 +51,12 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
     }
 
     $scope.refreshTitleOrigin=function(){
-        $scope.recyTitle = "¿Qué reciclar?";
+        $scope.recyTitle = "¿Qué separar?";
         $scope.subcategories = [];
     }
 
     $scope.refreshTitleCategory=function(){
-        $scope.recyTitle =  "¿Cómo reciclar " + $scope.category.name + "?";
+        $scope.recyTitle =  "¿Cómo separar " + $scope.category.name + "?";
         $scope.recy_ways = [];
     }
 
