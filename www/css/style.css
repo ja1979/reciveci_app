@@ -11,15 +11,48 @@ ons-carousel-item {
   text-align: center;
 }
 
-.tour-item-label {
-  display: table-cell;
-  vertical-align: top;
-  padding-top: 40px;
+.tour-item-title {
+/*  display: table-cell;
+  vertical-align: top;*/
+  padding-top: 20px;
   color: white;
   line-height: 1;
   font-size: 28px;
   font-family:'ArialRounded', sans-serif;
   letter-spacing: 1.5px;
+}
+
+.tour-item-text {
+  text-align: left;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: black;
+  line-height: 1.2;
+  font-size: 16px;
+  /*font-family:'ArialRounded', sans-serif;*/
+}
+
+
+.tour-item-list {
+  text-align: left;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: black;
+  line-height: 1.4;
+  font-size: 18px;
+  font-family:'ArialRounded', sans-serif;
+  letter-spacing: 1.5px;
+
+  float: left;
+  width: 50%;
+}
+
+.tour-item-logo {
+  right: 0;
+  padding-right: 20px;
+  text-align: right;
+  padding-top: 10px;
 }
 
 .cover-label {
@@ -159,15 +192,15 @@ ons-tabbar-item ons-icon {
 .top-right {
   top: 0;
   right: 0;
-  margin-top: 15px;
+  margin-top: 20px;
   margin-right: 15px;
 }
 
 .top-left {
   top: 0;
   left: 0;
-  margin-top: 5px;
-  margin-left: 5px;
+  margin-top: 20px;
+  margin-left: 15px;
 }
 
 
