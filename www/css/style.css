@@ -167,6 +167,8 @@ ons-tabbar-item ons-icon {
   font-size: 28px;
   /*position: absolute;
   bottom:   10%;*/
+  bottom: 40px;  
+  position: absolute;
   font-family:'ArialRounded', sans-serif;
   letter-spacing: 1.5px;
 }
