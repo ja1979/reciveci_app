@@ -165,8 +165,8 @@ ons-tabbar-item ons-icon {
 .startbutton {
   background-color: #1f9cd9; /*ReciVeci color*/
   font-size: 28px;
-  position: absolute;
-  bottom:   10%;
+  /*position: absolute;
+  bottom:   10%;*/
   font-family:'ArialRounded', sans-serif;
   letter-spacing: 1.5px;
 }
