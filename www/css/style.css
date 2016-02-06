@@ -5,6 +5,18 @@
 
 
 
+.catpic {
+  max-width: 70%;
+  /*width: 50px;*/
+
+  height: auto;
+  /*border-top: 10px;*/
+  /*text-align: center;*/
+  /*background-color: red;*/
+  padding-top: 20px;
+}
+
+
 
 ons-carousel-item {
   display: table;
@@ -24,7 +36,7 @@ ons-carousel-item {
 
 .tour-item-text {
   text-align: left;
-  padding-top: 15px;
+  padding-top: 20px;
   padding-left: 15px;
   padding-right: 15px;
   color: black;
@@ -167,7 +179,11 @@ ons-tabbar-item ons-icon {
   font-size: 28px;
   font-family:'ArialRounded', sans-serif;
   letter-spacing: 1.5px;
-  margin-top: 40px;
+  /*margin-top: 40px;*/
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  margin-bottom: 50px;
 }
 
 .color-orange {

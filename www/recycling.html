@@ -11,6 +11,24 @@
         <i class="fa fa-spinner fa-spin fa-2x"></i>
       </ons-modal>
 
+      <ons-row>
+        <ons-col>
+          <ons-list class="centered">
+            <ons-list-item ng-repeat="cat in categories_1" ng-click="showSubcategory(1, $index)">
+              <img class="catpic" ng-src="{{cat.image_url}}"/>
+            </ons-list-item>
+          </ons-list>
+        </ons-col>
+        <ons-col>
+          <ons-list  class="centered">
+            <ons-list-item ng-repeat="cat in categories_2" ng-click="showSubcategory(2, $index)">
+              <img class="catpic" ng-src="{{cat.image_url}}"/>
+            </ons-list-item>
+          </ons-list>
+        </ons-col>
+      </ons-row>
+
+
       <ons-list>
         <ons-list-item class="centered error-connection" ng-hide="success">
           <ons-icon size="35px" icon="ion-sad-outline"></ons-icon>
@@ -22,12 +40,13 @@
         <ons-list-item modifier="chevron" ng-repeat="cat in categories" ng-click="showSubcategory($index)">
           <ons-row>
             <ons-col width="100px">
-              <img class="newspic" ng-src="{{root_base}}{{cat.image_url}}"/>
+              <img class="newspic" ng-src="{{cat.image_url}}"/>
             </ons-col>
             <ons-col>
               <div class="recyTitle">{{cat.name}}</div>
             </ons-col>
           </ons-row>  
+        </ons-list-item>
       </ons-list>
     </ons-page>
   </ons-navigator>
@@ -67,8 +86,8 @@
         </ons-list-item>
 
          <div ng-repeat="way in recy_ways">
-              <img class="entryPic" ng-if="way.image_name!=null"
-                  ng-src="{{root_base}}{{path_images_ways}}{{way.image_name}}"/>
+              <img class="entryPic" ng-if="way.image_url!=null"
+                  ng-src="{{way.image_url}}"/>
         </div>
 
 

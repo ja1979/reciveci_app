@@ -1,19 +1,23 @@
 myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
-    $scope.categories = [];
+    $scope.categories_1 = [];
+    $scope.categories_2 = [];
     $scope.subcategories = [];
     $scope.recy_ways = [];
-    $scope.root_base = 'http://api-reciveci.rhcloud.com/';
-    //$scope.root_base = 'http://192.168.10.115:3000/';
-    $scope.path_images_ways = 'assets/images/ways/';
-
     $scope.success = true;
 
     $timeout(function(){
         modal.show();
         $scope.success = true;
-        $recycling.categories(function(categories) {
-            $scope.categories = categories;
+        $recycling.categories_by_column(1, function(categories) {
+            $scope.categories_1 = categories;
+            if(categories == null){
+                $scope.success = false;
+            }
+            modal.hide();
+        });
+        $recycling.categories_by_column(2, function(categories) {
+            $scope.categories_2 = categories;
             if(categories == null){
                 $scope.success = false;
             }
@@ -24,8 +28,10 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
     
     $scope.recyTitle = "¿Qué separar?";
 
-    $scope.showSubcategory = function(index){ 
-        var category = $scope.categories[index];
+    $scope.showSubcategory = function(column, index){ 
+
+        var category = column == 1 ? $scope.categories_1[index] : $scope.categories_2[index]
+
         $scope.category = category;
         $scope.recyTitle = "¿Cómo separar " + category.name + "?";
 
