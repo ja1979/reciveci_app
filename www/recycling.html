@@ -4,7 +4,7 @@
   </ons-toolbar>
 
   
-  <ons-navigator title="Navigator" var="recyclingNavigator">
+  <ons-navigator title="Navigator" var="recyclingNavigator" ons-postpop="handlePostPop($event);">
     <ons-page>
       
       <ons-modal var="modal">
@@ -13,18 +13,14 @@
 
       <ons-row>
         <ons-col>
-          <ons-list class="centered">
-            <ons-list-item ng-repeat="cat in categories_1" ng-click="showSubcategory(1, $index)">
-              <img class="catpic" ng-src="{{cat.image_url}}"/>
-            </ons-list-item>
-          </ons-list>
+          <div class="centered" ng-repeat="cat in categories_1" ng-click="showSubcategory(1, $index)">
+            <img class="catpic" ng-src="{{cat.image_url}}"/>
+          </div>
         </ons-col>
         <ons-col>
-          <ons-list  class="centered">
-            <ons-list-item ng-repeat="cat in categories_2" ng-click="showSubcategory(2, $index)">
-              <img class="catpic" ng-src="{{cat.image_url}}"/>
-            </ons-list-item>
-          </ons-list>
+          <div class="centered" ng-repeat="cat in categories_2" ng-click="showSubcategory(2, $index)">
+            <img class="catpic" ng-src="{{cat.image_url}}"/>
+          </div>
         </ons-col>
       </ons-row>
 
@@ -65,7 +61,7 @@
        </ons-list>
       <ons-toolbar>
         <div class="left">
-          <ons-back-button ng-click="refreshTitleOrigin();">Regresar</ons-back-button>
+          <ons-back-button>Regresar</ons-back-button>
         </div>
       </ons-toolbar>
     </ons-page>
@@ -95,7 +91,7 @@
       </ons-list>
       <ons-toolbar>
         <div class="left">
-          <ons-back-button ng-click="refreshTitleCategory();">Regresar</ons-back-button>
+          <ons-back-button>Regresar</ons-back-button>
         </div>
       </ons-toolbar>
     </ons-page>

@@ -1,11 +1,58 @@
 myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
+
+    $scope.setMainTitle=function(){
+        $scope.recyTitle = "¿Qué separar?";
+        $scope.subcategories = [];
+    }
+
+    var setSpecificTitle=function(name){
+        $scope.recyTitle = "¿Cómo separar " + name + "?";
+    }
+
+
+
+/*    $scope.handleBackButtom=function(event){
+        //alert(event.currentPage);
+        
+        //alert('Hey!');
+        $scope.recyTitle = "xxx";
+        $scope.setMainTitle();
+        $scope.recyclingNavigator.popPage("recycling.html");
+    }*/
+
+
+  /*  document.addEventListener("backbutton", onBackKeyDown, false);
+
+    function onBackKeyDown() {
+        // Handle the back button
+        alert("Backbutton is pressed!");
+        var element = document.querySelector( ".navigator-container");
+        var scope = angular.element( element ).scope();
+        alert(element);
+        scope.popPage();
+    }*/
+
+
+
+
+    $scope.handlePostPop=function(e) {
+        console.log(e.leavePage);
+        if (e.leavePage.page == "subcategories.html")
+            $scope.setMainTitle(); 
+        else
+            if (e.leavePage.page == "recy_ways.html")
+                setSpecificTitle($scope.category.name);
+
+    }
+
+
     $scope.categories_1 = [];
     $scope.categories_2 = [];
-    $scope.subcategories = [];
     $scope.recy_ways = [];
     $scope.success = true;
 
+    // Load categories in tow columns
     $timeout(function(){
         modal.show();
         $scope.success = true;
@@ -26,14 +73,15 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
     },100);
     
-    $scope.recyTitle = "¿Qué separar?";
+    $scope.setMainTitle();
 
     $scope.showSubcategory = function(column, index){ 
 
         var category = column == 1 ? $scope.categories_1[index] : $scope.categories_2[index]
 
         $scope.category = category;
-        $scope.recyTitle = "¿Cómo separar " + category.name + "?";
+        //$scope.recyTitle = "¿Cómo separar " + category.name + "?";
+        setSpecificTitle(category.name);
 
         $recycling.subcategories_by_category(category.id, function(data) {
             $scope.subcategories = data;
@@ -46,7 +94,8 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
     $scope.showRecyWays = function(index){ 
         var subcategory = $scope.subcategories[index];
         $scope.subcategory = subcategory;
-        $scope.recyTitle = "¿Cómo separar " + subcategory.name + "?";
+        //$scope.recyTitle = "¿Cómo separar " + subcategory.name + "?";
+        setSpecificTitle(subcategory.name);
 
         $recycling.recy_ways_by_subcategory(subcategory.id, function(data) {
             $scope.recy_ways = data;
@@ -56,13 +105,10 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
     }
 
-    $scope.refreshTitleOrigin=function(){
-        $scope.recyTitle = "¿Qué separar?";
-        $scope.subcategories = [];
-    }
 
-    $scope.refreshTitleCategory=function(){
-        $scope.recyTitle =  "¿Cómo separar " + $scope.category.name + "?";
+
+    $scope.refreshTitleCategory=function() {
+        setSpecificTitle($scope.category.name);
         $scope.recy_ways = [];
     }
 
