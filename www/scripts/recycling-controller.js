@@ -37,7 +37,7 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
 
     $scope.handlePostPop=function(e) {
-        console.log(e.leavePage);
+        // console.log(e.leavePage);
         if (e.leavePage.page == "subcategories.html")
             $scope.setMainTitle(); 
         else

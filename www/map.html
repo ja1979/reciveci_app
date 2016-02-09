@@ -1,5 +1,5 @@
 <div ng-controller="MapController"3>
-	<ons-navigator title="Navigator" var="mapNavigator">
+	<ons-navigator title="Navigator" var="mapNavigator" ons-postpush="pilotNotification($event);">
 		<ons-page>
     		<div id="map"></div>
 		</ons-page>
