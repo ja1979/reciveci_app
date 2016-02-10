@@ -65,11 +65,25 @@ ons-carousel-item {
 }
 
 .tour-item-logo {
-  right: 0;
-  padding-right: 20px;
-  text-align: right;
-  padding-top: 10px;
+  padding-top: 25px;
 }
+
+.tour-item-logo-img {
+  max-width: 100px;
+  height: auto;
+}
+
+.tour-image {
+  padding-top: 15px;
+}
+
+.tour-image-img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+}
+
 
 .cover-label {
   text-align: center;
@@ -172,21 +186,25 @@ ons-carousel-item {
   max-width: 250px;
   width: 75%;
   height: auto;
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 
 
 .startbutton {
   background-color: #1f9cd9; /*ReciVeci color*/
-  font-size: 28px;
-  font-family:'ArialRounded', sans-serif;
-  letter-spacing: 1.5px;
+  font-size: 32px;
+  /*font-family:'ArialRounded', sans-serif;*/
+  /*letter-spacing: 1.5px;*/
   /*margin-top: 40px;*/
-  bottom: 0;
-  left: 0;
-  position: fixed;
-  margin-bottom: 70px;
+  /*bottom: 0;*/
+  /*left: 0;*/
+  /*position: fixed;*/
+  /*margin-bottom: 70px;*/
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 70px;
+  margin-top: 40px;
 }
 
 .color-orange {
@@ -197,6 +215,17 @@ ons-carousel-item {
   background-color: #D38312;
 }
 
+
+.tour-background {
+  /*opacity: 0.5;*/
+  background-color:rgba(0,0,0,0.5);
+  position: absolute;
+  width: 100%;
+  height: 56px;
+  left: 0;
+  bottom: 0;
+}
+
 .tour-button {
   background-color: transparent;
   font-size: 28px;
@@ -205,6 +234,7 @@ ons-carousel-item {
 
 .tour-button-active {
   background-color: #1f1f21;
+  width: 35px;
   font-size: 28px;
   position: absolute;
   color: #1f9cd9;
@@ -213,33 +243,35 @@ ons-carousel-item {
   -webkit-border-radius: 4px;
 }
 
+
+
 .top-right {
   top: 0;
   right: 0;
   margin-top: 15px;
-  margin-right: 15px;
+  margin-right: 10px;
 }
 
 .top-left {
   top: 0;
   left: 0;
   margin-top: 15px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
 
 .bottom-right {
   bottom: 0;
   right: 0;
-  margin-bottom: 15px;
-  margin-right: 15px;
+  margin-bottom: 7px;
+  margin-right: 10px;
 }
 
 .bottom-left {
   bottom: 0;
   left: 0;
-  margin-bottom: 15px;
-  margin-left: 15px;
+  margin-bottom: 7px;
+  margin-left: 10px;
 }
 
 .centered {

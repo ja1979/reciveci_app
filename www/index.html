@@ -80,9 +80,10 @@
                     <div class="centered">
                         <img class="logo" src="images/logo_reciveci_medium.png"/>
 
-                        <ons-button modifier="large--cta" onclick="myNavigator.resetToPage('main.html')" class="startbutton"><ons-icon icon="ion-android-hand"></ons-icon></ons-button>
 
                     </div>
+                    
+                    <ons-button onclick="myNavigator.resetToPage('main.html')" class="startbutton"><ons-icon icon="ion-android-hand"></ons-icon></ons-button>
 
                     <ons-button onclick="carousel.next()" class="tour-button bottom-right color-orange">
                         <ons-icon icon="ion-arrow-right-c"></ons-icon>
@@ -91,80 +92,114 @@
                 </ons-carousel-item>
 
                 <ons-carousel-item style="background-color: #1f9cd9;">
-                    <ons-button onclick="carousel.prev()" class="tour-button bottom-left">
-                        <ons-icon icon="ion-arrow-left-c"></ons-icon>
-                    </ons-button>
-                    <ons-button onclick="carousel.next()" class="tour-button bottom-right">
-                        <ons-icon icon="ion-arrow-right-c"></ons-icon>
-                    </ons-button>
+                    <div class="tour-background">
+                        <ons-button onclick="carousel.prev()" class="tour-button bottom-left">
+                            <ons-icon icon="ion-arrow-left-c"></ons-icon>
+                        </ons-button>
+                        <ons-button onclick="carousel.next()" class="tour-button bottom-right">
+                            <ons-icon icon="ion-arrow-right-c"></ons-icon>
+                        </ons-button>
+                    </div>
                     <div class="tour-item-title">¿Qué es ReciVeci?</div>
+                    <div class="tour-item-logo">
+                        <img src="images/logo_reciveci_medium.png" class="tour-item-logo-img"/>
+                    </div>
                     <div class="tour-item-text">
-                        <strong>ReciVeci</strong> es un proyecto ciudadano enfocado a incrementar y potenciar la labor de los <strong>recicladores de base</strong> en Ecuador. Nuestro <strong>propósito</strong> es generar una cultura de reciclaje por medio de un <strong>vínculo humano</strong> entre el reciclador(a) y el <strong>ciudadano(a).</strong>
+                        <strong>ReciVeci</strong> es una iniciativa ciudadana enfocada a incrementar y potenciar la labor de los <strong>recicladores de base</strong> mediante la creación de un <strong>vínculo humano</strong> entre el reciclador(a) y el <strong>ciudadano(a).</strong>
                     </div>
                     <br/>
                     <div class="tour-item-text">
-                        Con esto en mente, hemos creado esta App(aplicación móvil) para tí, la cuál está organizada en tres grandes secciones:
+                        Continúa para conocer más de lo que esta <strong>App</strong> te ofrece.
                     </div>
-                    <div class="tour-item-list">
+                    <!-- <div class="tour-item-list">
                         <ol>
                             <li>Separa</li>
                             <li>Entrega</li>
                             <li>Comparte</li>
                         </ol>                        
                         
-                    </div>
-                    <div class="tour-item-logo">
-                        <img src="images/logo_reciveci_tiny.png"/>
-                    </div>
-<!--                     <div class="tour-item-text">
-                        Puedes deslizar la pantalla a la izquierda para continuar o toca la flecha derecha.
                     </div> -->
                 </ons-carousel-item>
 
                 <!-- Separa -->
-                <ons-carousel-item style="background-color: #085078;">
-                    <ons-button onclick="carousel.prev()" class="tour-button bottom-left">
-                        <ons-icon icon="ion-arrow-left-c"></ons-icon>
-                    </ons-button>
-                    <ons-button onclick="carousel.next()" class="tour-button bottom-right">
-                        <ons-icon icon="ion-arrow-right-c"></ons-icon>
-                    </ons-button>
+                <ons-carousel-item style="background-color: #00b33c;">
+                    <div class="tour-background">
+                        <ons-button onclick="carousel.prev()" class="tour-button bottom-left">
+                            <ons-icon icon="ion-arrow-left-c"></ons-icon>
+                        </ons-button>
+                        <ons-button onclick="carousel.next()" class="tour-button bottom-right">
+                            <ons-icon icon="ion-arrow-right-c"></ons-icon>
+                        </ons-button>
+                    </div>
                     <div class="tour-item-title">
                         Separa
                         <ons-icon icon="ion-android-hand" class="tour-button-active top-right"></ons-icon>
+                    </div>
+                
+                    <div class="tour-image">
+                        <img src="images/categories.png" class="tour-image-img"/>
+                    </div>
+                    <div class="tour-item-text">
+                        Conoce sobre los diferentes tipos de materiales que son reciclables y que puedes <strong>separar</strong>.
+                    </div>
+                    <div class="tour-item-text">
+                        Dentro de cada tipo encontrarás mayor detalle sobre cómo identificarlos, prepararlos y finalmente almacenarlos. 
                     </div>
                 </ons-carousel-item>
 
 
                 <!-- Entrega -->
-                <ons-carousel-item style="background-color: #373B44;">
-                    <ons-button onclick="carousel.prev()" class="tour-button bottom-left">
-                        <ons-icon icon="ion-arrow-left-c"></ons-icon>
-                    </ons-button>
-                    <ons-button onclick="carousel.next()" class="tour-button bottom-right">
-                        <ons-icon icon="ion-arrow-right-c"></ons-icon>
-                    </ons-button>
+                <ons-carousel-item style="background-color: #ff66b3;">
+                    <div class="tour-background">
+                        <ons-button onclick="carousel.prev()" class="tour-button bottom-left">
+                            <ons-icon icon="ion-arrow-left-c"></ons-icon>
+                        </ons-button>
+                        <ons-button onclick="carousel.next()" class="tour-button bottom-right">
+                            <ons-icon icon="ion-arrow-right-c"></ons-icon>
+                        </ons-button>
+                    </div>
                     <div class="tour-item-title">
                         Entrega
                         <ons-icon icon="ion-android-pin" class="tour-button-active top-right"></ons-icon>
+                    </div>
+                    <div class="tour-image">
+                        <img src="images/map.png" class="tour-image-img"/>
+                    </div>
+                    <div class="tour-item-text">
+                        En esta sección conocerás cómo <strong>entregar</strong> el material que previamente has separado.
+                    </div>
+                    <div class="tour-item-text">
+                        También podrás identificar y conocer un poco más al <strong>reciclador(a)</strong> que pasa por tu barrio.
                     </div>
                 </ons-carousel-item>
 
 
                 <!-- Comparte -->
-                <ons-carousel-item class="background-color-orange">
-                    <ons-button onclick="carousel.prev()" class="tour-button bottom-left">
-                        <ons-icon icon="ion-arrow-left-c"></ons-icon>
-                    </ons-button>
+                <ons-carousel-item style="background-color: #ffb31a;">
+                    <div class="tour-background">
+                        <ons-button onclick="carousel.prev()" class="tour-button bottom-left">
+                            <ons-icon icon="ion-arrow-left-c"></ons-icon>
+                        </ons-button>
+                    </div>
                     <div class="tour-item-title">
                         <div>
-                            3. Comparte
+                            Comparte
                             <ons-icon icon="ion-chatbubbles" class="tour-button-active top-right"></ons-icon>
                         </div>
-                        <div>
-                            <ons-button modifier="large--cta" onclick="myNavigator.resetToPage('main.html')" class="startbutton"><ons-icon icon="ion-android-hand"></ons-icon></ons-button>
-                        </div>
-                    </div>                  
+           
+                        <ons-button onclick="myNavigator.resetToPage('main.html')" class="tour-button bottom-right">
+                            <ons-icon icon="ion-android-hand"></ons-icon>
+                        </ons-button>
+                    </div>
+                    <div class="tour-image">
+                        <img src="images/social-icon.png" class="tour-image-img"/>
+                    </div>
+                    <div class="tour-item-text">
+                        Te invitamos a que <strong>compartas</strong> las alegría de ser parte de esta inicitiva que nace y crece de todos los ciudadanos.
+                    </div>
+                    <div class="tour-item-text">
+                        Aquí podrás encontrar los enlaces a las redes sociales y a los otros canales de comunicación digitales. Tus comentarios y sugerencias son bien recividos.
+                    </div>       
                 </ons-carousel-item>
                 <!-- <ons-carousel-cover>
                   <div class="cover-label">Desliza a la izquierda para conocer más...</div>
