@@ -1,7 +1,7 @@
 <div ng-controller="RecyclingController">
-  <ons-toolbar fixed-style>
-    <div class="center sectionbar">{{recyTitle}}</div>
-  </ons-toolbar>
+  <!-- <ons-toolbar fixed-style>
+    <div class="center sectionbar" style="background-color: #085078;">Separa</div>
+  </ons-toolbar> -->
 
   
   <ons-navigator title="Navigator" var="recyclingNavigator" ons-postpop="handlePostPop($event);">
@@ -33,16 +33,6 @@
           </div>
         </ons-list-item>
         
-        <ons-list-item modifier="chevron" ng-repeat="cat in categories" ng-click="showSubcategory($index)">
-          <ons-row>
-            <ons-col width="100px">
-              <img class="newspic" ng-src="{{cat.image_url}}"/>
-            </ons-col>
-            <ons-col>
-              <div class="recyTitle">{{cat.name}}</div>
-            </ons-col>
-          </ons-row>  
-        </ons-list-item>
       </ons-list>
     </ons-page>
   </ons-navigator>
@@ -51,13 +41,11 @@
   <ons-template id="subcategories.html">
     <ons-page>
       <ons-list>
-        <div ng-repeat="sub in subcategories" ng-click="showRecyWays($index)">
-          <ons-list-item modifier="chevron">
-            <div class="recyTitle">{{sub.name}}</div>
-            <div class="recyContent" >{{sub.description}}</div>
-            <span class="recyMore" >Ver más ...<span>
-          </ons-list-item>
-        </div>
+        <ons-list-item modifier="chevron" ng-repeat="sub in subcategories" ng-click="showRecyWays($index)">
+          <div class="recy-title">{{sub.name}}</div>
+          <div class="recy-content" >{{sub.description}}</div>
+          <span class="recyMore" >Ver más ...<span>
+        </ons-list-item>
        </ons-list>
       <ons-toolbar>
         <div class="left">

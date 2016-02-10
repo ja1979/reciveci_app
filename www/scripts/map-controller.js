@@ -5,7 +5,7 @@ myApp.controller('MapController', function($scope, $timeout) {
   $scope.pilotNotification = function(event, material) {
       console.log("In pilotNotification");
       ons.notification.alert({
-        message: 'Durante el piloto de ReciVeci, la entrega solamente estará disponible en el sector mostrado.',
+        message: 'Durante el piloto de ReciVeci, la entrega solamente estará disponible en el sector mostrado en el mapa. Pronto estaremos cubriendo más sectores y ciudades.',
         modifier: material ? 'material' : undefined
       });
     }

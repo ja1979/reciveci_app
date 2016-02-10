@@ -84,7 +84,7 @@
 
                     </div>
 
-                    <ons-button onclick="carousel.next()" class="tour-button top-right color-orange">
+                    <ons-button onclick="carousel.next()" class="tour-button bottom-right color-orange">
                         <ons-icon icon="ion-arrow-right-c"></ons-icon>
                     </ons-button>
 
@@ -121,6 +121,7 @@
                     </div> -->
                 </ons-carousel-item>
 
+                <!-- Separa -->
                 <ons-carousel-item style="background-color: #085078;">
                     <ons-button onclick="carousel.prev()" class="tour-button bottom-left">
                         <ons-icon icon="ion-arrow-left-c"></ons-icon>
@@ -129,11 +130,13 @@
                         <ons-icon icon="ion-arrow-right-c"></ons-icon>
                     </ons-button>
                     <div class="tour-item-title">
-                        1. Separa
-                        <ons-icon icon="ion-android-hand" class="tour-button top-right"></ons-icon>
+                        Separa
+                        <ons-icon icon="ion-android-hand" class="tour-button-active top-right"></ons-icon>
                     </div>
                 </ons-carousel-item>
 
+
+                <!-- Entrega -->
                 <ons-carousel-item style="background-color: #373B44;">
                     <ons-button onclick="carousel.prev()" class="tour-button bottom-left">
                         <ons-icon icon="ion-arrow-left-c"></ons-icon>
@@ -142,10 +145,13 @@
                         <ons-icon icon="ion-arrow-right-c"></ons-icon>
                     </ons-button>
                     <div class="tour-item-title">
-                        2. Entrega
-                        <ons-icon icon="ion-android-pin" class="tour-button top-right"></ons-icon>
+                        Entrega
+                        <ons-icon icon="ion-android-pin" class="tour-button-active top-right"></ons-icon>
                     </div>
                 </ons-carousel-item>
+
+
+                <!-- Comparte -->
                 <ons-carousel-item class="background-color-orange">
                     <ons-button onclick="carousel.prev()" class="tour-button bottom-left">
                         <ons-icon icon="ion-arrow-left-c"></ons-icon>
@@ -153,10 +159,10 @@
                     <div class="tour-item-title">
                         <div>
                             3. Comparte
-                            <ons-icon icon="ion-chatbubbles" class="tour-button top-right"></ons-icon>
+                            <ons-icon icon="ion-chatbubbles" class="tour-button-active top-right"></ons-icon>
                         </div>
                         <div>
-                            <ons-button modifier="large--cta" onclick="myNavigator.resetToPage('main.html')" class="startbutton">Súmate</ons-button>
+                            <ons-button modifier="large--cta" onclick="myNavigator.resetToPage('main.html')" class="startbutton"><ons-icon icon="ion-android-hand"></ons-icon></ons-button>
                         </div>
                     </div>                  
                 </ons-carousel-item>
