@@ -27,7 +27,7 @@
     <!-- Map -->
     <link rel="stylesheet" href="lib/leaflet/leaflet.css" />
     <script src="lib/leaflet/leaflet.js"></script>
-    <script src="lib/jquery-2.1.0.min.js"></script>    
+    <script src="lib/jquery-2.1.0.min.js"></script>
 
     <!-- Custom style -->
     <link rel="stylesheet" href="css/style.css">
@@ -43,12 +43,12 @@
     <!-- Filters -->
     <script src="scripts/age-filter.js"></script>
 
-    <!--Services -->    
+    <!--Services -->
     <script src="scripts/news-service.js"></script>
     <script src="scripts/recycling-service.js"></script>
     <script src="scripts/rates-service.js"></script>
-    
-    <!--Controllers -->    
+
+    <!--Controllers -->
     <script src="scripts/map-controller.js"></script>
     <script src="scripts/news-controller.js"></script>
     <script src="scripts/recycling-controller.js"></script>
@@ -61,7 +61,7 @@
 <body>
     <!-- Cordova reference -->
     <script src="scripts/index.js"></script>
-    
+
 
     <!--
       Comment this line to prevent script message on browser development machine.
@@ -70,7 +70,7 @@
     <script src="cordova.js"></script>
 
 
-    
+
     <ons-navigator var="myNavigator">
         <ons-page modifier="full_bg">
 
@@ -82,11 +82,14 @@
 
 
                     </div>
-                    
-                    <ons-button onclick="myNavigator.resetToPage('main.html')" class="startbutton"><ons-icon icon="ion-android-hand"></ons-icon></ons-button>
+
+                    <ons-button onclick="myNavigator.resetToPage('main.html')" class="startbutton">
+                      Ingresa
+                      <ons-icon icon="ion-android-hand"></ons-icon>
+                    </ons-button>
 
                     <ons-button onclick="carousel.next()" class="tour-button bottom-right color-orange">
-                        <ons-icon icon="ion-arrow-right-c"></ons-icon>
+                        <ons-icon icon="ion-help-circled"></ons-icon>
                     </ons-button>
 
                 </ons-carousel-item>
@@ -116,8 +119,8 @@
                             <li>Separa</li>
                             <li>Entrega</li>
                             <li>Comparte</li>
-                        </ol>                        
-                        
+                        </ol>
+
                     </div> -->
                 </ons-carousel-item>
 
@@ -135,7 +138,7 @@
                         Separa
                         <ons-icon icon="ion-android-hand" class="tour-button-active top-right"></ons-icon>
                     </div>
-                
+
                     <div class="tour-image">
                         <img src="images/categories.png" class="tour-image-img"/>
                     </div>
@@ -143,7 +146,7 @@
                         Conoce sobre los diferentes tipos de materiales que son reciclables y que puedes <strong>separar</strong>.
                     </div>
                     <div class="tour-item-text">
-                        Dentro de cada tipo encontrarás mayor detalle sobre cómo identificarlos, prepararlos y finalmente almacenarlos. 
+                        Dentro de cada tipo encontrarás mayor detalle sobre cómo identificarlos, prepararlos y finalmente almacenarlos.
                     </div>
                 </ons-carousel-item>
 
@@ -186,7 +189,7 @@
                             Comparte
                             <ons-icon icon="ion-chatbubbles" class="tour-button-active top-right"></ons-icon>
                         </div>
-           
+
                         <ons-button onclick="myNavigator.resetToPage('main.html')" class="tour-button bottom-right">
                             <ons-icon icon="ion-android-hand"></ons-icon>
                         </ons-button>
@@ -199,7 +202,7 @@
                     </div>
                     <div class="tour-item-text">
                         Aquí podrás encontrar los enlaces a las redes sociales y a los otros canales de comunicación digitales. Tus comentarios y sugerencias son bien recividos.
-                    </div>       
+                    </div>
                 </ons-carousel-item>
                 <!-- <ons-carousel-cover>
                   <div class="cover-label">Desliza a la izquierda para conocer más...</div>
