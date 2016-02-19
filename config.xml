@@ -28,6 +28,7 @@
 
   <content src="index.html" />
   <icon src="icon.png" />
+  <splash src="splash.png" />
 
 
 
@@ -38,7 +39,6 @@
 
   <platform name="ios">
     <preference name="orientation" value="portrait" />
-    <splash src="splash/ios/Default-568h@2x~iphone.png" platform="ios" width="320" height="480" />
   </platform>
 
 
