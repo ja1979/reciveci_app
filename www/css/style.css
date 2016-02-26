@@ -222,6 +222,7 @@ ons-carousel-item {
 
 .tour-button {
   background-color: transparent;
+  /*background-color: #D38312;*/
   font-size: 28px;
   position: absolute;
 }

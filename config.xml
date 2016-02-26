@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="ec.reviceci.app" version="0.1.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="ec.reviceci.app" version="0.1.2" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
   <name>ReciVeci</name>
   <description>
@@ -28,7 +28,7 @@
 
   <content src="index.html" />
   <icon src="icon.png" />
-  <splash src="splash.png" />
+  <!-- <splash src="splash.png" /> -->
 
 
 
@@ -39,6 +39,15 @@
 
   <platform name="ios">
     <preference name="orientation" value="portrait" />
+
+    <!-- iPhone / iPod Touch -->
+    <icon src="icon-57.png" platform="ios" width="57" height="57" />
+    <icon src="icon-57@2x.png" platform="ios" width="114" height="114" />
+
+    <!-- iPad -->
+    <icon src="icon-72.png" platform="ios" width="72" height="72" />
+    <icon src="icon-72@2x.png" platform="ios" width="144" height="144" />
+
   </platform>
 
 
