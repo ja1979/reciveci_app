@@ -2,19 +2,17 @@
 
   <ons-navigator title="Navigator" var="newsNavigator">
     <ons-page>
-      
+
       <ons-modal var="modal">
         <i class="fa fa-spinner fa-spin fa-2x"></i>
       </ons-modal>
 
 
-
-
-      <ons-toolbar fixed-style>
+      <!-- <ons-toolbar fixed-style>
         <div class="center sectionbar">
           Noticias recientes
         </div>
-      </ons-toolbar>
+      </ons-toolbar> -->
 
 
       <ons-pull-hook var="loader" ng-action="load($done)">
@@ -31,7 +29,7 @@
         <ons-list-item class="centered error-connection" ng-hide="success">
           <ons-icon size="35px" icon="ion-sad-outline"></ons-icon>
           <div class="info">
-            Lo sentimos, no se pudo completar la operación            
+            Lo sentimos, no se pudo completar la operación
           </div>
         </ons-list-item>
 
@@ -44,8 +42,8 @@
       </ons-list>
     </ons-page>
   </ons-navigator>
-  
-  
+
+
   <ons-template id="new.html">
     <ons-page ng-device-backbutton="newsNavigator.popPage()">
       <ons-toolbar>
@@ -59,9 +57,9 @@
         <div class="centered" ng-show="currentNew.image_url">
           <img class="newspic" ng-src="{{currentNew.image_url}}"/>
         </div>
-        <div class="newscontent">{{currentNew.content}}</div>        
+        <div class="newscontent">{{currentNew.content}}</div>
       </div>
     </ons-page>
   </ons-template>
-        
+
 </div>

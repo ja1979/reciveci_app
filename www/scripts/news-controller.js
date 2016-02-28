@@ -1,23 +1,47 @@
 myApp.controller('NewsController', function($scope, $news, $timeout) {
 
-    
+
     $scope.news = [];
     $scope.success = true;
 
     var initialLoad = function() {
 
-        
+
         $timeout(function(){
             $scope.success = true;
             modal.show();
             $news.last(
                 function(news) {
-                    $scope.news = news;
+
+                    var newsData = JSON.stringify(news);
+                    console.log(news);
+
+                    localStorage.setItem('newsData', newsData);
+
+                    console.log(localStorage.length);
+                    // console.log(localStorage["newsData"]);
+
+
+                    var foo = JSON.parse(localStorage.getItem('newsData'));
+
+                    console.log(foo);
+
+                    $scope.news = foo;
+                    // $scope.news = news;
                     modal.hide();
                 },
                 function(error) {
                     console.log(error);
-                    $scope.success = false;
+
+                    // console.log("Looking for data in cache");
+                    var news = JSON.parse(localStorage.getItem('newsData'));
+
+                    if (news != null) {
+                      $scope.news = news;
+                    } else {
+                      $scope.success = false;
+                    }
+
                     modal.hide();
                     //alert('Error: ');
                     /*
@@ -36,7 +60,7 @@ myApp.controller('NewsController', function($scope, $news, $timeout) {
 
     initialLoad();
 
-    
+
     $scope.load = function($done) {
         $scope.success = true;
         $news.last(
@@ -56,16 +80,16 @@ myApp.controller('NewsController', function($scope, $news, $timeout) {
 
             }
         );
-     
+
     };
 
 
 
 
-  
 
 
-    $scope.showDetail = function(newObj){ 
+
+    $scope.showDetail = function(newObj){
         //console.log(newObj.title);
         //console.log($scope.news[index]);
         //$scope.selectedItem = selectedItem;
@@ -73,5 +97,5 @@ myApp.controller('NewsController', function($scope, $news, $timeout) {
         $scope.currentNew = newObj;
     }
 
-  
+
 });

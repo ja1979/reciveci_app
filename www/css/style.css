@@ -191,9 +191,9 @@ ons-carousel-item {
 
 
 
-.startbutton {
+.start-button {
   background-color: #1f9cd9; /*ReciVeci color*/
-  font-size: 26px;
+  font-size: 28px;
   font-family:'ArialRounded', sans-serif;
   letter-spacing: 1.5px;
   padding-top: 12px;
@@ -223,7 +223,8 @@ ons-carousel-item {
 .tour-button {
   background-color: transparent;
   /*background-color: #D38312;*/
-  font-size: 28px;
+  font-size: 26px;
+  font-family:'ArialRounded', sans-serif;
   position: absolute;
 }
 

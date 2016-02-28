@@ -11,35 +11,10 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
     }
 
 
-
-/*    $scope.handleBackButtom=function(event){
-        //alert(event.currentPage);
-        
-        //alert('Hey!');
-        $scope.recyTitle = "xxx";
-        $scope.setMainTitle();
-        $scope.recyclingNavigator.popPage("recycling.html");
-    }*/
-
-
-  /*  document.addEventListener("backbutton", onBackKeyDown, false);
-
-    function onBackKeyDown() {
-        // Handle the back button
-        alert("Backbutton is pressed!");
-        var element = document.querySelector( ".navigator-container");
-        var scope = angular.element( element ).scope();
-        alert(element);
-        scope.popPage();
-    }*/
-
-
-
-
     $scope.handlePostPop=function(e) {
         // console.log(e.leavePage);
         if (e.leavePage.page == "subcategories.html")
-            $scope.setMainTitle(); 
+            $scope.setMainTitle();
         else
             if (e.leavePage.page == "recy_ways.html")
                 setSpecificTitle($scope.category.name);
@@ -52,7 +27,7 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
     $scope.recy_ways = [];
     $scope.success = true;
 
-    // Load categories in tow columns
+    // Load categories in two columns
     $timeout(function(){
         modal.show();
         $scope.success = true;
@@ -72,10 +47,10 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
         });
 
     },100);
-    
+
     $scope.setMainTitle();
 
-    $scope.showSubcategory = function(column, index){ 
+    $scope.showSubcategory = function(column, index){
 
         var category = column == 1 ? $scope.categories_1[index] : $scope.categories_2[index]
 
@@ -91,7 +66,7 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
     }
 
-    $scope.showRecyWays = function(index){ 
+    $scope.showRecyWays = function(index){
         var subcategory = $scope.subcategories[index];
         $scope.subcategory = subcategory;
         //$scope.recyTitle = "¿Cómo separar " + subcategory.name + "?";
