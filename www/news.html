@@ -15,7 +15,7 @@
       </ons-toolbar> -->
 
 
-      <ons-pull-hook var="loader" ng-action="load($done)">
+      <ons-pull-hook var="loader" ng-action="loadDataPull($done)">
         <span ng-switch="loader.getCurrentState()">
           <span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon> Baje para refrescar</span>
           <span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon> Libere para refrescar</span>
