@@ -3,10 +3,10 @@
     <div class="center sectionbar" style="background-color: #085078;">Separa</div>
   </ons-toolbar> -->
 
-  
+
   <ons-navigator title="Navigator" var="recyclingNavigator" ons-postpop="handlePostPop($event);">
     <ons-page>
-      
+
       <ons-modal var="modal">
         <i class="fa fa-spinner fa-spin fa-2x"></i>
       </ons-modal>
@@ -14,7 +14,7 @@
       <ons-row>
         <ons-col>
           <div class="centered" ng-repeat="cat in categories_1" ng-click="showSubcategory(1, $index)">
-            <img class="catpic" ng-src="{{cat.image_url}}"/>
+            <img class="catpic" ng-src="{{cat.image_url}}" tooltip="hey"/>
           </div>
         </ons-col>
         <ons-col>
@@ -29,15 +29,15 @@
         <ons-list-item class="centered error-connection" ng-hide="success">
           <ons-icon size="35px" icon="ion-sad-outline"></ons-icon>
           <div class="info">
-            Lo sentimos, no se pudo completar la operación            
+            Lo sentimos, no se pudo completar la operación
           </div>
         </ons-list-item>
-        
+
       </ons-list>
     </ons-page>
   </ons-navigator>
-    
-    
+
+
   <ons-template id="subcategories.html">
     <ons-page>
       <ons-list>
@@ -75,7 +75,7 @@
         </div>
 
 
-        
+
       </ons-list>
       <ons-toolbar>
         <div class="left">
@@ -84,6 +84,5 @@
       </ons-toolbar>
     </ons-page>
   </ons-template>
-        
-</div>
 
+</div>

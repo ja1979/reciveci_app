@@ -8,18 +8,11 @@
       </ons-modal>
 
 
-      <!-- <ons-toolbar fixed-style>
-        <div class="center sectionbar">
-          Noticias recientes
-        </div>
-      </ons-toolbar> -->
-
-
       <ons-pull-hook var="loader" ng-action="loadDataPull($done)">
         <span ng-switch="loader.getCurrentState()">
           <span ng-switch-when="initial"><ons-icon size="35px" icon="ion-arrow-down-a"></ons-icon> Baje para refrescar</span>
           <span ng-switch-when="preaction"><ons-icon size="35px" icon="ion-arrow-up-a"></ons-icon> Libere para refrescar</span>
-          <span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Cargando...</span>
+          <!-- <span ng-switch-when="action"><ons-icon size="35px" spin="true" icon="ion-load-d"></ons-icon> Cargando...</span> -->
         </span>
       </ons-pull-hook>
 
@@ -32,7 +25,6 @@
             Lo sentimos, no se pudo completar la operación
           </div>
         </ons-list-item>
-
         <ons-list-item modifier="chevron" class="newsentry" ng-repeat="newObj in news" ng-click="showDetail(newObj)">
           <div class="newstitle">
             {{newObj.title}}
@@ -44,8 +36,14 @@
   </ons-navigator>
 
 
+  <!-- Detail -->
   <ons-template id="new.html">
     <ons-page ng-device-backbutton="newsNavigator.popPage()">
+      <ons-modal var="newImageModal">
+        <img class="news-image-zoom" ng-src="{{currentNew.image_url}}"/>
+        <ons-icon class="close-button top-right" size="35px" icon="ion-close-circled" onclick="newImageModal.hide()">
+        </ons-icon>
+      </ons-modal>
       <ons-toolbar>
         <div class="left">
           <ons-back-button>Regresar</ons-back-button>
@@ -55,11 +53,12 @@
         <div class="newstitle">{{currentNew.title}}</div>
         <span class="newsdate">{{currentNew.created_at | timeAgo}}</span>
         <div class="centered" ng-show="currentNew.image_url">
-          <img class="newspic" ng-src="{{currentNew.image_url}}"/>
+          <img class="news-image" ng-src="{{currentNew.image_url}}" ng-click="showImage()"/>
         </div>
         <div class="newscontent">{{currentNew.content}}</div>
       </div>
     </ons-page>
   </ons-template>
+
 
 </div>

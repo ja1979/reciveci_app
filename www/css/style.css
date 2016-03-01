@@ -228,6 +228,13 @@ ons-carousel-item {
   position: absolute;
 }
 
+
+.close-button {
+  /*background-color: transparent;*/
+  font-size: 26px;
+  position: absolute;
+}
+
 .tour-button-active {
   background-color: #1f1f21;
   width: 35px;
@@ -334,13 +341,19 @@ ons-carousel-item {
   padding: 0px 10px 10px 10px;
 }
 
-.newspic {
-  max-width: 90%;
+.news-image {
+  max-width: 60%;
   height: auto;
-  padding-top: 25px;
-  padding-bottom: 25px;
-  /*background-color: red;*/
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
+
+.news-image-zoom {
+  width: 100%;
+  /*height: auto;*/
+
+}
+
 
 .newsdate {
   opacity: 0.5;

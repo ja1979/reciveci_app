@@ -29,6 +29,10 @@
     <script src="lib/leaflet/leaflet.js"></script>
     <script src="lib/jquery-2.1.0.min.js"></script>
 
+    <!-- Image cache -->
+    <script src="lib/imagesloaded.pkgd.min.js"></script>
+    <script src="lib/imgcache.js"></script>
+
     <!-- Custom style -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -53,6 +57,34 @@
     <script src="scripts/news-controller.js"></script>
     <script src="scripts/recycling-controller.js"></script>
     <script src="scripts/rates-controller.js"></script>
+
+    <script>
+       var startTest = function() {
+           /* Note: this is using version 2.x of the imagesloaded library, use of current version might differ */
+           $('body').imagesLoaded(function($images, $proper, $broken ) {
+               // see console output for debug info
+               ImgCache.options.debug = true;
+               ImgCache.options.usePersistentCache = true;
+               ImgCache.init(function() {
+                   // 1. cache images
+                   for (var i = 0; i < $proper.length; i++) {
+                       ImgCache.cacheFile($($proper[i]).attr('src'));
+                   }
+                   // 2. broken images get replaced
+                   for (var i = 0; i < $broken.length; i++) {
+                       ImgCache.useCachedFile($($broken[i]));
+                   }
+               });
+           });
+       };
+       if (typeof(cordova) !== 'undefined') {
+           // cordova test
+           document.addEventListener('deviceready', startTest, false);
+       } else {
+           // normal browser test
+           $(document).ready(startTest);
+       }
+   </script>
 
 
 

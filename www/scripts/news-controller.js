@@ -1,6 +1,8 @@
 myApp.controller('NewsController', function($scope, $news, $timeout) {
 
 
+    $scope.foo = "bar";
+
     $scope.news = [];
     $scope.success = true;
 
@@ -51,11 +53,29 @@ myApp.controller('NewsController', function($scope, $news, $timeout) {
 
 
     $scope.showDetail = function(newObj){
-        //console.log(newObj.title);
-        //console.log($scope.news[index]);
-        //$scope.selectedItem = selectedItem;
+        //newImageModal.hide();
         $scope.newsNavigator.pushPage('new.html');
         $scope.currentNew = newObj;
+    }
+
+
+
+    $scope.showImage = function() {
+      console.log('Hey!');
+      newImageModal.show();
+    }
+
+    $scope.dialogs = {};
+    $scope.show = function(dlg, imageUrl) {
+        $scope.imageUrl = imageUrl;
+        if (!$scope.dialogs[dlg]) {
+          ons.createDialog(dlg).then(function(dialog) {
+            $scope.dialogs[dlg] = dialog;
+            dialog.show();
+          });
+        } else {
+          $scope.dialogs[dlg].show();
+        }
     }
 
 
