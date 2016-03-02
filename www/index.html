@@ -42,6 +42,22 @@
 
     <script>
         var myApp = angular.module('myApp', ['onsen','ngResource','yaru22.angular-timeago']);
+
+        var launchTour = function() {
+          var tourExecuted = localStorage.getItem('tourExecuted');
+          console.log("tourExecuted: " + tourExecuted);
+          if (tourExecuted == null) {
+            localStorage.setItem('tourExecuted', 'Y');
+            carousel.next();
+          }
+        }
+
+
+
+
+
+
+
     </script>
 
     <!-- Filters -->
@@ -80,9 +96,11 @@
        if (typeof(cordova) !== 'undefined') {
            // cordova test
            document.addEventListener('deviceready', startTest, false);
+           document.addEventListener('deviceready', launchTour, false);
        } else {
            // normal browser test
            $(document).ready(startTest);
+           $(document).ready(launchTour);
        }
    </script>
 
@@ -111,8 +129,6 @@
                 <ons-carousel-item>
                     <div class="centered">
                         <img class="logo" src="images/logo_reciveci_medium.png"/>
-
-
                     </div>
 
                     <ons-button onclick="myNavigator.resetToPage('main.html')" class="start-button">
