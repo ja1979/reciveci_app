@@ -1,7 +1,4 @@
 <div ng-controller="RecyclingController">
-  <!-- <ons-toolbar fixed-style>
-    <div class="center sectionbar" style="background-color: #085078;">Separa</div>
-  </ons-toolbar> -->
 
 
   <ons-navigator title="Navigator" var="recyclingNavigator" ons-postpop="handlePostPop($event);">
@@ -13,12 +10,12 @@
 
       <ons-row>
         <ons-col>
-          <div class="centered" ng-repeat="cat in categories_1" ng-click="showSubcategory(1, $index)">
-            <img class="catpic" ng-src="{{cat.image_url}}" tooltip="hey"/>
+          <div class="centered" ng-repeat="cat in separate[0].categories_col1" ng-click="showSubcategory(cat)">
+            <img class="catpic" ng-src="{{cat.image_url}}"/>
           </div>
         </ons-col>
         <ons-col>
-          <div class="centered" ng-repeat="cat in categories_2" ng-click="showSubcategory(2, $index)">
+          <div class="centered" ng-repeat="cat in separate[0].categories_col2" ng-click="showSubcategory(cat)">
             <img class="catpic" ng-src="{{cat.image_url}}"/>
           </div>
         </ons-col>
@@ -41,10 +38,11 @@
   <ons-template id="subcategories.html">
     <ons-page>
       <ons-list>
-        <ons-list-item modifier="chevron" ng-repeat="sub in subcategories" ng-click="showRecyWays($index)">
+        <ons-list-item modifier="chevron" ng-repeat="sub in currentCategory.subcategories">
           <div class="recy-title">{{sub.name}}</div>
-          <div class="recy-content" >{{sub.description}}</div>
-          <span class="recyMore" >Ver más ...<span>
+          <div style="white-space: pre;" class="recy-content">{{sub.examples}}</div>
+          <div style="white-space: pre;" class="recy-content">{{sub.instructions}}</div>
+          <img class="entryPic" ng-src="{{sub.image_url}}"/>
         </ons-list-item>
        </ons-list>
       <ons-toolbar>
@@ -55,7 +53,7 @@
     </ons-page>
   </ons-template>
 
-  <ons-template id="recy_ways.html">
+  <!-- <ons-template id="recy_ways.html">
     <ons-page>
       <ons-list>
         <ons-list-item ng-repeat="way in recy_ways">
@@ -83,6 +81,6 @@
         </div>
       </ons-toolbar>
     </ons-page>
-  </ons-template>
+  </ons-template> -->
 
 </div>

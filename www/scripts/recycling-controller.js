@@ -31,38 +31,56 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
     $timeout(function(){
         modal.show();
         $scope.success = true;
-        $recycling.categories_by_column(1, function(categories) {
-            $scope.categories_1 = categories;
-            if(categories == null){
+
+        $recycling.separate(function(data) {
+            $scope.separate = data;
+            if(data == null){
                 $scope.success = false;
             }
             modal.hide();
+            console.log($scope.separate[0]);
         });
-        $recycling.categories_by_column(2, function(categories) {
-            $scope.categories_2 = categories;
-            if(categories == null){
-                $scope.success = false;
-            }
-            modal.hide();
-        });
+
+        // $recycling.categories_by_column(1, function(categories) {
+        //     $scope.categories_1 = categories;
+        //     if(categories == null){
+        //         $scope.success = false;
+        //     }
+        //     modal.hide();
+        // });
+        // $recycling.categories_by_column(2, function(categories) {
+        //     $scope.categories_2 = categories;
+        //     if(categories == null){
+        //         $scope.success = false;
+        //     }
+        //     modal.hide();
+        // });
 
     },100);
 
     $scope.setMainTitle();
 
-    $scope.showSubcategory = function(column, index){
+    // $scope.showSubcategory = function(column, index) {
+    $scope.showSubcategory = function(category) {
 
-        var category = column == 1 ? $scope.categories_1[index] : $scope.categories_2[index]
+      $scope.recyclingNavigator.pushPage('subcategories.html');
+      $scope.currentCategory = category;
 
-        $scope.category = category;
-        //$scope.recyTitle = "¿Cómo separar " + category.name + "?";
-        setSpecificTitle(category.name);
 
-        $recycling.subcategories_by_category(category.id, function(data) {
-            $scope.subcategories = data;
-        });
-
-        $scope.recyclingNavigator.pushPage('subcategories.html', category);
+        // var category = column == 1 ? $scope.categories_1[index] : $scope.categories_2[index]
+        //
+        // $scope.category = category;
+        // //$scope.recyTitle = "¿Cómo separar " + category.name + "?";
+        // setSpecificTitle(category.name);
+        //
+        // $recycling.subcategories_by_category(category.id, function(data) {
+        //     $scope.subcategories = data;
+        //
+        //     var foo = JSON.stringify(data);
+        //     console.log(foo);
+        // });
+        //
+        // $scope.recyclingNavigator.pushPage('subcategories.html', category);
 
     }
 

@@ -1,10 +1,7 @@
 myApp.factory('$recycling', function($http) {
-  var API_ROOT = 'http://api-reciveci.rhcloud.com/';
-  //var API_ROOT = 'http://192.168.1.8:3000/';
-  //var API_ROOT = 'http://localhost:5000/';
-  //var API_ROOT = 'http://192.168.10.115:3000/';
-  //var API_ROOT = 'http://192.168.10.126:3000/';
-  //var API_ROOT = 'http://192.168.0.104:5000/';
+  // var API_ROOT = 'http://api-reciveci.rhcloud.com/';
+  // var API_ROOT = 'http://localhost:5000/';
+  var API_ROOT = 'http://192.168.0.109:5000/';
 
   return {
     categories: function(callback){
@@ -21,9 +18,12 @@ myApp.factory('$recycling', function($http) {
     },
     recy_ways_by_subcategory: function(subcategory_id, callback){
       $http.get(API_ROOT + 'recycling_ways_by_subcategory/' + subcategory_id + '.json').success(callback);
+    },
+    separate: function(callback){
+      $http.get(API_ROOT + 'separate.json').success(callback);
     }
   };
 
-  
+
 
 });
