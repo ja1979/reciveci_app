@@ -1,8 +1,6 @@
 myApp.controller('NewsController', function($scope, $news, $timeout) {
 
 
-    $scope.foo = "bar";
-
     $scope.news = [];
     $scope.success = true;
 
@@ -61,7 +59,6 @@ myApp.controller('NewsController', function($scope, $news, $timeout) {
 
 
     $scope.showImage = function() {
-      console.log('Hey!');
       newImageModal.show();
     }
 
@@ -76,7 +73,9 @@ myApp.controller('NewsController', function($scope, $news, $timeout) {
         } else {
           $scope.dialogs[dlg].show();
         }
-    }
+    };
+
+
 
 
 });

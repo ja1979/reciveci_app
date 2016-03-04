@@ -1,11 +1,11 @@
 <div ng-controller="MapController"3>
 
-	<!-- <ons-toolbar fixed-style>
-		<div class="center sectionbar" style="background-color: #373B44;">Entrega</div>
-	</ons-toolbar> -->
-
-	<ons-navigator title="Navigator" var="mapNavigator" ons-postpush="pilotNotification($event);">
+	<ons-navigator title="Navigator" var="mapNavigator">
+	<!-- <ons-navigator title="Navigator" var="mapNavigator" ons-postpush="pilotNotification($event);"> -->
 		<ons-page>
+				<nav id='filters' class='filter-ui'>
+					<input type="checkbox" onclick="showHideLayers(this)">Reciclador@s</input>
+				</nav>
     		<div id="map"></div>
 		</ons-page>
 	</ons-navigator>
@@ -26,33 +26,63 @@
 	        	</ons-toolbar-button>
 	          </div>
 	        </ons-toolbar>
-	        
+
 			<div class="profile-card">
 				<img class="profile-image" ng-src="{{currentWastePicker['waste_picker-image_url']}}"/>
 				<div class="profile-name">@{{currentWastePicker["waste_picker-name"]}}</div>
 				<div class="profile-message">"{{currentWastePicker["waste_picker-message"]}}"</div>
 			</div>
-	        
+
 			<ons-list modifier="inset">
 		        <ons-list-item>
-		        	<ons-icon icon="ion-android-walk" style="color: {{currentWastePicker['color']}}; opacity: 0.4;"></ons-icon>
-		          	<span class="formvalue">{{currentWastePicker["schedule"]}}</span>
+							<ons-row>
+		            <ons-col width="40px">
+		              <ons-icon icon="ion-android-walk" style="color: {{currentWastePicker['color']}}; opacity: 0.4;" class="profile-icon-detail"></ons-icon>
+		            </ons-col>
+		            <ons-col>
+									<div class="formvalue">{{currentWastePicker["schedule"]}}</div>
+		            </ons-col>
+		          </ons-row>
 		        </ons-list-item>
 		        <ons-list-item ng-show="currentWastePicker['affiliation-name']">
-		        	<ons-icon icon="ion-ios-people" size="25px"></ons-icon>
-		          	<span class="formvalue">{{currentWastePicker["affiliation-name"]}}</span>
+							<ons-row>
+		            <ons-col width="40px">
+		              <ons-icon icon="ion-ios-people" class="profile-icon-detail"></ons-icon>
+		            </ons-col>
+		            <ons-col>
+									<div class="formvalue">{{currentWastePicker["affiliation-name"]}}</div>
+		            </ons-col>
+		          </ons-row>
 		        </ons-list-item>
 		        <ons-list-item>
-		        	<ons-icon icon="user" size="20px"></ons-icon>
-		          	<span class="formvalue">{{currentWastePicker["waste_picker-birth_date"] | ageFilter}} años de edad</span>
+							<ons-row>
+		            <ons-col width="40px">
+		              <ons-icon icon="user" class="profile-icon-detail"></ons-icon>
+		            </ons-col>
+		            <ons-col>
+		              <div class="formvalue">{{currentWastePicker["waste_picker-birth_date"] | ageFilter}} años de edad</div>
+		            </ons-col>
+		          </ons-row>
 		        </ons-list-item>
 		        <ons-list-item>
-		        	<ons-icon icon="recycle" size="20px"></ons-icon>
-		          	<span class="formvalue">{{currentWastePicker["waste_picker-start_date"] | ageFilter}} años reciclando</span>
+							<ons-row>
+		            <ons-col width="40px">
+		              <ons-icon icon="recycle" class="profile-icon-detail"></ons-icon>
+		            </ons-col>
+		            <ons-col>
+		              <div class="formvalue">{{currentWastePicker["waste_picker-start_date"] | ageFilter}} años reciclando</div>
+		            </ons-col>
+		          </ons-row>
 		        </ons-list-item>
 		        <ons-list-item>
-		        	<ons-icon icon="ion-android-textsms" size="20px"></ons-icon>
-		          	<span class="formvalue">{{currentWastePicker["waste_picker-background"]}}</span>
+							<ons-row>
+		            <ons-col width="40px">
+		              <ons-icon icon="ion-android-textsms" class="profile-icon-detail"></ons-icon>
+		            </ons-col>
+		            <ons-col>
+		              <div class="formvalue">{{currentWastePicker["waste_picker-background"]}}</div>
+		            </ons-col>
+		          </ons-row>
 		        </ons-list-item>
 	      	</ons-list>
 		</ons-page>
