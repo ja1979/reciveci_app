@@ -20,7 +20,7 @@ myApp.controller('MapController', function($scope, $timeout) {
 
 
     $scope.openProfile = function(feature) {
-      console.log(feature.properties["waste_picker-name"]);
+      // console.log(feature.properties["waste_picker-name"]);
       $scope.mapNavigator.pushPage('profile.html');
       $scope.currentWastePicker = feature.properties;
     };
@@ -167,7 +167,7 @@ myApp.controller('MapController', function($scope, $timeout) {
 
 
     $timeout(function(){
-      console.log("Cargando...");
+      // console.log("Cargando...");
       loadMap();
     },100);
 
