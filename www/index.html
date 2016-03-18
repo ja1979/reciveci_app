@@ -47,10 +47,11 @@
           var tourExecuted = localStorage.getItem('tourExecuted');
           // console.log("tourExecuted: " + tourExecuted);
           if (tourExecuted == null) {
-            localStorage.setItem('tourExecuted', 'Y');
             carousel.next();
+            localStorage.setItem('tourExecuted', 'Y');
           }
         }
+
     </script>
 
     <!-- Filters -->
@@ -62,6 +63,7 @@
     <script src="scripts/rates-service.js"></script>
 
     <!--Controllers -->
+    <script src="scripts/main-controller.js"></script>
     <script src="scripts/map-controller.js"></script>
     <script src="scripts/news-controller.js"></script>
     <script src="scripts/recycling-controller.js"></script>
@@ -140,7 +142,7 @@
 
                 <ons-carousel-item style="background-color: #1f9cd9;">
                     <div class="tour-background">
-                        <ons-button onclick="carousel.prev()" class="tour-button bottom-left">
+                        <ons-button onclick="carousel.prev()" class="tour-button bottom-left" ng-hide="hideBack">
                             <ons-icon icon="ion-arrow-left-c"></ons-icon>
                         </ons-button>
                         <ons-button onclick="carousel.next()" class="tour-button bottom-right">

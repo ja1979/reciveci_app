@@ -6,6 +6,7 @@ myApp.controller('NewsController', function($scope, $news, $timeout) {
 
 
     var loadData = function($done) {
+
       $scope.success = true;
       modal.show();
       $news.last(
@@ -15,6 +16,14 @@ myApp.controller('NewsController', function($scope, $news, $timeout) {
               localStorage.setItem('newsData', newsData);
 
               $scope.news = news;
+
+              if (news.length > 0) {
+                lastDateNews = news[0].created_at;
+                localStorage.setItem('lastDateNews', lastDateNews);
+                // $parent.newsCount = 0;
+              }
+
+
               modal.hide();
               if ($done)
                 $done();

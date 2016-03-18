@@ -4,6 +4,8 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
     $scope.categories_2 = [];
     $scope.success = true;
 
+
+
     var loadData = function() {
       $scope.success = true;
       modal.show();

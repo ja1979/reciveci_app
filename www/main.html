@@ -1,4 +1,4 @@
-<ons-page>
+<ons-page ng-controller="MainController">
 
 <!--     <ons-toolbar fixed-style class="maintoolbar">
         <div class="center maintoolbartext">ReciVeci</div>
@@ -8,7 +8,6 @@
     </ons-toolbar> -->
 
     <ons-tabbar var="tabbar" position="top">
-
         <!-- Separa -->
         <ons-tabbar-item
         icon="ion-android-hand"
@@ -28,18 +27,19 @@
         label="Comparte"
         page="contacts.html"></ons-tabbar-item>
 
+        <ons-tab page="news.html">
+          <div ng-show="newsCount" class="notification reply-notification" ons-tab-inactive>{{newsCount}}</div>
+          <ons-icon icon="rss" class="tab-icon" ng-click="clearNewsNotification();"></ons-icon>
+          <div class="tab-text">Noticias</div>
+        </ons-tab>
+
         <!-- Noticias -->
-        <ons-tabbar-item
+        <!-- <ons-tabbar-item
         icon="rss"
         label="Noticias"
-        page="news.html"></ons-tabbar-item>
-
-        <!-- Logo -->
-        <!-- <ons-tabbar-item>
-            <div onclick="myNavigator.resetToPage('index.html')">
-                <img src="images/logo_reciveci_medium.png" class="maintoolbariconimage"/>
-            </div>
+        page="news.html" class="news-tab">
         </ons-tabbar-item> -->
+
 
 
         <!--
