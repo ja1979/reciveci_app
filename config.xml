@@ -29,6 +29,7 @@
   <content src="index.html" />
   <icon src="icon.png" />
   <!-- <splash src="splash.png" /> -->
+  <preference name="SplashScreen" value="splash.png" />
 
 
 
@@ -37,7 +38,6 @@
 
   <platform name="android">
     <preference name="orientation" value="portrait" />
-    <splash src="mdpi.png" qualifier="mdpi" />
   </platform>
 
 
