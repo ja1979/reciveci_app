@@ -713,7 +713,8 @@ ons-carousel-item {
   background-color:rgba(17,160,220,0.8);
   /*opacity: 0.3;*/
   position:absolute;
-  top:10px;
+  /*top:12px;*/
+  bottom: 35px;
   right:10px;
   z-index:100;
   padding:10px;

@@ -4,7 +4,8 @@
 	<!-- <ons-navigator title="Navigator" var="mapNavigator" ons-postpush="pilotNotification($event);"> -->
 		<ons-page>
 				<nav id='filters' class='filter-ui'>
-					<input type="checkbox" onclick="showHideLayers(this)">Reciclador@s</input>
+					<label for="layerWastePickers">Reciclad@s</label>
+					<input id="layerWastePickers" type="checkbox" onclick="showHideLayers(this)"/>
 				</nav>
     		<div id="map"></div>
 		</ons-page>
