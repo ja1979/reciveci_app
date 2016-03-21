@@ -28,14 +28,19 @@
 
   <content src="index.html" />
   <icon src="icon.png" />
-  <!-- <splash src="splash.png" /> -->
+  <splash src="splash.png" />
 
 
 
+
+  <!-- Android -->
 
   <platform name="android">
     <preference name="orientation" value="portrait" />
   </platform>
+
+
+  <!-- iOS -->
 
   <platform name="ios">
     <preference name="orientation" value="portrait" />
