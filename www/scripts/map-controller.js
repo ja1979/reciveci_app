@@ -42,9 +42,7 @@ myApp.controller('MapController', function($scope, $timeout) {
 
     var routes;
 
-    //$.getJSON("http://192.168.43.240:5000/map/routes.json", function(data) {
-    // $.getJSON("http://localhost:5000/map/routes.json", function(data) {
-    //$.getJSON("http://192.168.0.107:5000/map/routes.json", function(data) {
+    // $.getJSON("http://192.168.0.106:5000/map/routes.json", function(data) {
     $.getJSON("http://api-reciveci.rhcloud.com/map/routes.json", function(routes) {
       // routes = data ;
       //console.log(routes);
@@ -90,7 +88,7 @@ myApp.controller('MapController', function($scope, $timeout) {
 
         geojsonLayer.addTo(map);
         $("#layerWastePickers").prop('checked',true);
-        
+
       } else {
         console.log(error);
       }
