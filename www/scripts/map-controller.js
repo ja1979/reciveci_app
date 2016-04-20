@@ -17,7 +17,7 @@ myApp.controller('MapController', function($scope, $timeout) {
 var map;
 var geojsonLayer;
 var popup;
-var geojsonLayer_bussines;
+var geojsonLayer_business;
 
 
     ShowHideLayers = function(event){
@@ -44,13 +44,13 @@ var geojsonLayer_bussines;
 
 
 
-          }else if(event.target.id == "layerBussines"){
+          }else if(event.target.id == "layerBusiness"){
             if(event.target.checked){
             
-            geojsonLayer_bussines.addTo(map);
+            geojsonLayer_business.addTo(map);
             }
             else{
-            map.removeLayer(geojsonLayer_bussines);
+            map.removeLayer(geojsonLayer_business);
 
 
             }
@@ -91,7 +91,7 @@ var geojsonLayer_bussines;
 
 
       var routes;
-      var bussines ;
+      var business ;
 
       //$.getJSON("http://192.168.43.240:5000/map/routes.json", function(data) {
        //$.getJSON("http://localhost:5000/map/routes.json", function(routes) {
@@ -147,21 +147,21 @@ var routesData = JSON.stringify(routes);
 
 
 
- $.getJSON("http://localhost:5000/map/bussines.json", function(bussines) {
+ $.getJSON("http://localhost:5000/map/business.json", function(business) {
 
 
  
 
 
-var bussinesData = JSON.stringify(bussines);
-   localStorage.setItem('bussinesData', bussinesData);
+var businessData = JSON.stringify(business);
+   localStorage.setItem('businessData', businessData);
       
 
     
 
      // console.log(bussinesData);
 
-
+console.log(business);
 
 function traits (feature,layer){
 
@@ -174,7 +174,7 @@ layer.setIcon(imagen);
 
 var imagen = new L.icon({iconUrl:"../images/logo_reciveci_small.png"});
 
-  geojsonLayer_bussines = L.geoJson(bussines,{
+  geojsonLayer_business = L.geoJson(business,{
         //style: getStyle,
         onEachFeature: traits
       });
@@ -196,10 +196,10 @@ var imagen = new L.icon({iconUrl:"../images/logo_reciveci_small.png"});
  }).fail(function() {
 
       // Retrieve data from cache
-      var bussines = JSON.parse(localStorage.getItem('bussinesData'));
+      var business = JSON.parse(localStorage.getItem('businessData'));
 
-      if (bussines!= null) {
-       geojsonLayer_bussines = L.geoJson(bussines, {
+      if (business!= null) {
+       geojsonLayer_business = L.geoJson(business, {
           ///style: getStyle,
           onEachFeature: traits
 
