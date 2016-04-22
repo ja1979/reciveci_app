@@ -3,7 +3,21 @@
     src: url("../fonts/arial-rounded-mt-bold.ttf")
 }
 
+.affiliations-title{
 
+  font-family:'ArialRounded', sans-serif;
+  font-size: 40px;
+  line-height: 16px;
+  text-align:center;
+
+}
+
+.affiliations-content {
+
+  line-height: 1.5;
+  white-space: pre-wrap;
+
+}
 
 
 /*.tab-bar__icon + .tab-bar__label {
