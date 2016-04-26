@@ -1,9 +1,7 @@
 
 myApp.controller('MapController', function($scope, $timeout) {
 
-  var map;
-  var geojsonLayer;
-  var popup;
+ 
 
 
   $scope.openProfile = function(feature) {
@@ -12,20 +10,66 @@ myApp.controller('MapController', function($scope, $timeout) {
   };
 
 
-  showHideLayers = function(cb) {
-    // console.log(geojsonLayer);
-    if (cb.checked) {
-      geojsonLayer.addTo(map);
+
+
+
+
+var map;
+var geojsonLayer;
+var popup;
+var geojsonLayer_bussines;
+
+
+    ShowHideLayers = function(event){
+          if(event.target.id == "layerWastePickers" ){
+            if(event.target.checked){
+              geojsonLayer.addTo(map); 
+
+        var mapAlertExecuted = localStorage.getItem('mapAlertExecuted');
+        // console.log("tourExecuted: " + tourExecuted);
+            if (mapAlertExecuted == null) {
+                localStorage.setItem('mapAlertExecuted', 'Y');
+                popup = L.popup()
+                      .setLatLng([-0.18292634404976632, -78.47974061965942])
+                      .setContent("Haz un tab sobre cada línea para</br>conocer a <strong>l@s reciclador@s<strong>")
+                      .openOn(map);
+                                           }
+            }
+            else{
+               map.closePopup(popup);
+               map.removeLayer(geojsonLayer);
+   
+
+            }
+
+
+
+          }else if(event.target.id == "layerBussines"){
+            if(event.target.checked){
+            
+            geojsonLayer_bussines.addTo(map);
+            }
+            else{
+            map.removeLayer(geojsonLayer_bussines);
+
+
+            }
+
+
+          }
+
+          
+
+
     }
-    else {
-      map.removeLayer(geojsonLayer);
-    }
-  }
+
+  
 
 
   var loadMap = function() {
 
-    // console.log("Loading map...");
+
+    
 
     map = L.map('map').setView([-0.1832911226129649, -78.48079204559326], 15);
 
@@ -36,21 +80,34 @@ myApp.controller('MapController', function($scope, $timeout) {
     }).addTo(map);
 
 
+        
+
+
+ 
+
+
 
     // console.log(map);
 
 
-    var routes;
+      var routes;
+      var bussines ;
 
-    // $.getJSON("http://192.168.0.106:5000/map/routes.json", function(data) {
-    $.getJSON("http://api-reciveci.rhcloud.com/map/routes.json", function(routes) {
-      // routes = data ;
-      //console.log(routes);
+      //$.getJSON("http://192.168.43.240:5000/map/routes.json", function(data) {
+       //$.getJSON("http://localhost:5000/map/routes.json", function(routes) {
+        // $.getJSON("http://localhost:5000/map/bussines.json", function(bussines) {
+ 
+      //$.getJSON("http://192.168.0.107:5000/map/routes.json", function(data) {
+      $.getJSON("http://api-reciveci.rhcloud.com/map/routes.json", function(routes) {
+        // routes = data ;
+        
 
-      var routesData = JSON.stringify(routes);
+
+
+var routesData = JSON.stringify(routes);
       localStorage.setItem('routesData', routesData);
 
-      // console.log(routesData);
+      //console.log(routesData);
 
       geojsonLayer = L.geoJson(routes, {
         style: getStyle,
@@ -58,19 +115,12 @@ myApp.controller('MapController', function($scope, $timeout) {
       });
 
 
-      geojsonLayer.addTo(map);
-      $("#layerWastePickers").prop('checked',true);
+      //geojsonLayer.addTo(map);
+     
 
 
-      // Welcome popup
-      var mapAlertExecuted = localStorage.getItem('routeOpened');
-      if (mapAlertExecuted == null) {
-        localStorage.setItem('routeOpened', 'Y');
-        popup = L.popup()
-                    .setLatLng([-0.18292634404976632, -78.47974061965942])
-                    .setContent("Haz un tab sobre cada línea para</br>conocer a <strong>l@s reciclador@s<strong>")
-                    .openOn(map);
-      }
+
+    
 
 
 
@@ -88,7 +138,7 @@ myApp.controller('MapController', function($scope, $timeout) {
 
         geojsonLayer.addTo(map);
         $("#layerWastePickers").prop('checked',true);
-
+        
       } else {
         console.log(error);
       }
@@ -96,7 +146,84 @@ myApp.controller('MapController', function($scope, $timeout) {
     });
 
 
+
+ $.getJSON("http://localhost:5000/map/bussines.json", function(bussines) {
+
+
+ 
+
+
+var bussinesData = JSON.stringify(bussines);
+   localStorage.setItem('bussinesData', bussinesData);
+      
+
+    
+
+     // console.log(bussinesData);
+
+
+
+function traits (feature,layer){
+
+
+layer.bindPopup(feature.properties["name"]);
+layer.setIcon(imagen);
+
+
+};
+
+var imagen = new L.icon({iconUrl:"../images/logo_reciveci_small.png"});
+
+  geojsonLayer_bussines = L.geoJson(bussines,{
+        //style: getStyle,
+        onEachFeature: traits
+      });
+     
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+ }).fail(function() {
+
+      // Retrieve data from cache
+      var bussines = JSON.parse(localStorage.getItem('bussinesData'));
+
+      if (bussines!= null) {
+       geojsonLayer_bussines = L.geoJson(bussines, {
+          ///style: getStyle,
+          onEachFeature: traits
+
+        });
+        
+      } else {
+        console.log(error);
+      }
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
   }
+
 
 
 
@@ -147,12 +274,18 @@ myApp.controller('MapController', function($scope, $timeout) {
 
 
 
-  $timeout(function(){
-    // console.log("Cargando...");
-    loadMap();
-  },100);
+
+
+
+
+    $timeout(function(){
+      // console.log("Cargando...");
+      loadMap();
+    },100);
+  
 
 
 
 
 });
+
