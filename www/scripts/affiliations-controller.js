@@ -50,6 +50,23 @@ myApp.controller('AffiliationsController',function ($scope ,$affiliations , $tim
         $scope.currentNew = newObj;
     }
 
+    $scope.showImage = function() {
+      newImageModal.show();
+    }
+
+    $scope.dialogs = {};
+    $scope.show = function(dlg, imageUrl) {
+        $scope.imageUrl = imageUrl;
+        if (!$scope.dialogs[dlg]) {
+          ons.createDialog(dlg).then(function(dialog) {
+            $scope.dialogs[dlg] = dialog;
+            dialog.show();
+          });
+        } else {
+          $scope.dialogs[dlg].show();
+        }
+    };
+
 
 
 });

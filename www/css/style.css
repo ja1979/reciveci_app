@@ -16,8 +16,19 @@
 
   line-height: 1.5;
   white-space: pre-wrap;
+  text-align:center;
 
 }
+
+.affiliations-image {
+  max-width: 60%;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+
+
 
 
 /*.tab-bar__icon + .tab-bar__label {
