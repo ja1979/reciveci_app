@@ -12,9 +12,11 @@ myApp.controller('AffiliationsController',function ($scope ,$affiliations , $tim
               // Store in local store
               var affiliationsData = JSON.stringify(affiliations);
               localStorage.setItem('affiliationsData', affiliationsData);
-
               $scope.affiliations = affiliations;
-				modal.hide();
+              
+
+
+        modal.hide();
               if ($done)
                 $done();
           },
@@ -22,9 +24,9 @@ myApp.controller('AffiliationsController',function ($scope ,$affiliations , $tim
               console.log(error);
 
               // Retrieve data from cache
-              var news = JSON.parse(localStorage.getItem('affiliationsData'));
+              var affiliations= JSON.parse(localStorage.getItem('affiliationsData'));
 
-              if (news != null) {
+              if (affiliations != null) {
                 $scope.affiliations = affiliations;
               } else {
                 $scope.success = false;

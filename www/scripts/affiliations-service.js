@@ -4,7 +4,7 @@ myApp.factory('$affiliations', [ '$resource', function($resource) {
    
   return $resource(API_ROOT, {}, {
       last : {
-          url : API_ROOT + "affiliations_last.json",
+          url : API_ROOT + "api/v1/affiliations.json",
           method : "GET",
           isArray : true,
           timeout : 5000
