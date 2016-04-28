@@ -1,6 +1,6 @@
 myApp.factory('$news', [ '$resource', function($resource) {
-  var API_ROOT = 'http://api-reciveci.rhcloud.com/';
-  // var API_ROOT = 'http://192.168.0.106:5000/';
+  //var API_ROOT = 'http://api-reciveci.rhcloud.com/';
+  var API_ROOT = 'http://192.168.122.1:5000/';
   return $resource(API_ROOT, {}, {
       last : {
           url : API_ROOT + "articles_last.json",
