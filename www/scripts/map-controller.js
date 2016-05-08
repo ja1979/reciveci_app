@@ -166,32 +166,24 @@ console.log(business);
 function traits (feature,layer){
 
 
-layer.bindPopup(feature.properties["name"]);
+layer.bindPopup("<h1 class=centered>"+feature.properties["name"]+"</h1>"+
+  "<h3 class=centered>"+feature.properties["address"]+"</h3>"
+
+
+  );
+
 layer.setIcon(imagen);
 
 
 };
 
-var imagen = new L.icon({iconUrl:"../images/logo_reciveci_small.png"});
+var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
 
   geojsonLayer_business = L.geoJson(business,{
         //style: getStyle,
         onEachFeature: traits
       });
      
-
-
-
-
- 
-
-
-
-
-
-
-
-
 
  }).fail(function() {
 
@@ -283,8 +275,6 @@ var imagen = new L.icon({iconUrl:"../images/logo_reciveci_small.png"});
       loadMap();
     },100);
   
-
-
 
 
 });
