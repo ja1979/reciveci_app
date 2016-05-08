@@ -23,17 +23,26 @@
             Algo se ha salido fuera de control, vuelve a intentar por favor
           </div>
         </ons-list-item>
-        <ons-list-item modifier="chevron" class="news-entry" ng-repeat="newObj in affiliations" ng-click="showDetail(newObj)">
 
+        
+       
+
+        <ons-list-item modifier="chevron" class="news-entry" ng-repeat="(ciudad, newObj) in groups">
+
+       <ons-list-header>{{ciudad}}</ons-list-header>
+
+       </ons-list-item>
+
+        <ons-list-item modifier="chevron" class="news-entry" ng-repeat="affiliation in newObj" ng-click="showDetail(newObj)">
           <ons-row>
             <ons-col width="95px">
-             <img class="subcat-pic" ng-src="{{newObj.image_url}}"/>
+             <img class="subcat-pic" ng-src="{{affiliation.image_url}}"/>
             </ons-col>
             <ons-col>
               <div class="news-title">
-                {{newObj.nombre}}
+                {{affiliation.nombre}}
               </div>
-              <div class="news-date">{{newObj.sector}}</div>
+              <div class="news-date">{{affiliation.sector}}</div>
             </ons-col>
             <ons-col width="20px"></ons-col>
           </ons-row>
@@ -62,8 +71,8 @@
         </div>
         <div class="affiliations-content">{{currentNew.sector}}</div>
         <div class="affiliations-content">{{currentNew.direccion}}</div>
-        <div class="affiliations-content">{{currentNew.telefono}}</div>
-        <div class="affiliations-content">{{currentNew.email}}</div>
+        <div class="affiliations-content" onclick="window.open('tel: {{69000000}}', '_system')"><span class="affiliation affiliation-phone">{{currentNew.telefono}}</span></div>
+        <div class="affiliations-content" onclick="window.open('mailto:info@reciveci.ec?subject=Contacto', '_system');"><span class="affiliation affiliation-email">{{currentNew.email}}</span></div>
       </div>
     </ons-page>
   </ons-template>
