@@ -17,10 +17,10 @@ myApp.controller('MapController', function($scope, $timeout) {
 var map;
 var geojsonLayer;
 var popup;
+var geojsonLayer_affiliations;
 var geojsonLayer_business;
 
-
-    ShowHideLayers = function(event){
+   ShowHideLayers = function(event){
           if(event.target.id == "layerWastePickers" ){
             if(event.target.checked){
               geojsonLayer.addTo(map); 
@@ -55,6 +55,21 @@ var geojsonLayer_business;
 
 
             }
+          }else if(event.target.id == "layerAffiliations"){
+
+                if(event.target.checked){
+                    
+                    geojsonLayer_affiliations.addTo(map);
+                  }
+                  else{
+
+                     map.removeLayer(geojsonLayer_affiliations);
+
+                      }
+
+
+
+              }
 
 
           }
@@ -62,17 +77,14 @@ var geojsonLayer_business;
           
 
 
-    }
+    
 
   
 
 
   var loadMap = function() {
 
-
-    
-
-    map = L.map('map').setView([-0.1832911226129649, -78.48079204559326], 15);
+map = L.map('map').setView([-0.1832911226129649, -78.48079204559326], 15);
 
     L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamExOTc5IiwiYSI6ImNpazcyZHFtcjAxOGJ2ZGt0NGNhamQ1cXQifQ.Kkz4bJY_fOE6PM9YaWzJIg', {
       attribution: 'Map data &copy; <a href="http://openo streetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -93,6 +105,7 @@ var geojsonLayer_business;
 
       var routes;
       var business ;
+      var affiliations ;
 
       //$.getJSON("http://192.168.43.240:5000/map/routes.json", function(data) {
        //$.getJSON("http://localhost:5000/map/routes.json", function(routes) {
@@ -167,8 +180,8 @@ console.log(business);
 function traits (feature,layer){
 
 
-layer.bindPopup("<div class=fuente>"+feature.properties["name"]+"</div>"+
-  "<div class=fuenteDireccion>"+feature.properties["address"]+"</div>"
+layer.bindPopup("<div class=map-poup"+feature.properties["name"]+"</div>"+
+  "<div class=map-content-popup>"+feature.properties["address"]+"</div>"
 
 
   )
@@ -185,8 +198,8 @@ var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
         onEachFeature: traits
       });
      
+}).fail(function() {
 
- }).fail(function() {
 
       // Retrieve data from cache
       var business = JSON.parse(localStorage.getItem('businessData'));
@@ -207,6 +220,60 @@ var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
 
 
 });
+
+$.getJSON("http://192.168.1.8:5000/map/affiliations.json", function(affiliations) {
+
+var affiliationsData = JSON.stringify(affiliations);
+   localStorage.setItem('affiliationsData', affiliationsData);
+
+   console.log(affiliations);
+
+   function traits (feature,layer){
+
+
+layer.bindPopup("<div class=map-poup>"+feature.properties["name"]+"</div>"+
+  "<div class=map-content-popup>"+feature.properties["address"]+"</div>"
+
+  );
+
+
+
+
+layer.setIcon(imagen);
+
+
+};
+
+var imagen = new L.icon({iconUrl:"../images/acopio3.png"});
+
+geojsonLayer_affiliations = L.geoJson(affiliations,{
+        //style: getStyle,
+        onEachFeature: traits
+      });
+     
+
+ }).fail(function() {
+
+      // Retrieve data from cache
+      var affiliations = JSON.parse(localStorage.getItem('affiliationsData'));
+
+      if (affiliations!= null) {
+       geojsonLayer_affiliations = L.geoJson(affiliations, {
+          ///style: getStyle,
+          onEachFeature: traits
+
+        });
+        
+      } else {
+        console.log(error);
+      }
+
+
+
+});
+
+
+
 
 
   }

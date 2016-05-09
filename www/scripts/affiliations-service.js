@@ -1,10 +1,10 @@
 myApp.factory('$affiliations', [ '$resource', function($resource) {
   //var API_ROOT = 'http://api-reciveci.rhcloud.com/';
-   var API_ROOT = 'http://192.168.1.7:5000/';
+   var API_ROOT = 'http://192.168.1.8:5000/';
    
   return $resource(API_ROOT, {}, {
       last : {
-          url : API_ROOT + "api/v1/affiliations.json",
+          url : API_ROOT + "api/v1/cities.json",
           method : "GET",
           isArray : true,
           timeout : 5000
@@ -12,8 +12,3 @@ myApp.factory('$affiliations', [ '$resource', function($resource) {
     });
 } ])
 
-
-// var underscore = angular.module('underscore', []);
-// underscore.factory('_', ['$window', function() {
-//   return $window._;
-// }]);

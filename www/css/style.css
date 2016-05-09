@@ -12,6 +12,26 @@
 
 }
 
+.map-poup {
+
+font-family:'ArialRounded', sans-serif;
+font-size: 20px;
+text-align:center;
+color: #3b5998;
+  }
+
+.map-content-popup {
+
+  line-height: 1.5;
+  white-space: pre-wrap;
+  text-align:center;
+  font-size: 10px;
+
+}
+
+
+
+
 .affiliations-content {
 
   line-height: 1.5;
