@@ -26,6 +26,7 @@ var geojsonLayer_business;
               geojsonLayer.addTo(map); 
 
         var mapAlertExecuted = localStorage.getItem('mapAlertExecuted');
+
         // console.log("tourExecuted: " + tourExecuted);
             if (mapAlertExecuted == null) {
                 localStorage.setItem('mapAlertExecuted', 'Y');
@@ -115,7 +116,7 @@ var routesData = JSON.stringify(routes);
       });
 
 
-      //geojsonLayer.addTo(map);
+      geojsonLayer.addTo(map);
      
 
 
@@ -166,11 +167,11 @@ console.log(business);
 function traits (feature,layer){
 
 
-layer.bindPopup("<h1 class=centered>"+feature.properties["name"]+"</h1>"+
-  "<h3 class=centered>"+feature.properties["address"]+"</h3>"
+layer.bindPopup("<div class=fuente>"+feature.properties["name"]+"</div>"+
+  "<div class=fuenteDireccion>"+feature.properties["address"]+"</div>"
 
 
-  );
+  )
 
 layer.setIcon(imagen);
 
@@ -194,8 +195,11 @@ var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
        geojsonLayer_business = L.geoJson(business, {
           ///style: getStyle,
           onEachFeature: traits
-
         });
+          geojsonLayer_business.addTo(map);
+        $("#layerBusiness").prop('checked',true);
+
+        
         
       } else {
         console.log(error);
@@ -203,15 +207,6 @@ var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
 
 
 });
-
-
-
-
-
-
-
-
-
 
 
   }

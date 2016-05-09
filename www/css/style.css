@@ -319,7 +319,21 @@ ons-carousel-item {
 .centered {
   text-align: center;
 }
+.fuente{
+text-align: center;
+font-family:'ArialRounded' , sans-serif;
 
+font-size: 20px;
+}
+.fuenteDreccion{
+
+text-align: center;
+font-family:ArialRounded;
+font-size: 10px;
+
+
+
+}
 .wastepickerpic {
   width: 50px;
   max-width: 50px;
