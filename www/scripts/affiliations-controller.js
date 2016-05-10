@@ -1,7 +1,16 @@
+// var underscore = angular.module('underscore', []);
+// underscore.factory('_', function() {
+//   return window._; //Underscore must already be loaded on the page
+// });
+
+//var myApp = angular.module('myApp', ['underscore']);
+//var myApp = angular.module('myApp', ['angular.filter']);
+//var myApp = angular.module('underscore',[]);
 myApp.controller('AffiliationsController',function ($scope ,$affiliations , $timeout){
 	
 	$scope.affiliations = [];
     $scope.success = true;
+   
 
     var loadData = function($done) {
 
@@ -68,6 +77,8 @@ myApp.controller('AffiliationsController',function ($scope ,$affiliations , $tim
           $scope.dialogs[dlg].show();
         }
     };
+
+    //$scope.groups = _.groupBy($scope.affiliations, "ciudad");
 
 
 

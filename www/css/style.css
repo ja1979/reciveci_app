@@ -581,6 +581,7 @@ ons-carousel-item {
   padding-bottom: 10px;
 }
 
+
 .contact {
   position: absolute;
   right: 25px;
@@ -600,6 +601,20 @@ ons-carousel-item {
 
 .contact-email {
   color: #1f9cd9;
+}
+
+.affiliation {
+
+  text-align:center;
+
+  }
+
+.affiliation-email{
+  color: #1f9cd9;
+  }
+
+.affiliation-phone {
+  color: #3BAA35;
 }
 
 
