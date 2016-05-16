@@ -179,13 +179,18 @@ console.log(business);
 function traits (feature,layer){
 
 
-layer.bindPopup(feature.properties["name"]);
+layer.bindPopup("<h1 class=centered>"+feature.properties["name"]+"</h1>"+
+  "<h3 class=centered>"+feature.properties["address"]+"</h3>"
+
+
+  );
+
 layer.setIcon(imagen);
 
 
 };
 
-var imagen = new L.icon({iconUrl:"../images/logo_reciveci_small.png"});
+var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
 
   geojsonLayer_business = L.geoJson(business,{
         //style: getStyle,
@@ -193,6 +198,7 @@ var imagen = new L.icon({iconUrl:"../images/logo_reciveci_small.png"});
       });
      
 }).fail(function() {
+
 
       // Retrieve data from cache
       var business = JSON.parse(localStorage.getItem('businessData'));
@@ -227,14 +233,15 @@ layer.setIcon(imagen);
 
 };
 
-var imagen = new L.icon({iconUrl:"../images/recicle.png"});
+var imagen = new L.icon({iconUrl:"../images/acopio3.png"});
 
 geojsonLayer_affiliations = L.geoJson(affiliations,{
         //style: getStyle,
         onEachFeature: traits
       });
      
-}).fail(function() {
+
+ }).fail(function() {
 
       // Retrieve data from cache
       var affiliations = JSON.parse(localStorage.getItem('affiliationsData'));
@@ -318,8 +325,6 @@ geojsonLayer_affiliations = L.geoJson(affiliations,{
       loadMap();
     },100);
   
-
-
 
 
 });
