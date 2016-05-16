@@ -1,12 +1,5 @@
-// var underscore = angular.module('underscore', []);
-// underscore.factory('_', function() {
-//   return window._; //Underscore must already be loaded on the page
-// });
 
-//var myApp = angular.module('myApp', ['underscore']);
-//var myApp = angular.module('myApp', ['angular.filter']);
-//var myApp = angular.module('underscore',[]);
-myApp.controller('AffiliationsController',function ($scope ,$affiliations , $timeout){
+myApp.controller('AffiliationsController',function ($scope ,$affiliations , $timeout ){
 	
 	$scope.affiliations = [];
     $scope.success = true;
@@ -55,10 +48,10 @@ myApp.controller('AffiliationsController',function ($scope ,$affiliations , $tim
         loadData($done);
     };
 
-    $scope.showDetail = function(newObj){
+    $scope.showDetail = function(sub){
         //newImageModal.hide();
         $scope.affiliationNavigator.pushPage('new.html');
-        $scope.currentNew = newObj;
+        $scope.currentNew = sub;
     }
 
     $scope.showImage = function() {
@@ -78,7 +71,9 @@ myApp.controller('AffiliationsController',function ($scope ,$affiliations , $tim
         }
     };
 
-    //$scope.groups = _.groupBy($scope.affiliations, "ciudad");
+    //$scope.groups = _.groupBy(affiliations, "ciudad");
+
+    
 
 
 
