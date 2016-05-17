@@ -227,8 +227,8 @@ var affiliationsData = JSON.stringify(affiliations);
    function traits (feature,layer){
 
 
-layer.bindPopup("<h1 class=affiliations-poup>"+feature.properties["name"]+"</h1>"+
-  "<h3 class=affiliations-content-popup>"+feature.properties["address"]+"</h3>"
+layer.bindPopup("<h1 class=map-poup>"+feature.properties["name"]+"</h1>"+
+  "<h3 class=map-content-popup>"+feature.properties["address"]+"</h3>"
 
   );
 
