@@ -217,7 +217,7 @@ var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
 
 });
 
-$.getJSON("http://192.168.1.5:5000/map/affiliations.json", function(affiliations) {
+$.getJSON("http://192.168.1.8:5000/map/affiliations.json", function(affiliations) {
 
 var affiliationsData = JSON.stringify(affiliations);
    localStorage.setItem('affiliationsData', affiliationsData);
@@ -227,7 +227,13 @@ var affiliationsData = JSON.stringify(affiliations);
    function traits (feature,layer){
 
 
-layer.bindPopup(feature.properties["name"]);
+layer.bindPopup("<h1 class=affiliations-poup>"+feature.properties["name"]+"</h1>"+
+  "<h3 class=affiliations-content-popup>"+feature.properties["address"]+"</h3>"
+
+  );
+
+
+
 layer.setIcon(imagen);
 
 
