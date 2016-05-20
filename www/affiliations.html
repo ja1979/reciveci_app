@@ -72,8 +72,8 @@
         </div>
         <div class="affiliations-content">{{currentNew.sector}}</div>
         <div class="affiliations-content">{{currentNew.direccion}}</div>
-        <div class="affiliations-content" onclick="window.open('tel: {{69000000}}', '_system')"><span class="affiliation affiliation-phone">{{currentNew.telefono}}</span></div>
-        <div class="affiliations-content" onclick="window.open('mailto:info@reciveci.ec?subject=Contacto', '_system');"><span class="affiliation affiliation-email">{{currentNew.email}}</span></div>
+        <div class="affiliations-content" ng-click="openDialer(currentNew.telefono)"><span class="affiliation affiliation-phone">{{currentNew.telefono}}</span></div>
+        <div class="affiliations-content"ng-click="sendEmail(currentNew.email)"><span class="affiliation affiliation-email">{{currentNew.email}}</span></div>
       </div>
     </ons-page>
   </ons-template>
