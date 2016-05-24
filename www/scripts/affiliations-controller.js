@@ -71,7 +71,14 @@ myApp.controller('AffiliationsController',function ($scope ,$affiliations , $tim
         }
     };
 
-    //$scope.groups = _.groupBy(affiliations, "ciudad");
+    $scope.openDialer = function(number) {
+            window.open('tel: ' + number, '_system');
+        };
+
+    $scope.sendEmail = function(email) {
+            window.open('mailto: ' + email, '_system');
+        };
+
 
     
 
