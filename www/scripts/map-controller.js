@@ -20,6 +20,9 @@ var popup;
 var geojsonLayer_affiliations;
 var geojsonLayer_business;
 
+
+//algoritmo usado con checkboxs
+
    ShowHideLayers = function(event){
           if(event.target.id == "layerWastePickers" ){
             if(event.target.checked){
@@ -77,7 +80,10 @@ var geojsonLayer_business;
           
 
 
-    
+
+
+
+
 
   
 
