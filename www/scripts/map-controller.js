@@ -9,6 +9,11 @@ myApp.controller('MapController', function($scope, $timeout) {
     $scope.currentWastePicker = feature.properties;
   };
 
+  $scope.openProfileAffiliation = function(feature) {
+    $scope.mapNavigator.pushPage('profileAffiliation.html');
+    $scope.currentAffiliation = feature.properties;
+  };
+
 
 
 
@@ -230,14 +235,20 @@ var affiliationsData = JSON.stringify(affiliations);
 
    function traits (feature,layer){
 
+var container = $('<div />');
 
-layer.bindPopup("<div class=map-poup>"+feature.properties["name"]+"</div>"+
+      // Delegate all event handling for the container itself and its contents to the container
+      container.on('click', '.profile-link', function() {
+        $scope.openProfileAffiliation(feature);
+      });
+
+container.html("<div class=map-poup>"+"<a class='profile-link' href='#'>"+feature.properties["name"]+"</div>"+
   "<div class=map-content-popup>"+feature.properties["address"]+"</div>"
 
   );
 
 
-
+layer.bindPopup(container[0]);
 
 layer.setIcon(imagen);
 
@@ -326,6 +337,7 @@ geojsonLayer_affiliations = L.geoJson(affiliations,{
   }
 
 
+  
 
 
 

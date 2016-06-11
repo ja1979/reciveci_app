@@ -101,6 +101,86 @@
 
 	</ons-template>
 
+	<ons-template id="profileAffiliation.html">
+		<ons-page modifier="shop-details">
+<!-- 			<ons-toolbar fixed-style>
+			    <div class="left"><ons-back-button>Back</ons-back-button></div>
+			</ons-toolbar> -->
+			<ons-toolbar modifier="transparent">
+	          <div class="left">
+	            <ons-toolbar-button ng-click="mapNavigator.popPage()">
+	            	<!-- <ons-back-button> -->
+	            		<ons-icon icon="ion-arrow-left-c" class="profile-backbutton">
+	            		</ons-icon>
+	            	<!-- </ons-back-button> -->
+	        	</ons-toolbar-button>
+	          </div>
+	        </ons-toolbar>
+
+			<div class="profile-card">
+				<img class="profile-image" ng-src="{{currenAffiliation['image_url']}}"/>
+				<div class="profile-name">{{currentAffiliation["name"]}}</div>
+				
+			</div>
+
+			<ons-list modifier="inset">
+		        <ons-list-item>
+							<ons-row>
+		            <ons-col width="40px">
+		              <ons-icon icon="ion-android-walk" style="color: {{currentWastePicker['color']}}; opacity: 0.4;" class="profile-icon-detail"></ons-icon>
+		            </ons-col>
+		            <ons-col>
+									<div class="formvalue">{{currentAffiliation["address"]}}</div>
+		            </ons-col>
+		          </ons-row>
+		        </ons-list-item>
+		        <ons-list-item ng-show="currentWastePicker['affiliation-name']">
+							<ons-row>
+		            <ons-col width="40px">
+		              <ons-icon icon="ion-ios-people" class="profile-icon-detail"></ons-icon>
+		            </ons-col>
+		            <ons-col>
+									<div class="formvalue">{{currentWastePicker["affiliation-name"]}}</div>
+		            </ons-col>
+		          </ons-row>
+		        </ons-list-item>
+		        <ons-list-item>
+							<ons-row>
+		            <ons-col width="40px">
+		              <ons-icon icon="user" class="profile-icon-detail"></ons-icon>
+		            </ons-col>
+		            <ons-col>
+		              <div class="formvalue"></div>
+		            </ons-col>
+		          </ons-row>
+		        </ons-list-item>
+		        <ons-list-item>
+							<ons-row>
+		            <ons-col width="40px">
+		              <ons-icon icon="recycle" class="profile-icon-detail"></ons-icon>
+		            </ons-col>
+		            <ons-col>
+		              <div class="formvalue"></div>
+		            </ons-col>
+		          </ons-row>
+		        </ons-list-item>
+		        <ons-list-item>
+							<ons-row>
+		            <ons-col width="40px">
+		              <ons-icon icon="ion-android-textsms" class="profile-icon-detail"></ons-icon>
+		            </ons-col>
+		            <ons-col>
+		              <div class="formvalue">{{currentAffiliation["affiliation-emai"]}}</div>
+		            </ons-col>
+		          </ons-row>
+		        </ons-list-item>
+	      	</ons-list>
+		</ons-page>
+
+	</ons-template>
+
+
+
 
 
 </div>
