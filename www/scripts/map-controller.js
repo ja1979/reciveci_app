@@ -25,6 +25,9 @@ var popup;
 var geojsonLayer_affiliations;
 var geojsonLayer_business;
 
+
+//algoritmo usado con checkboxs
+
    ShowHideLayers = function(event){
           if(event.target.id == "layerWastePickers" ){
             if(event.target.checked){
@@ -82,7 +85,10 @@ var geojsonLayer_business;
           
 
 
-    
+
+
+
+
 
   
 
@@ -185,7 +191,7 @@ console.log(business);
 function traits (feature,layer){
 
 
-layer.bindPopup("<div class=map-poup"+feature.properties["name"]+"</div>"+
+layer.bindPopup("<div class=map-poup>"+feature.properties["name"]+"</div>"+
   "<div class=map-content-popup>"+feature.properties["address"]+"</div>"
 
 
@@ -225,8 +231,8 @@ var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
 
 
 });
-
-$.getJSON("http://192.168.1.8:5000/map/affiliations.json", function(affiliations) {
+$.getJSON("http://10.0.2.15:5000/map/affiliations.json", function(affiliations) {
+//$.getJSON("http://192.168.1.8:5000/map/affiliations.json", function(affiliations) {
 
 var affiliationsData = JSON.stringify(affiliations);
    localStorage.setItem('affiliationsData', affiliationsData);
