@@ -1,11 +1,12 @@
-<div ng-controller="MapController"3>
+<div ng-controller="MapController" >
+
 
 <!--ANTIGUA BARRA DE NAVEGACION LATERAL (NO BORRAR CODIGO )>
-	<!--<ons-navigator title="Navigator" var="mapNavigator">
+	<ons-navigator title="Navigator" var="mapNavigator">
 	<!-- <ons-navigator title="Navigator" var="mapNavigator" ons-postpush="pilotNotification($event);"> 
 		<ons-page>
 				<nav id='filters' class='filter-ui'>
-					<label for="layerWastePickers">Reciclador@s</label>
+					<!--<label for="layerWastePickers">Reciclador@s</label>
 					<input id="layerWastePickers" type="checkbox" onclick="ShowHideLayers(event)" checked="checked" />
 					<br>
 					<br>
@@ -21,18 +22,18 @@
 
     	
     		
-    		<div id="map"></div>
+    		<!--<div id="map"></div>
 		</ons-page>
-	</ons-navigator>
--->
+	</ons-navigator>-->
 
 
 
 
 
-<ons-sliding-menu main-page="page1.html" menu-page="menu.html" side="left" max-slide-distance="250px" var="menu" type="overlay">
 
+<ons-sliding-menu main-page="page1.html" menu-page="menu.html" side="left" max-slide-distance="250px" var="menu" type="overlay" >
 
+<div ></div>
 
 </ons-sliding-menu>
 
@@ -44,9 +45,21 @@
           <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;">Opciones</ons-icon>
         </ons-toolbar-button>
       </div>
-      <div class="center" var="mapNavigator">ENTREGA</div>
+      <div class="center" >ENTREGA</div>
     </ons-toolbar>
-    <div id="map"></div>
+    
+<ons-navigator var="mapNavigator">
+	
+		<ons-page>
+				
+    	
+    		 <div id="map"></div>
+    		
+		</ons-page>
+	</ons-navigator>
+
+
+
 
     <p style="text-align: center; color: #999; padding-top: 100px;">Page1 Contents</p>
   </ons-page>
@@ -56,6 +69,8 @@
 
 
 <ons-template id="menu.html">
+
+
   <ons-list>
     <ons-list-item >
       <label for="layerWastePickers">Reciclador@s</label>
@@ -72,6 +87,7 @@
 
 
   </ons-list>
+  
 </ons-template>
 
 
