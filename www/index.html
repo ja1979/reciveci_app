@@ -15,7 +15,7 @@
     <script src="lib/onsen/js/onsenui.js"></script>
     <script src="lib/angular/angular-timeago.js"></script>
     <script src="lib/angular/angular-resource.js"></script>
-    
+        
 
 
 
@@ -44,7 +44,7 @@
     <title>ReciVeci</title>
 
     <script>
-        var myApp = angular.module('myApp', ['onsen','ngResource','yaru22.angular-timeago']);
+        var myApp = angular.module('myApp', ['onsen','ngResource','yaru22.angular-timeago','ngSanitize']);
 
         var launchTour = function() {
           var tourExecuted = localStorage.getItem('tourExecuted');

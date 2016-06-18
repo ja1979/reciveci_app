@@ -1,8 +1,13 @@
 <div ng-controller="MapController" >
 
+<<<<<<< HEAD
 
 <!--ANTIGUA BARRA DE NAVEGACION LATERAL (NO BORRAR CODIGO )>
 	<ons-navigator title="Navigator" var="mapNavigator">
+=======
+<!--ANTIGUA BARRA DE NAVEGACION LATERAL (NO BORRAR CODIGO )>
+	<!--<ons-navigator title="Navigator" var="mapNavigator">
+>>>>>>> c5eea2c01fe49a608ea269d0908f174cb17edcbb
 	<!-- <ons-navigator title="Navigator" var="mapNavigator" ons-postpush="pilotNotification($event);"> 
 		<ons-page>
 				<nav id='filters' class='filter-ui'>
@@ -22,6 +27,7 @@
 
     	
     		
+<<<<<<< HEAD
     		<!--<div id="map"></div>
 		</ons-page>
 	</ons-navigator>-->
@@ -55,8 +61,61 @@
     	
     		 <div id="map"></div>
     		
+=======
+    		<div id="map"></div>
+>>>>>>> c5eea2c01fe49a608ea269d0908f174cb17edcbb
 		</ons-page>
 	</ons-navigator>
+-->
+
+
+
+
+
+<ons-sliding-menu main-page="page1.html" menu-page="menu.html" side="left" max-slide-distance="250px" var="menu" >
+
+
+
+</ons-sliding-menu>
+
+<ons-template id="page1.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button ng-click="menu.toggleMenu()">
+          <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center" var="mapNavigator">ENTREGA</div>
+    </ons-toolbar>
+    <div id="map"></div>
+
+    <p style="text-align: center; color: #999; padding-top: 100px;">Page1 Contents</p>
+  </ons-page>
+</ons-template>
+
+
+
+
+<ons-template id="menu.html">
+  <ons-list>
+    <ons-list-item >
+      <label for="layerWastePickers">Reciclador@s</label>
+		<input id="layerWastePickers" type="checkbox" onclick="ShowHideLayers(event)" checked="checked" />
+    </ons-list-item>
+    <ons-list-item>
+      <label for="layerBusiness">Negocios</label>
+		<input id="layerBusiness" type="checkbox" onclick="ShowHideLayers(event)">
+    </ons-list-item>
+    <ons-list-item>
+      <label for="layerAffiliations">Centros de Acopio</label>
+		<input id="layerAffiliations" type="checkbox" onclick="ShowHideLayers(event)"/>
+    </ons-list-item>
+
+
+  </ons-list>
+</ons-template>
+
 
 
 
