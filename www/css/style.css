@@ -3,6 +3,10 @@
     src: url("../fonts/arial-rounded-mt-bold.ttf")
 }
 
+.affiliations-page {
+  padding: 10px 10px 10px 10px;
+}
+
 .affiliations-title{
 
   font-family:'ArialRounded', sans-serif;

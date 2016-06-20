@@ -9,7 +9,6 @@
 					<input id="layerWastePickers" type="checkbox" onclick="ShowHideLayers(event)" checked="checked" />
 					<br>
 					<br>
-
 					<label for="layerBusiness">Negocios</label>
 					<input id="layerBusiness" type="checkbox" onclick="ShowHideLayers(event)">
 									
@@ -18,7 +17,6 @@
 					<label for="layerAffiliations">Centros de Acopio</label>
 					<input id="layerAffiliations" type="checkbox" onclick="ShowHideLayers(event)"/>
 				</nav>
-
     	
     		
     		<div id="map"></div>
@@ -154,85 +152,31 @@
 
 	</ons-template>
 
-	<ons-template id="profileAffiliation.html">
-		<ons-page modifier="shop-details">
-<!-- 			<ons-toolbar fixed-style>
-			    <div class="left"><ons-back-button>Back</ons-back-button></div>
-			</ons-toolbar> -->
-			<ons-toolbar modifier="transparent">
-	          <div class="left">
-	            <ons-toolbar-button ng-click="mapNavigator.popPage()">
-	            	<!-- <ons-back-button> -->
-	            		<ons-icon icon="ion-arrow-left-c" class="profile-backbutton">
-	            		</ons-icon>
-	            	<!-- </ons-back-button> -->
-	        	</ons-toolbar-button>
-	          </div>
-	        </ons-toolbar>
 
-			<div class="profile-card">
-				<img class="profile-image" ng-src="{{currenAffiliation['image_url']}}"/>
-				<div class="profile-name">{{currentAffiliation["name"]}}</div>
-				
-			</div>
-
-			<ons-list modifier="inset">
-		        <ons-list-item>
-							<ons-row>
-		            <ons-col width="40px">
-		              <ons-icon icon="ion-android-walk" style="color: {{currentWastePicker['color']}}; opacity: 0.4;" class="profile-icon-detail"></ons-icon>
-		            </ons-col>
-		            <ons-col>
-									<div class="formvalue">{{currentAffiliation["address"]}}</div>
-		            </ons-col>
-		          </ons-row>
-		        </ons-list-item>
-		        <ons-list-item ng-show="currentWastePicker['affiliation-name']">
-							<ons-row>
-		            <ons-col width="40px">
-		              <ons-icon icon="ion-ios-people" class="profile-icon-detail"></ons-icon>
-		            </ons-col>
-		            <ons-col>
-									<div class="formvalue">{{currentWastePicker["affiliation-name"]}}</div>
-		            </ons-col>
-		          </ons-row>
-		        </ons-list-item>
-		        <ons-list-item>
-							<ons-row>
-		            <ons-col width="40px">
-		              <ons-icon icon="user" class="profile-icon-detail"></ons-icon>
-		            </ons-col>
-		            <ons-col>
-		              <div class="formvalue"></div>
-		            </ons-col>
-		          </ons-row>
-		        </ons-list-item>
-		        <ons-list-item>
-							<ons-row>
-		            <ons-col width="40px">
-		              <ons-icon icon="recycle" class="profile-icon-detail"></ons-icon>
-		            </ons-col>
-		            <ons-col>
-		              <div class="formvalue"></div>
-		            </ons-col>
-		          </ons-row>
-		        </ons-list-item>
-		        <ons-list-item>
-							<ons-row>
-		            <ons-col width="40px">
-		              <ons-icon icon="ion-android-textsms" class="profile-icon-detail"></ons-icon>
-		            </ons-col>
-		            <ons-col>
-		              <div class="formvalue">{{currentAffiliation["affiliation-emai"]}}</div>
-		            </ons-col>
-		          </ons-row>
-		        </ons-list-item>
-	      	</ons-list>
-		</ons-page>
-
-	</ons-template>
-
-
+	<ons-template id="new.html">
+    <ons-page ng-device-backbutton="mapNavigator.popPage()">
+      <ons-modal var="newImageModal">
+          <img class="image-zoom" ng-src="{{currentNew.CentrosAcopio[0].image_url}}" onclick="newImageModal.hide()"/>
+        <ons-icon class="close-button top-right" size="35px" icon="ion-close-circled" onclick="newImageModal.hide()">
+        </ons-icon>
+      </ons-modal>
+      <ons-toolbar>
+        <div class="left">
+          <ons-back-button>Regresar</ons-back-button>
+        </div>
+      </ons-toolbar>
+      <div class="affiliations-page ">
+        <div class="affiliations-title">{{currentNew.nombre}}</div>
+        <div class="centered" ng-show="currentNew.image_url">
+        <img class="affiliations-image" ng-src="{{currentNew.image_url}}" ng-click="showImage()"/>
+        </div>
+        <div class="affiliations-content">{{currentNew.sector}}</div>
+        <div class="affiliations-content">{{currentNew.direccion}}</div>
+        <div class="affiliations-content" ng-click="openDialer(currentNew.telefono)"><span class="affiliation affiliation-phone">{{currentNew.telefono}}</span></div>
+        <div class="affiliations-content"ng-click="sendEmail(currentNew.email)"><span class="affiliation affiliation-email">{{currentNew.email}}</span></div>
+      </div>
+    </ons-page>
+  </ons-template>
 
 
 

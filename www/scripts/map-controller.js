@@ -1,4 +1,3 @@
-
 myApp.controller('MapController', function($scope, $timeout) {
 
  
@@ -9,12 +8,7 @@ myApp.controller('MapController', function($scope, $timeout) {
     $scope.currentWastePicker = feature.properties;
   };
 
-  $scope.openProfileAffiliation = function(feature) {
-    $scope.mapNavigator.pushPage('profileAffiliation.html');
-    $scope.currentAffiliation = feature.properties;
-  };
-
-
+  
 
 
 
@@ -231,7 +225,7 @@ var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
 
 
 });
-$.getJSON("http://10.0.2.15:5000/map/affiliations.json", function(affiliations) {
+$.getJSON("http://192.168.1.6:5000/map/affiliations.json", function(affiliations) {
 //$.getJSON("http://192.168.1.8:5000/map/affiliations.json", function(affiliations) {
 
 var affiliationsData = JSON.stringify(affiliations);
@@ -241,20 +235,14 @@ var affiliationsData = JSON.stringify(affiliations);
 
    function traits (feature,layer){
 
-var container = $('<div />');
 
-      // Delegate all event handling for the container itself and its contents to the container
-      container.on('click', '.profile-link', function() {
-        $scope.openProfileAffiliation(feature);
-      });
-
-container.html("<div class=map-poup>"+"<a class='profile-link' href='#'>"+feature.properties["name"]+"</div>"+
+layer.bindPopup("<div class=map-poup>"+"<a class='profile-link'>"+feature.properties["name"]+"</div>"+
   "<div class=map-content-popup>"+feature.properties["address"]+"</div>"
 
   );
 
 
-layer.bindPopup(container[0]);
+
 
 layer.setIcon(imagen);
 
@@ -343,7 +331,6 @@ geojsonLayer_affiliations = L.geoJson(affiliations,{
   }
 
 
-  
 
 
 
