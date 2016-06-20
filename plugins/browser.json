@@ -1,0 +1,18 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "ec.reviceci.app"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "ec.reviceci.app"
+        }
+    },
+    "dependent_plugins": {}
+}

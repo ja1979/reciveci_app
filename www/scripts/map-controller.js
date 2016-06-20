@@ -5,6 +5,8 @@ myApp.controller('MapController', function($scope, $timeout) {
 
   $scope.openProfile = function(feature) {
     $scope.mapNavigator.pushPage('profile.html');
+    //$scope.ons.slidingMenu.setMainPage("profile.html", {closeMenu: true});
+
     $scope.currentWastePicker = feature.properties;
   };
 
