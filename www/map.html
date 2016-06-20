@@ -3,10 +3,10 @@
 
 <!--ANTIGUA BARRA DE NAVEGACION LATERAL (NO BORRAR CODIGO )>
 	<ons-navigator title="Navigator" var="mapNavigator">
-	<ons-navigator title="Navigator" var="mapNavigator" ons-postpush="pilotNotification($event);"> 
+	<!-- <ons-navigator title="Navigator" var="mapNavigator" ons-postpush="pilotNotification($event);"> 
 		<ons-page>
 				<nav id='filters' class='filter-ui'>
-					<<label for="layerWastePickers">Reciclador@s</label>
+					<!--<label for="layerWastePickers">Reciclador@s</label>
 					<input id="layerWastePickers" type="checkbox" onclick="ShowHideLayers(event)" checked="checked" />
 					<br>
 					<br>
@@ -18,6 +18,9 @@
 					<label for="layerAffiliations">Centros de Acopio</label>
 					<input id="layerAffiliations" type="checkbox" onclick="ShowHideLayers(event)"/>
 				</nav>
+    	
+    		
+    		<!--<div id="map"></div>
 		</ons-page>
 	</ons-navigator>-->
 
@@ -37,7 +40,7 @@
     <ons-toolbar>
       <div class="left">
         <ons-toolbar-button ng-click="menu.toggleMenu()">
-          <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;">Opciones</ons-icon>
+          <ons-icon icon="ion-navicon" style="font-size: 20px; width: 1em;">Opciones</ons-icon>
         </ons-toolbar-button>
       </div>
       <div class="center" >ENTREGA</div>
@@ -50,61 +53,8 @@
     	
     		 <div id="map"></div>
     		
-
-    		<div id="map"></div>
-
 		</ons-page>
 	</ons-navigator>
-
-
-
-
-
-
-<ons-sliding-menu main-page="page1.html" menu-page="menu.html" side="left" max-slide-distance="250px" var="menu" >
-
-
-
-</ons-sliding-menu>
-
-<ons-template id="page1.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button ng-click="menu.toggleMenu()">
-          <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em;"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center" var="mapNavigator">ENTREGA</div>
-    </ons-toolbar>
-    <div id="map"></div>
-
-    <p style="text-align: center; color: #999; padding-top: 100px;">Page1 Contents</p>
-  </ons-page>
-</ons-template>
-
-
-
-
-<ons-template id="menu.html">
-  <ons-list>
-    <ons-list-item >
-      <label for="layerWastePickers">Reciclador@s</label>
-		<input id="layerWastePickers" type="checkbox" onclick="ShowHideLayers(event)" checked="checked" />
-    </ons-list-item>
-    <ons-list-item>
-      <label for="layerBusiness">Negocios</label>
-		<input id="layerBusiness" type="checkbox" onclick="ShowHideLayers(event)">
-    </ons-list-item>
-    <ons-list-item>
-      <label for="layerAffiliations">Centros de Acopio</label>
-		<input id="layerAffiliations" type="checkbox" onclick="ShowHideLayers(event)"/>
-    </ons-list-item>
-
-
-  </ons-list>
-</ons-template>
-
 
 
 
@@ -219,10 +169,10 @@
 	</ons-template>
 
 
-	<ons-template id="new.html">
+    <ons-template id="new.html">
     <ons-page ng-device-backbutton="mapNavigator.popPage()">
       <ons-modal var="newImageModal">
-          <img class="image-zoom" ng-src="{{currentNew.CentrosAcopio[0].image_url}}" onclick="newImageModal.hide()"/>
+          <img class="image-zoom" ng-src="{{currentAffiliation.CentrosAcopio[0].image_url}}" onclick="newImageModal.hide()"/>
         <ons-icon class="close-button top-right" size="35px" icon="ion-close-circled" onclick="newImageModal.hide()">
         </ons-icon>
       </ons-modal>
@@ -232,17 +182,21 @@
         </div>
       </ons-toolbar>
       <div class="affiliations-page ">
-        <div class="affiliations-title">{{currentNew.nombre}}</div>
-        <div class="centered" ng-show="currentNew.image_url">
-        <img class="affiliations-image" ng-src="{{currentNew.image_url}}" ng-click="showImage()"/>
+        <div class="affiliations-title">{{currentAffiliation.name}}</div>
+        <div class="centered" ng-show="currentAffiliation.image_url">
+        <img class="affiliations-image" ng-src="{{currentAffiliation.image_url}}" ng-click="showImage()"/>
         </div>
-        <div class="affiliations-content">{{currentNew.sector}}</div>
-        <div class="affiliations-content">{{currentNew.direccion}}</div>
-        <div class="affiliations-content" ng-click="openDialer(currentNew.telefono)"><span class="affiliation affiliation-phone">{{currentNew.telefono}}</span></div>
-        <div class="affiliations-content"ng-click="sendEmail(currentNew.email)"><span class="affiliation affiliation-email">{{currentNew.email}}</span></div>
+        <div class="affiliations-content">{{currentAffiliation.sector}}</div>
+        <div class="affiliations-content">{{currentAffiliation.address}}</div>
+        <div class="affiliations-content" ng-click="openDialer(currentAffiliation.telefono)"><span class="affiliation affiliation-phone">{{currentAffiliation.telefono}}</span></div>
+        <div class="affiliations-content"ng-click="sendEmail(currentAffiliation.email)"><span class="affiliation affiliation-email">{{currentAffiliation.email}}</span></div>
       </div>
     </ons-page>
   </ons-template>
+
+
+
+
 
 
 

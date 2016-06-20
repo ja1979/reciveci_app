@@ -10,7 +10,12 @@ myApp.controller('MapController', function($scope, $timeout) {
     $scope.currentWastePicker = feature.properties;
   };
 
-  
+  $scope.openAffiliation=function(feature)
+  {
+    $scope.mapNavigator.pushPage('new.html');
+    $scope.currentAffiliation= feature.properties;
+  };
+
 
 
 
@@ -227,7 +232,7 @@ var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
 
 
 });
-$.getJSON("http://192.168.1.6:5000/map/affiliations.json", function(affiliations) {
+$.getJSON("http://172.30.177.72:5000/map/affiliations.json", function(affiliations) {
 //$.getJSON("http://192.168.1.8:5000/map/affiliations.json", function(affiliations) {
 
 var affiliationsData = JSON.stringify(affiliations);
@@ -237,11 +242,22 @@ var affiliationsData = JSON.stringify(affiliations);
 
    function traits (feature,layer){
 
+var container = $('<div />');
 
-layer.bindPopup("<div class=map-poup>"+"<a class='profile-link'>"+feature.properties["name"]+"</div>"+
+      // Delegate all event handling for the container itself and its contents to the container
+      container.on('click', '.profile-link', function() {
+        $scope.openAffiliation(feature);
+      });
+
+      // Insert whatever you want into the container, using whichever approach you prefer
+      container.html("<div class=map-poup >"+"<a class='profile-link' href='#'>"+feature.properties["name"]+"</div>"+
   "<div class=map-content-popup>"+feature.properties["address"]+"</div>"
 
   );
+      
+
+      // Insert the container into the popup
+      layer.bindPopup(container[0]);
 
 
 
@@ -344,6 +360,16 @@ geojsonLayer_affiliations = L.geoJson(affiliations,{
       loadMap();
     },100);
   
+
+
+   $scope.openDialer = function(number) {
+            window.open('tel: ' + number, '_system');
+        };
+
+    $scope.sendEmail = function(email) {
+            window.open('mailto: ' + email, '_system');
+        };
+
 
 
 });
