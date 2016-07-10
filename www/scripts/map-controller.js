@@ -1,6 +1,6 @@
 myApp.controller('MapController', function($scope, $timeout) {
 
- 
+
 
 
   $scope.openProfile = function(feature) {
@@ -32,7 +32,7 @@ var geojsonLayer_business;
    ShowHideLayers = function(event){
           if(event.target.id == "layerWastePickers" ){
             if(event.target.checked){
-              geojsonLayer.addTo(map); 
+              geojsonLayer.addTo(map);
 
         var mapAlertExecuted = localStorage.getItem('mapAlertExecuted');
 
@@ -48,7 +48,7 @@ var geojsonLayer_business;
             else{
                map.closePopup(popup);
                map.removeLayer(geojsonLayer);
-   
+
 
             }
 
@@ -56,7 +56,7 @@ var geojsonLayer_business;
 
           }else if(event.target.id == "layerBusiness"){
             if(event.target.checked){
-            
+
             geojsonLayer_business.addTo(map);
             }
             else{
@@ -67,7 +67,7 @@ var geojsonLayer_business;
           }else if(event.target.id == "layerAffiliations"){
 
                 if(event.target.checked){
-                    
+
                     geojsonLayer_affiliations.addTo(map);
                   }
                   else{
@@ -83,7 +83,6 @@ var geojsonLayer_business;
 
           }
 
-          
 
 
 
@@ -91,7 +90,8 @@ var geojsonLayer_business;
 
 
 
-  
+
+
 
 
   var loadMap = function() {
@@ -105,51 +105,25 @@ map = L.map('map').setView([-0.1832911226129649, -78.48079204559326], 15);
     }).addTo(map);
 
 
-        
-
-
- 
-
-
-
-    // console.log(map);
-
-
+    // Layes
       var routes;
       var business ;
       var affiliations ;
 
-      //$.getJSON("http://192.168.43.240:5000/map/routes.json", function(data) {
-       //$.getJSON("http://localhost:5000/map/routes.json", function(routes) {
-        // $.getJSON("http://localhost:5000/map/bussines.json", function(bussines) {
- 
-      //$.getJSON("http://192.168.0.107:5000/map/routes.json", function(data) {
+      // $.getJSON("http://localhost:5000/map/routes.json", function(routes) {
       $.getJSON("http://api-reciveci.rhcloud.com/map/routes.json", function(routes) {
         // routes = data ;
-        
+          var routesData = JSON.stringify(routes);
+          localStorage.setItem('routesData', routesData);
 
+          //console.log(routesData);
 
+          geojsonLayer = L.geoJson(routes, {
+            style: getStyle,
+            onEachFeature: onEachFeature
+          });
 
-var routesData = JSON.stringify(routes);
-      localStorage.setItem('routesData', routesData);
-
-      //console.log(routesData);
-
-      geojsonLayer = L.geoJson(routes, {
-        style: getStyle,
-        onEachFeature: onEachFeature
-      });
-
-
-      geojsonLayer.addTo(map);
-     
-
-
-
-    
-
-
-
+          geojsonLayer.addTo(map);
 
     }).fail(function() {
 
@@ -164,7 +138,7 @@ var routesData = JSON.stringify(routes);
 
         geojsonLayer.addTo(map);
         $("#layerWastePickers").prop('checked',true);
-        
+
       } else {
         console.log(error);
       }
@@ -173,67 +147,45 @@ var routesData = JSON.stringify(routes);
 
 
 
- $.getJSON("http://localhost:5000/map/business.json", function(business) {
+// $.getJSON("http://localhost:5000/map/business.json", function(business) {
+$.getJSON("http://192.168.0.112:5000/map/business.json", function(business) {
+  var businessData = JSON.stringify(business);
+  localStorage.setItem('businessData', businessData);
+  // console.log(bussinesData);
+  console.log(business);
 
+  function traits (feature,layer) {
+    layer.bindPopup("<div class=map-poup>"+feature.properties["name"]+"</div>"+"<div class=map-content-popup>"+feature.properties["address"]+"</div>");
+    layer.setIcon(imagen);
+  };
 
- 
-
-
-var businessData = JSON.stringify(business);
-   localStorage.setItem('businessData', businessData);
-      
-
-    
-
-     // console.log(bussinesData);
-
-console.log(business);
-
-function traits (feature,layer){
-
-
-layer.bindPopup("<div class=map-poup>"+feature.properties["name"]+"</div>"+
-  "<div class=map-content-popup>"+feature.properties["address"]+"</div>"
-
-
-  )
-
-layer.setIcon(imagen);
-
-
-};
-
-var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
+  var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
 
   geojsonLayer_business = L.geoJson(business,{
-        //style: getStyle,
-        onEachFeature: traits
-      });
-     
+    //style: getStyle,
+    onEachFeature: traits
+  });
 }).fail(function() {
 
+  // Retrieve data from cache
+  var business = JSON.parse(localStorage.getItem('businessData'));
 
-      // Retrieve data from cache
-      var business = JSON.parse(localStorage.getItem('businessData'));
+  if (business!= null) {
+    geojsonLayer_business = L.geoJson(business, {
+      ///style: getStyle,
+      onEachFeature: traits
+    });
+      geojsonLayer_business.addTo(map);
+    $("#layerBusiness").prop('checked',true);
 
-      if (business!= null) {
-       geojsonLayer_business = L.geoJson(business, {
-          ///style: getStyle,
-          onEachFeature: traits
-        });
-          geojsonLayer_business.addTo(map);
-        $("#layerBusiness").prop('checked',true);
-
-        
-        
       } else {
         console.log(error);
       }
-
-
 });
-$.getJSON("http://172.30.177.72:5000/map/affiliations.json", function(affiliations) {
-//$.getJSON("http://192.168.1.8:5000/map/affiliations.json", function(affiliations) {
+
+
+// $.getJSON("http://localhost:5000/map/affiliations.json", function(affiliations) {
+$.getJSON("http://192.168.0.112:5000/map/affiliations.json", function(affiliations) {
 
 var affiliationsData = JSON.stringify(affiliations);
    localStorage.setItem('affiliationsData', affiliationsData);
@@ -254,7 +206,7 @@ var container = $('<div />');
   "<div class=map-content-popup>"+feature.properties["address"]+"</div>"
 
   );
-      
+
 
       // Insert the container into the popup
       layer.bindPopup(container[0]);
@@ -273,7 +225,7 @@ geojsonLayer_affiliations = L.geoJson(affiliations,{
         //style: getStyle,
         onEachFeature: traits
       });
-     
+
 
  }).fail(function() {
 
@@ -286,7 +238,7 @@ geojsonLayer_affiliations = L.geoJson(affiliations,{
           onEachFeature: traits
 
         });
-        
+
       } else {
         console.log(error);
       }
@@ -359,7 +311,7 @@ geojsonLayer_affiliations = L.geoJson(affiliations,{
       // console.log("Cargando...");
       loadMap();
     },100);
-  
+
 
 
    $scope.openDialer = function(number) {
@@ -373,4 +325,3 @@ geojsonLayer_affiliations = L.geoJson(affiliations,{
 
 
 });
-
