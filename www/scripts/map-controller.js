@@ -232,7 +232,7 @@ var imagen = new L.icon({iconUrl:"../images/logo_reciveci_pin.png"});
 
 
 });
-$.getJSON("http://172.30.177.72:5000/map/affiliations.json", function(affiliations) {
+$.getJSON("http://192.168.1.6:5000/map/affiliations.json", function(affiliations) {
 //$.getJSON("http://192.168.1.8:5000/map/affiliations.json", function(affiliations) {
 
 var affiliationsData = JSON.stringify(affiliations);
