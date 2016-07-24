@@ -65,10 +65,9 @@
         <div class="centered" ng-show="currentNew.image_url">
           <img class="news-image" ng-src="{{currentNew.image_url}}" ng-click="showImage()"/>
         </div>
-        <div class="news-content">{{currentNew.content}}</div>
-        <div class="news-content" ng-bind-html="currentNew.content"></div> 
-        
-
+        <!--<div class="news-content">{{currentNew.content}}</div>-->
+        <!--<div class="news-content" ng-bind-html="currentNew.content"></div> -->
+        <div class="news-content" compile="contenido"></div>
       </div>
     </ons-page>
   </ons-template>
