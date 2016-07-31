@@ -1,12 +1,7 @@
-myApp.factory('$recycling', [ '$resource','$propierties', function($resource,$propierties) {
+myApp.factory('$recycling', [ '$resource','$properties', function($resource,$properties) {
 
-  // Use this line for Production env
-  // var API_ROOT = 'http://api-reciveci.rhcloud.com/';
-  // Use this line for Development env
-
-  var API_ROOT = 'http://localhost:'+$propierties.port+'/';
-
-  //var API_ROOT = 'http://localhost:5000/';
+  var API_ROOT ='http://'+$properties.ip+':'+$properties.port+'/';
+  console.log(API_ROOT);
 
   return $resource(API_ROOT + "separate.json", {}, {
       separate : {

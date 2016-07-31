@@ -1,12 +1,6 @@
-myApp.factory('$news', ['$resource','$http','$propierties', function($resource,$http,$propierties) {
+myApp.factory('$news', ['$resource','$http','$properties', function($resource,$http,$properties) {
 
-  var API_ROOT = 'http://'+$propierties.ip+':'+$propierties.port+'/';
-  
-
-  // Use this line for Production env
-  // var API_ROOT = 'http://api-reciveci.rhcloud.com/';
-  // Use this line for Development env
-  
+  var API_ROOT = 'http://'+$properties.ip+':'+$properties.port+'/';
 
   return $resource(API_ROOT, {}, {
       last : {

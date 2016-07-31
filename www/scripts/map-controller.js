@@ -1,4 +1,4 @@
-myApp.controller('MapController', function($scope, $timeout,$propierties) {
+myApp.controller('MapController', function($scope, $timeout,$properties) {
 
 
 
@@ -78,10 +78,10 @@ var loadMap = function() {
   var business ;
   var affiliations ;
 
-  // $.getJSON("http://api-reciveci.rhcloud.com/map/routes.json",
-  var ROUTES_JSON='http://'+$propierties.ip+':'+$propierties.port+'/map/business.json';
-  $.getJSON("http://api-reciveci.rhcloud.com/map/routes.json",
-  // $.getJSON(ROUTES_JSON,
+  // Routes
+  var ROUTES_JSON='http://'+$properties.ip+':'+$properties.port+'/map/routes.json';
+  // console.log(ROUTES_JSON);
+  $.getJSON(ROUTES_JSON,
             function(routes) {
               var routesData = JSON.stringify(routes);
               localStorage.setItem('routesData', routesData);
@@ -114,11 +114,9 @@ var loadMap = function() {
           }
         });
 
- 
-  var BUSINESS_JSON='http://'+$propierties.ip+':'+$propierties.port+'/map/business.json';
 
-// $.getJSON("http://localhost:5000/map/business.json", function(business) {
-$.getJSON(BUSINESS_JSON, function(business) {
+  var BUSINESS_JSON='http://'+$properties.ip+':'+$properties.port+'/map/business.json';
+  $.getJSON(BUSINESS_JSON, function(business) {
   var businessData = JSON.stringify(business);
   localStorage.setItem('businessData', businessData);
   // console.log(bussinesData);
@@ -156,11 +154,8 @@ $.getJSON(BUSINESS_JSON, function(business) {
 });
 
 
-// $.getJSON("http://localhost:5000/map/affiliations.json", function(affiliations) {
+  var AFFILIATIONS_JSON='http://'+$properties.ip+':'+$properties.port+'/map/affiliations.json';
 
-  var AFFILIATIONS_JSON='http://'+$propierties.ip+':'+$propierties.port+'/map/affiliations.json';
-
-// $.getJSON("http://localhost:5000/map/affiliations.json",
 $.getJSON(AFFILIATIONS_JSON,
   function(affiliations) {
     var affiliationsData = JSON.stringify(affiliations);
