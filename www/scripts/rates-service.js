@@ -2,8 +2,7 @@ myApp.factory('$rates', [ '$resource','$propierties', function($resource,$propie
   //var API_ROOT = 'http://api-reciveci.rhcloud.com/';
   //var API_ROOT = 'http://192.168.43.240:5000/';
   var API_ROOT = 'http://'+$propierties.ip+':'+$propierties.port+'/';
-  //var API_ROOT = 'http://192.168.0.107:5000/'; 
-  //var API_ROOT = 'http://192.168.10.126:3000/';
+
 
   return $resource(API_ROOT + "rates_last.json", {}, {
       last : {

@@ -641,6 +641,11 @@ font-size: 10px;
   color: #1f9cd9;
 }
 
+.custom_Links{
+  color: #3b5998;
+  text-decoration: underline;
+}
+
 .affiliation {
 
   text-align:center;

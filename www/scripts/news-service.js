@@ -3,6 +3,11 @@ myApp.factory('$news', ['$resource','$http','$propierties', function($resource,$
   var API_ROOT = 'http://'+$propierties.ip+':'+$propierties.port+'/';
   
 
+  // Use this line for Production env
+  // var API_ROOT = 'http://api-reciveci.rhcloud.com/';
+  // Use this line for Development env
+  
+
   return $resource(API_ROOT, {}, {
       last : {
           url : API_ROOT + "articles_last.json",

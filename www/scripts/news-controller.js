@@ -10,7 +10,7 @@ myApp.controller('NewsController', function($scope,$news, $timeout) {
     $scope.news = [];
     $scope.success = true;
 
-
+    
     var loadData = function($done) {
       
       $scope.success = true;
@@ -70,9 +70,15 @@ myApp.controller('NewsController', function($scope,$news, $timeout) {
         console.log("Exito");
         $scope.newsNavigator.pushPage('new.html');
         $scope.currentNew = newObj;
+        //console.log($scope.currentNew);
+        var str = newObj.content;      
+        var urlRegEx = /<(\w+) (.*")>(.*)<.a>/g;
+        result = str.replace(urlRegEx, "<a class='custom_Links' onclick=\"window.open('$3',\'_system\')\">$3</a>");
+        $scope.contenido = result;
+        //console.log(str);
+        //console.log(result);
+
     }
-
-
 
     $scope.showImage = function() {
       newImageModal.show();
@@ -95,3 +101,4 @@ myApp.controller('NewsController', function($scope,$news, $timeout) {
 
 
 });
+

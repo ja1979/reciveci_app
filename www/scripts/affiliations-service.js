@@ -3,6 +3,7 @@ myApp.factory('$affiliations', [ '$resource','$propierties', function($resource,
   // Use this line for Production env
   // var API_ROOT = 'http://api-reciveci.rhcloud.com/';
   // Use this line for Development env
+
   var API_ROOT ='http://'+$propierties.ip+':'+$propierties.port+'/';
   //var API_ROOT = 'http://192.168.0.112:5000/';
 
