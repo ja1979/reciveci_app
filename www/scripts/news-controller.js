@@ -1,12 +1,18 @@
-myApp.controller('NewsController', function($scope, $news, $timeout) {
+myApp.controller('NewsController', function($scope,$news, $timeout) {
 
+
+/*$http.get('connection.properties').then(function (response) {
+        console.log(response.data.a);
+        console.log('a is ', response.data.a);
+        console.log('b is ', response.data.b);
+      });*/
 
     $scope.news = [];
     $scope.success = true;
 
 
     var loadData = function($done) {
-
+      
       $scope.success = true;
       modal.show();
       $news.last(
@@ -61,6 +67,7 @@ myApp.controller('NewsController', function($scope, $news, $timeout) {
 
     $scope.showDetail = function(newObj){
         //newImageModal.hide();
+        console.log("Exito");
         $scope.newsNavigator.pushPage('new.html');
         $scope.currentNew = newObj;
     }

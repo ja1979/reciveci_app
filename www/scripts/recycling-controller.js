@@ -12,13 +12,15 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
     var loadFromCache = function() {
 
-      console.log("Loading from cache...");
+      console.log("Trying from cache...");
 
       var separate = JSON.parse(localStorage.getItem('separateData'));
 
       if (separate != null) {
+        console.log("Cache found!");
         $scope.separate = separate;
       } else {
+        console.log("No cache data!");
         $scope.success = false;
       }
       modal.hide();
@@ -30,10 +32,7 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
 
       console.log('Refreshing data...');
 
-      localStorage.setItem('lastRecyclingRefreshDate', currentDate);
-
       $recycling.separate(function(separate) {
-
         // Store in local store
         var separateData = JSON.stringify(separate);
         localStorage.setItem('separateData', separateData);
@@ -41,6 +40,7 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
         // console.log(separate);
 
         $scope.separate = separate;
+        localStorage.setItem('lastRecyclingRefreshDate', currentDate);
         modal.hide();
 
       },
@@ -68,7 +68,6 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
       $scope.success = true;
       modal.show();
 
-
       var currentDate = getCurrentDate();
       // console.log('currentDate:' + currentDate);
 
@@ -77,7 +76,6 @@ myApp.controller('RecyclingController', function($scope, $recycling, $timeout) {
       if (lastRecyclingRefreshDate == null || lastRecyclingRefreshDate != currentDate) {
         // console.log("Must refresh");
         refreshData(currentDate);
-
       } else {
         loadFromCache();
       }

@@ -3,7 +3,7 @@
 
 <!--ANTIGUA BARRA DE NAVEGACION LATERAL (NO BORRAR CODIGO )>
 	<ons-navigator title="Navigator" var="mapNavigator">
-	<!-- <ons-navigator title="Navigator" var="mapNavigator" ons-postpush="pilotNotification($event);"> 
+	<!-- <ons-navigator title="Navigator" var="mapNavigator" ons-postpush="pilotNotification($event);">
 		<ons-page>
 				<nav id='filters' class='filter-ui'>
 					<!--<label for="layerWastePickers">Reciclador@s</label>
@@ -12,27 +12,22 @@
 					<br>
 					<label for="layerBusiness">Negocios</label>
 					<input id="layerBusiness" type="checkbox" onclick="ShowHideLayers(event)">
-									
+
 					<br>
 					<br>
 					<label for="layerAffiliations">Centros de Acopio</label>
 					<input id="layerAffiliations" type="checkbox" onclick="ShowHideLayers(event)"/>
 				</nav>
-    	
-    		
+
+
     		<!--<div id="map"></div>
 		</ons-page>
 	</ons-navigator>-->
 
 
 
-
-
-
 <ons-sliding-menu main-page="page1.html" menu-page="menu.html" side="left" max-slide-distance="250px" var="menu" type="overlay" >
-
-<div ></div>
-
+	<div></div>
 </ons-sliding-menu>
 
 <ons-template id="page1.html">
@@ -40,19 +35,14 @@
     <ons-toolbar>
       <div class="left">
         <ons-toolbar-button ng-click="menu.toggleMenu()">
-          <ons-icon icon="ion-navicon" style="font-size: 20px; width: 1em;">Opciones</ons-icon>
+          <ons-icon icon="ion-navicon" style="font-size: 20px; width: 1em;"> Opciones</ons-icon>
         </ons-toolbar-button>
       </div>
-      <div class="center" >ENTREGA</div>
     </ons-toolbar>
-    
+
 <ons-navigator var="mapNavigator">
-	
 		<ons-page>
-				
-    	
     		 <div id="map"></div>
-    		
 		</ons-page>
 	</ons-navigator>
 
@@ -75,7 +65,7 @@
 		<input id="layerWastePickers" type="checkbox" onclick="ShowHideLayers(event)" checked="checked" />
     </ons-list-item>
     <ons-list-item>
-      <label for="layerBusiness">Negocios</label>
+      <label for="layerBusiness">Negocios ReciVeci</label>
 		<input id="layerBusiness" type="checkbox" onclick="ShowHideLayers(event)">
     </ons-list-item>
     <ons-list-item>
@@ -85,7 +75,7 @@
 
 
   </ons-list>
-  
+
 </ons-template>
 
 

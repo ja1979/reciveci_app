@@ -5,7 +5,7 @@
 
 <ons-modal var="modal">
   <i class="fa fa-spinner fa-spin fa-2x"></i>
-</ons-modal> 
+</ons-modal>
 
 <ons-pull-hook var="loader" ng-action="loadDataPull($done)">
         <span ng-switch="loader.getCurrentState()">
@@ -24,15 +24,14 @@
           </div>
         </ons-list-item>
 
-        
-      
+
+
         <ons-list-item modifier="chevron" class="news-entry" ng-repeat="newObj in affiliations">
       <ons-list-item class="waste-type-name recyclable">
         {{newObj.Ciudad}}
       </ons-list-item>
           <ons-row  ng-repeat="sub in newObj.CentrosAcopio" ng-click="showDetail(sub)">
-            <ons-col width="95px">
-            
+            <ons-col width="95px">            
              <img class="subcat-pic" ng-src="{{sub.image_url}}"/>
             </ons-col>
             <ons-col>
