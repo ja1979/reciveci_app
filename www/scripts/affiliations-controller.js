@@ -3,6 +3,24 @@ myApp.controller('AffiliationsController',function ($scope ,$affiliations , $tim
 	
 	$scope.affiliations = [];
     $scope.success = true;
+
+    var loadFromCache = function() {
+
+      console.log("Trying from cache...");
+
+      var separate = JSON.parse(localStorage.getItem('separateData'));
+
+      if (separate != null) {
+        console.log("Cache found!");
+        $scope.separate = separate;
+      } else {
+        console.log("No cache data!");
+        $scope.success = false;
+      }
+      modal.hide();
+
+    }
+
    
 
     var loadData = function($done) {

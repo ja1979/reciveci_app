@@ -26,13 +26,14 @@
 
 
 
-        <ons-list-item modifier="chevron" class="news-entry" ng-repeat="newObj in affiliations">
+        <ons-list-item  class="news-entry" ng-repeat="newObj in affiliations">
       <ons-list-item class="waste-type-name recyclable">
         {{newObj.Ciudad}}
       </ons-list-item>
-          <ons-row  ng-repeat="sub in newObj.CentrosAcopio" ng-click="showDetail(sub)">
+          <ons-list-item modifier="chevron" ng-repeat="sub in newObj.CentrosAcopio" ng-click="showDetail(sub)">
+           <ons-row>  
             <ons-col width="95px">            
-             <img class="subcat-pic" ng-src="{{sub.image_url}}"/>
+             <img class="subcat-picAff" ng-src="{{sub.image_url}}"/>
             </ons-col>
             <ons-col>
               <div class="news-title">
@@ -44,8 +45,8 @@
 
             </ons-col>
             <ons-col width="20px"></ons-col>
-
-          </ons-row>
+            </ons-row>
+          </ons-list-item>
 
         </ons-list-item>
       </ons-list>
